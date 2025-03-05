@@ -35,6 +35,7 @@ LeftMouse={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+<<<<<<< HEAD
 [layer_names]
 
 3d_render/layer_1="Kolizje między przedmiotami i graczem"
@@ -42,3 +43,9 @@ LeftMouse={
 3d_physics/layer_1="Kolizja przedmiotów"
 3d_physics/layer_2="Wykrywanie czy przedmiot jest w zasięgu area 3d"
 3d_physics/layer_3="Ray_casting wymagany do chodzenia"
+=======
+
+[dotnet]
+
+project/assembly_name="Projekt-Stargate"
+>>>>>>> 84b40e2 (added protoptype menu)
