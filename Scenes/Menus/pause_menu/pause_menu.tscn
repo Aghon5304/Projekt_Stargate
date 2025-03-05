@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://d1imfipilgb4h"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
+[ext_resource type="Shader" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
+[ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_a2t2h"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+[ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
+
+[sub_resource type="Animation" id="Animation_fbqq0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PauseMenu/PauseBlur:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7drhi"]
+resource_name = "pause_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PauseMenu/PauseBlur:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsjft"]
+_data = {
+"RESET": SubResource("Animation_fbqq0"),
+"pause_animation": SubResource("Animation_7drhi")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twyo4"]
+shader = ExtResource("2_o55xs")
+shader_parameter/lod = 0.8
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vyio3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -574.0
+offset_top = -325.0
+offset_right = 581.0
+offset_bottom = 319.0
+
+[node name="PauseMenu" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Blur" type="AnimationPlayer" parent="MarginContainer/PauseMenu"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_dsjft")
+}
+
+[node name="PauseBlur" type="ColorRect" parent="MarginContainer/PauseMenu"]
+material = SubResource("ShaderMaterial_twyo4")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 1155.0
+offset_bottom = 649.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PauseMenu"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 161.0
+offset_right = 669.0
+offset_bottom = 493.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PauseMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Resume"
+script = ExtResource("3_bpdg5")
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Options"
+script = ExtResource("4_acaqb")
+options_menu = ExtResource("5_a2t2h")
+
+[node name="ExitToMenuButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Exit to Menu"
+script = ExtResource("5_cgna5")
+main_menu = ExtResource("6_2n1qu")
+
+[node name="ExitGameButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Exit Game"
+script = ExtResource("5_djvnr")
+
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitToMenuButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitToMenuButton" method="_on_exit_to_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitGameButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitGameButton" method="_on_exit_game_button_pressed"]
