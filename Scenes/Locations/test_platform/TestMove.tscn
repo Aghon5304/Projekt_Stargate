@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://5knrd7f2waax"]
+
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/Gracz.tscn" id="1_s0ufy"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_hif2c"]
+vertices = PackedVector3Array(-9.4439, 0.0271593, -10.113, -9.4439, 0.0271593, 10.137, 9.5561, 0.0271593, 10.137, 9.5561, 0.0271593, -10.113)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_q8a4c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvx0g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gemmb"]
+
+[sub_resource type="Sky" id="Sky_6xbsx"]
+sky_material = SubResource("ProceduralSkyMaterial_gemmb")
+
+[sub_resource type="Environment" id="Environment_re82b"]
+background_mode = 2
+sky = SubResource("Sky_6xbsx")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_hif2c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(19.8878, 0, 0, 0, 0.0256813, 0, 0, 0, 21.226, 0, 0, 0)
+mesh = SubResource("BoxMesh_q8a4c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_vvx0g")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_s0ufy")]
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7.92028, 13.1512)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_re82b")
