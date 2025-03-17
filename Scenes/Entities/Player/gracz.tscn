@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://br0ipli46s4xo"]
+[gd_scene load_steps=6 format=3 uid="uid://br0ipli46s4xo"]
 
 [ext_resource type="Script" path="res://Scenes/Entities/Player/character_body_3d.gd" id="1_2hl51"]
 
@@ -6,13 +6,25 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_75dk3"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj2o1"]
+albedo_color = Color(0.0453163, 0.787668, 7.70092e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gdvll"]
+material = SubResource("StandardMaterial3D_xj2o1")
+
 [node name="Gracz" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
 script = ExtResource("1_2hl51")
+main_game_mesh = NodePath("mainCharacterMesh")
+tutorial_mesh = NodePath("tutorialMesh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="mainCharacterMesh" type="MeshInstance3D" parent="CharacterBody3D"]
+visible = false
 mesh = SubResource("CapsuleMesh_nxwrj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_75dk3")
+
+[node name="tutorialMesh" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_gdvll")

@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Projekt-Stargate"
+run/main_scene="res://Scenes/Entities/Player/gracz.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"

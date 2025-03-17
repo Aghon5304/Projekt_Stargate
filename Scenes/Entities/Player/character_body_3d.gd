@@ -1,9 +1,13 @@
 extends CharacterBody3D
 
+@export var main_game_mesh: MeshInstance3D
+@export var tutorial_mesh: MeshInstance3D
+
+var tutorial = true
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +30,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+func _ready():
+	update_appearance()
+
+func update_appearance():
+	main_game_mesh.visible = not tutorial
+	tutorial_mesh.visible = tutorial

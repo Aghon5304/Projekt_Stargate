@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://d18fnrmmd5dqp"]
+
+[ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
+<<<<<<< Updated upstream
+[ext_resource type="PackedScene" uid="uid://br0ipli46s4xo" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
+=======
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
+
+[sub_resource type="Sky" id="Sky_bc1m6"]
+sky_material = SubResource("ProceduralSkyMaterial_qrjnr")
+
+[sub_resource type="Environment" id="Environment_pf2r1"]
+background_mode = 2
+sky = SubResource("Sky_bc1m6")
+>>>>>>> Stashed changes
+
+[node name="Test" type="Node3D"]
+
+[node name="level" parent="." instance=ExtResource("1_5fyyu")]
+
+[node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15731, 0)
