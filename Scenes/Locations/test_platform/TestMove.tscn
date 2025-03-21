@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://5knrd7f2waax"]
+[gd_scene load_steps=9 format=3 uid="uid://5knrd7f2waax"]
 
-[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/Gracz.tscn" id="1_s0ufy"]
+[ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="1_p2c8o"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="1_s0ufy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hif2c"]
 vertices = PackedVector3Array(-9.4439, 0.0271593, -10.113, -9.4439, 0.0271593, 10.137, 9.5561, 0.0271593, 10.137, 9.5561, 0.0271593, -10.113)
@@ -31,9 +32,26 @@ transform = Transform3D(19.8878, 0, 0, 0, 0.0256813, 0, 0, 0, 21.226, 0, 0, 0)
 mesh = SubResource("BoxMesh_q8a4c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_vvx0g")
+
+[node name="boxes" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95573, 0.486397, 2.6671)
+
+[node name="TestBox" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138809, -0.112535, -0.963742)
+
+[node name="TestBox2" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91327, -0.0828053, 0.942662)
+
+[node name="TestBox3" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.322585, -0.0121357, 2.00924)
+
+[node name="TestBox4" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45868, 0, -3.08043)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_s0ufy")]
 
