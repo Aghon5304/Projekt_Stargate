@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
 
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
+[ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="3_aklht"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
 
@@ -13,6 +15,12 @@ sky_material = SubResource("ProceduralSkyMaterial_qrjnr")
 background_mode = 2
 sky = SubResource("Sky_bc1m6")
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_1gyjd"]
+vertices = PackedVector3Array(-4.47187, 0.5, -4.47187, -4.47187, 0.5, 4.52813, 4.52813, 0.5, 4.52813, 4.52813, 0.5, -4.47187)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8hhku"]
+
 [node name="Test" type="Node3D"]
 
 [node name="level" parent="." instance=ExtResource("1_5fyyu")]
@@ -22,3 +30,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.03899, 4.84125)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pf2r1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_1gyjd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(4.97187, 0, 0, 0, 1, 0, 0, 0, 4.97187, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8hhku")
+
+[node name="Przedmioty" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="TestBox" parent="NavigationRegion3D/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.63299, 0.739742, -1.01105)
+
+[node name="TestBox2" parent="NavigationRegion3D/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.8843, -0.00199386, 3.0764)
+
+[node name="Equipment" parent="." instance=ExtResource("4_xw5i1")]
