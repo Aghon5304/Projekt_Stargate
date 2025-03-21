@@ -29,3 +29,5 @@ shape = SubResource("CapsuleShape3D_18hyh")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.1
 target_desired_distance = 0.1
+avoidance_enabled = true
+debug_enabled = true

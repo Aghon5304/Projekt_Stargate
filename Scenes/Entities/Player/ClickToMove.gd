@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var main_game_mesh: MeshInstance3D
 @export var tutorial_mesh: MeshInstance3D
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
+
 var Speed = 5
 var tutorial = true #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka
@@ -32,19 +33,22 @@ func faceDirection(direction):
 
 func _input(event):
 	if Input.is_action_just_pressed("LeftMouse"):
-		var camera = get_tree().get_nodes_in_group("Cameras")[0]
-		var mousePos = get_viewport().get_mouse_position()
-		var rayLength = 100
-		var from = camera.project_ray_origin(mousePos)
-		var to = from + camera.project_ray_normal(mousePos) * rayLength
-		var space = get_world_3d().direct_space_state
-		var rayQuery = PhysicsRayQueryParameters3D.new()
-		rayQuery.from = from
-		rayQuery.to = to
-		rayQuery.collide_with_areas = true
-		var result = space.intersect_ray(rayQuery)
-		if (result != {} ):
-			navigationAgent.target_position = result.position
+		var Ekwipunek : Control = get_parent().get_node("Equipment/ObramowanieEkwipunku")
+		if not Ekwipunek.get_global_rect().has_point(get_viewport().get_mouse_position()):
+			var camera = get_tree().get_nodes_in_group("Cameras")[0]
+			var mousePos = get_viewport().get_mouse_position()
+			var rayLength = 100
+			var from = camera.project_ray_origin(mousePos)
+			var to = from + camera.project_ray_normal(mousePos) * rayLength
+			var space = get_world_3d().direct_space_state
+			var rayQuery = PhysicsRayQueryParameters3D.new()
+			rayQuery.collision_mask = 2
+			rayQuery.from = from
+			rayQuery.to = to
+			rayQuery.collide_with_areas = true
+			var result = space.intersect_ray(rayQuery)
+			if (result != {} ):
+				navigationAgent.target_position = result.position
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial
