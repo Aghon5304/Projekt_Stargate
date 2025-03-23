@@ -65,14 +65,8 @@ omni_range = 34.5848
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5)
 
 [node name="sciana" type="StaticBody3D" parent="sciany"]
-<<<<<<< HEAD
 collision_layer = 5
 collision_mask = 5
-=======
-collision_layer = 3
-collision_mask = 3
->>>>>>> 5fde872 (added test objects, added early implementation, fixed equipment position)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108871, 0.00138474, 0)
 shape = SubResource("BoxShape3D_wglia")
