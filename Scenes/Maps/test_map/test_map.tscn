@@ -28,8 +28,8 @@ omni_range = 34.5848
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -5)
 
 [node name="sciana" type="StaticBody3D" parent="sciany"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108871, 0.00138474, 0)
@@ -40,8 +40,8 @@ mesh = SubResource("PlaneMesh_8ahdw")
 
 [node name="sciana2" type="StaticBody3D" parent="sciany"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -5, 5, -2.38419e-07)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108871, 0.00138474, 0)
@@ -52,8 +52,8 @@ mesh = SubResource("PlaneMesh_8ahdw")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, -1.36424e-12, 2.98023e-08, 5.00222e-12, 1, 1.81899e-11, 2.98023e-08, 1.13687e-11, 1, 0, 0, 0)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 5
+collision_mask = 5
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
