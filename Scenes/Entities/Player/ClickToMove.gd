@@ -21,7 +21,7 @@ func _process(delta):
 	moveToPoint(delta, Speed)
 	pass
 
-func moveToPoint(delta, speed):
+func moveToPoint(_delta, speed):
 	var targetPos = navigationAgent.get_next_path_position()
 	var direction = global_position.direction_to(targetPos)
 	faceDirection(targetPos)
@@ -31,7 +31,7 @@ func moveToPoint(delta, speed):
 func faceDirection(direction):
 	look_at(Vector3(direction.x, global_position.y, direction.z), Vector3.UP)
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("LeftMouse"):
 		var Ekwipunek : Control = get_parent().get_node("Equipment/ObramowanieEkwipunku")
 		if not Ekwipunek.get_global_rect().has_point(get_viewport().get_mouse_position()):
@@ -42,7 +42,7 @@ func _input(event):
 			var to = from + camera.project_ray_normal(mousePos) * rayLength
 			var space = get_world_3d().direct_space_state
 			var rayQuery = PhysicsRayQueryParameters3D.new()
-			rayQuery.collision_mask = 2
+			rayQuery.collision_mask = 4
 			rayQuery.from = from
 			rayQuery.to = to
 			rayQuery.collide_with_areas = true

@@ -12,7 +12,10 @@ material = SubResource("StandardMaterial3D_vyoov")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
+
 [node name="Gracz" type="CharacterBody3D" node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
+input_ray_pickable = false
 script = ExtResource("1_h75k5")
 main_game_mesh = NodePath("MainGameMesh")
 tutorial_mesh = NodePath("TutorialMesh")
@@ -31,3 +34,11 @@ path_desired_distance = 0.1
 target_desired_distance = 0.1
 avoidance_enabled = true
 debug_enabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 1.19897, 0)
+shape = SubResource("BoxShape3D_2sxh3")

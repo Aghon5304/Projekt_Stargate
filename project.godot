@@ -18,6 +18,7 @@ config/icon="res://Assets/Images/icon.svg"
 [autoload]
 
 GlobalItems="*res://Scenes/Global/Items/Global_Items.gd"
+GlobalInput="*res://Scenes/Global/Input/Global_input.gd"
 
 [global_group]
 
@@ -34,4 +35,7 @@ LeftMouse={
 [layer_names]
 
 3d_render/layer_1="Kolizje między przedmiotami i graczem"
-3d_render/layer_2="Kolizje z Raycastem dla move"
+3d_render/layer_3="Kolizje z Raycastem dla move"
+3d_physics/layer_1="Kolizja przedmiotów"
+3d_physics/layer_2="Wykrywanie czy przedmiot jest w zasięgu area 3d"
+3d_physics/layer_3="Ray_casting wymagany do chodzenia"
