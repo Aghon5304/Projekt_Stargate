@@ -31,20 +31,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.03899, 4.84125)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pf2r1")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="Equipment" parent="." instance=ExtResource("4_xw5i1")]
+
+[node name="Navigation" type="Node3D" parent="."]
+
+[node name="AllTextBoxes" type="NavigationRegion3D" parent="Navigation"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_1gyjd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/AllTextBoxes"]
 transform = Transform3D(4.97187, 0, 0, 0, 1, 0, 0, 0, 4.97187, 0, 0, 0)
 mesh = SubResource("PlaneMesh_8hhku")
 
-[node name="Przedmioty" type="Node3D" parent="NavigationRegion3D"]
+[node name="Przedmioty" type="Node3D" parent="Navigation/AllTextBoxes"]
 
-[node name="TestBox" parent="NavigationRegion3D/Przedmioty" instance=ExtResource("3_aklht")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.63299, 0.739742, -1.01105)
+[node name="TestBox" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.5379, 0.739742, -3.43657)
+visible = false
 
-[node name="TestBox2" parent="NavigationRegion3D/Przedmioty" instance=ExtResource("3_aklht")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.8843, -0.00199386, 3.0764)
+[node name="TestBox2" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44882, 0.471498, 0.200171)
 
-[node name="Equipment" parent="." instance=ExtResource("4_xw5i1")]
+[node name="TestBox3" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38866, 0.471832, -1.7145)
+
+[node name="TestBox4" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.878425, 0.472584, -2.04466)
+
+[node name="TestBox5" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85999, 0.473696, -1.6217)
+
+[node name="TestBox6" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95135, 0.474001, 0.668752)
+
+[node name="TestBox7" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90888, 0.473671, 2.77599)
+
+[node name="TestBox8" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08638, 0.472202, 0.327165)
+
+[node name="TestBox9" parent="Navigation/AllTextBoxes/Przedmioty" instance=ExtResource("3_aklht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120782, 0.472756, 3.9043)
