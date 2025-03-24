@@ -1,27 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://drw23ealwufd"]
+[gd_scene load_steps=8 format=3 uid="uid://8ipmn4ni3j6m"]
 
-[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="1_8vgkg"]
-[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_ogdah"]
+[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="1_15bba"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="1_hcnv1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wglia"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_x77ay"]
 size = Vector3(10, 0, 5)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8ahdw"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_4wn5y"]
 size = Vector2(10, 5)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_ah56n"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_wm1q7"]
 vertices = PackedVector3Array(-4.5, 0.02, -4.5, -4.5, 0.02, 4.5, 4.5, 0.02, 4.5, 4.5, 0.02, -4.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 cell_height = 0.01
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wbdte"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_ve7ro"]
 size = Vector2(10, 10)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pogoe"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_putd4"]
 size = Vector3(10, 0, 10)
 
-[node name="level" type="Node3D"]
-transform = Transform3D(0.707235, -0.000298425, -0.706979, 0.00020459, 1, -0.000217448, 0.706979, 9.14437e-06, 0.707235, 0, 0, 0)
+[node name="test_map_2" type="Node3D"]
+
+[node name="Gracz" parent="." instance=ExtResource("1_hcnv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
 transform = Transform3D(0.707107, -0.488373, 0.511363, -9.38358e-05, 0.723111, 0.690732, -0.707107, -0.488469, 0.511271, 5.65685, 5.6923, 5.47594)
@@ -39,15 +41,15 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108871, 0.00138474, 0)
-shape = SubResource("BoxShape3D_wglia")
+shape = SubResource("BoxShape3D_x77ay")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana"]
-mesh = SubResource("PlaneMesh_8ahdw")
+mesh = SubResource("PlaneMesh_4wn5y")
 
 [node name="Label3D" type="Label3D" parent="sciany/sciana"]
 transform = Transform3D(1, -4.09273e-12, 2.98023e-08, 2.98023e-08, -4.37053e-08, 1, 4.54747e-13, -1, -4.37199e-08, -0.169294, 0.169232, -7.15256e-05)
 modulate = Color(0, 0, 0, 1)
-text = "Level 1"
+text = "Level 2"
 font_size = 128
 
 [node name="sciana2" type="StaticBody3D" parent="sciany"]
@@ -55,26 +57,22 @@ transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 4.37114
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108871, 0.00138474, 0)
-shape = SubResource("BoxShape3D_wglia")
+shape = SubResource("BoxShape3D_x77ay")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana2"]
-mesh = SubResource("PlaneMesh_8ahdw")
+mesh = SubResource("PlaneMesh_4wn5y")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_ah56n")
+navigation_mesh = SubResource("NavigationMesh_wm1q7")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, -4.09273e-12, 2.98023e-08, 5.00222e-12, 1, 3.63798e-12, 2.98023e-08, 8.6402e-12, 1, 0, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor"]
-mesh = SubResource("PlaneMesh_wbdte")
+mesh = SubResource("PlaneMesh_ve7ro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor"]
-shape = SubResource("BoxShape3D_pogoe")
+shape = SubResource("BoxShape3D_putd4")
 
-[node name="Door" parent="." instance=ExtResource("1_8vgkg")]
-next_scene = "res://Scenes/Maps/test_map/test_map_2.tscn"
-
-[node name="Gracz" parent="." instance=ExtResource("2_ogdah")]
-transform = Transform3D(1, -4.8658e-11, 2.98023e-08, 5.00222e-12, 1, 7.63976e-11, 2.98023e-08, 8.04903e-11, 1, -4.24264, 0.000867834, -0.000768423)
+[node name="Door" parent="." instance=ExtResource("1_15bba")]
