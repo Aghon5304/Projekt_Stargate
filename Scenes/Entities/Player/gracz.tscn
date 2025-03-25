@@ -8,7 +8,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
 
-[node name="Gracz" type="CharacterBody3D"]
+[node name="Gracz" type="CharacterBody3D" groups=["Player"]]
 input_ray_pickable = false
 script = ExtResource("1_h75k5")
 

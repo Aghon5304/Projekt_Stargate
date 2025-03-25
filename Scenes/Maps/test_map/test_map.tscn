@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://drw23ealwufd"]
+[gd_scene load_steps=9 format=3 uid="uid://drw23ealwufd"]
 
 [ext_resource type="Script" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="1_hwxpn"]
 
@@ -73,7 +73,7 @@ mesh = SubResource("PlaneMesh_wbdte")
 shape = SubResource("BoxShape3D_pogoe")
 
 [node name="Test_go_the_end_credits" type="StaticBody3D" parent="."]
-transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0.482924, 0.429443, -4.51708)
+transform = Transform3D(1, -4.04725e-11, 2.98023e-08, 5.00222e-12, 1, 6.18456e-11, 2.98023e-08, 5.91172e-11, 1, 1.70862, 0.429193, -4.51399)
 script = ExtResource("1_hwxpn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Test_go_the_end_credits"]

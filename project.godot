@@ -18,10 +18,12 @@ config/icon="res://Assets/Images/icon.svg"
 
 GlobalItems="*res://Scenes/Global/Items/Global_Items.gd"
 GlobalInput="*res://Scenes/Global/Input/Global_input.gd"
+GlobalSignals="*res://Scenes/Global/Signals/Global_signals.gd"
 
 [global_group]
 
 Cameras=""
+Player="gracz"
 
 [input]
 
