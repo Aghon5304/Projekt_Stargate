@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c022k2pduvwhn"]
+[gd_scene load_steps=5 format=3 uid="uid://c022k2pduvwhn"]
 
+[ext_resource type="Script" path="res://Scenes/Menus/equipment_bar/equipment.gd" id="1_ih5l6"]
 [ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_yt4th"]
 [ext_resource type="Script" path="res://Scenes/Menus/equipment_bar/items.gd" id="2_81wq6"]
 [ext_resource type="PackedScene" uid="uid://e8a4bbg4u8cf" path="res://Scenes/Menus/equipment_bar/item_button.tscn" id="3_gk8qt"]
@@ -13,6 +14,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_ih5l6")
 
 [node name="ObramowanieEkwipunku" type="TextureRect" parent="."]
 layout_mode = 1
@@ -69,3 +71,5 @@ layout_mode = 2
 
 [node name="ItemButton8" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
 layout_mode = 2
+
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton" to="." method="_on_item_button_wybrano_item"]

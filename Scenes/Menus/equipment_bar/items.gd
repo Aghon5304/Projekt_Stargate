@@ -9,13 +9,13 @@ func _ready() -> void:
 	Icons[GlobalItems.ItemTypes.NOTATNIK] = preload("res://Assets/Images/icon.svg")
 	for x in buttons.size():
 		buttons[x].button_number = x
-		if GlobalItems.Ekwipunek[x]!= null:
+		if GlobalItems.Ekwipunek[x]!= -1:
 			buttons[x].icon = Icons[GlobalItems.Ekwipunek[x]]
 		else:
 			buttons[x].icon = NoIcon
 func OnEkwipunekChang() ->void:
 	for x in buttons.size():
-		if GlobalItems.Ekwipunek[x]!= null:
+		if GlobalItems.Ekwipunek[x]!= -1:
 			buttons[x].icon = Icons[GlobalItems.Ekwipunek[x]]
 		else:
 			buttons[x].icon = NoIcon

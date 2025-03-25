@@ -3,10 +3,6 @@
 
 [ext_resource type="Script" uid="uid://crx680c2xyaw4" path="res://Scenes/Maps/test_map/test_level_change.gd" id="1_e455k"]
 
-[ext_resource type="Script" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="1_hwxpn"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://drw23ealwufd"]
->>>>>>> 5fde872 (added test objects, added early implementation, fixed equipment position)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wglia"]
 size = Vector3(10, 0, 5)
@@ -14,7 +10,6 @@ size = Vector3(10, 0, 5)
 [sub_resource type="PlaneMesh" id="PlaneMesh_8ahdw"]
 size = Vector2(10, 5)
 
-<<<<<<< HEAD
 [sub_resource type="BoxShape3D" id="BoxShape3D_fl70j"]
 size = Vector3(1, 0.5, 1)
 
@@ -30,8 +25,6 @@ vertices = PackedVector3Array(-4.5, 0.02, -4.5, -4.5, 0.02, 4.5, 4.5, 0.02, 4.5,
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 cell_height = 0.01
 
-=======
->>>>>>> 5fde872 (added test objects, added early implementation, fixed equipment position)
 [sub_resource type="PlaneMesh" id="PlaneMesh_wbdte"]
 size = Vector2(10, 10)
 
@@ -113,7 +106,7 @@ shape = SubResource("BoxShape3D_pogoe")
 [connection signal="body_entered" from="TestChangeMesh" to="TestChangeMesh" method="_on_body_entered"]
 
 [node name="Test_go_the_end_credits" type="StaticBody3D" parent="."]
-transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0.482924, 0.429443, -4.51708)
+transform = Transform3D(1, -4.04725e-11, 2.98023e-08, 5.00222e-12, 1, 6.18456e-11, 2.98023e-08, 5.91172e-11, 1, 1.70862, 0.429193, -4.51399)
 script = ExtResource("1_hwxpn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Test_go_the_end_credits"]
