@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://drw23ealwufd"]
+[gd_scene load_steps=10 format=3 uid="uid://drw23ealwufd"]
+
+[ext_resource type="Script" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="1_hwxpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wglia"]
 size = Vector3(10, 0, 5)
@@ -16,6 +18,14 @@ size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pogoe"]
 size = Vector3(10, 0, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5ki1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jibvm"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxh6m"]
+material = SubResource("StandardMaterial3D_jibvm")
 
 [node name="level" type="Node3D"]
 transform = Transform3D(0.707235, -0.000298425, -0.706979, 0.00020459, 1, -0.000217448, 0.706979, 9.14437e-06, 0.707235, 0, 0, 0)
@@ -63,3 +73,15 @@ mesh = SubResource("PlaneMesh_wbdte")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor"]
 shape = SubResource("BoxShape3D_pogoe")
+
+[node name="Test_go_the_end_credits" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0.482924, 0.429443, -4.51708)
+script = ExtResource("1_hwxpn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test_go_the_end_credits"]
+shape = SubResource("BoxShape3D_o5ki1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test_go_the_end_credits/CollisionShape3D"]
+mesh = SubResource("BoxMesh_vxh6m")
+
+[connection signal="input_event" from="Test_go_the_end_credits" to="Test_go_the_end_credits" method="_on_input_event"]

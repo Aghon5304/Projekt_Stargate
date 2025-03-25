@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6q0ernj5jcsw"]
+
+[ext_resource type="Script" path="res://Scenes/Locations/end_location/end_credits.gd" id="1_etqai"]
+
+[sub_resource type="Gradient" id="Gradient_urnhi"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ra2ti"]
+gradient = SubResource("Gradient_urnhi")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="EndCredits" type="Node2D"]
+position = Vector2(578, 324)
+script = ExtResource("1_etqai")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.121211, 0.0184195, 0.0256231, 1)
+offset_left = -581.0
+offset_top = -323.0
+offset_right = 576.0
+offset_bottom = 321.0
+texture = SubResource("GradientTexture2D_ra2ti")
+
+[node name="Authors" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -580.0
+offset_top = -720.0
+offset_right = 576.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]Patrycja Bień
+
+Emilka Zborowska
+
+Mateusz Januszkiewicz
+
+Kuba Karwalski
+
+Oliwier Matus
+
+Sebastian Wróbel
+
+Paweł Piwowarczyk
+
+Piotr The Yoshi Woźnicki
+
+Łukasz Mędrek
+
+"
