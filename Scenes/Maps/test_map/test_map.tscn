@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://drw23ealwufd"]
+[gd_scene load_steps=9 format=3 uid="uid://drw23ealwufd"]
 
 [ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="1_8vgkg"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_ogdah"]
