@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d18fnrmmd5dqp"]
+[gd_scene load_steps=10 format=3 uid="uid://d4jvi1pwtr1ig"]
 
 [ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
-
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
 [ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="3_aklht"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]
@@ -26,7 +25,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [node name="level" parent="." instance=ExtResource("1_5fyyu")]
 
 [node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.03899, 4.84125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43429, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pf2r1")
