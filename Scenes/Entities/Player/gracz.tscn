@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgmp0s0yqctpj"]
+[gd_scene load_steps=7 format=3 uid="uid://bgmp0s0yqctpj"]
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
 
