@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ca8jmeovriklg"]
+[gd_scene load_steps=41 format=3 uid="uid://ca8jmeovriklg"]
 
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="1_kggl8"]
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="2_ojfkl"]
@@ -24,30 +24,50 @@
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="22_ytskt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkxop"]
-size = Vector3(7.3, 0.2, 5)
+size = Vector3(10, 0.2, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kggl8"]
+albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd2pb"]
+material = SubResource("StandardMaterial3D_kggl8")
 size = Vector3(7.3, 0.2, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojfkl"]
+albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_r8n4t"]
+material = SubResource("StandardMaterial3D_ojfkl")
 size = Vector3(10, 0.2, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_whffc"]
 size = Vector3(7.2, 0.2, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne18r"]
+albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_ps3pg"]
+material = SubResource("StandardMaterial3D_ne18r")
 size = Vector3(7.2, 0.2, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m400d"]
 size = Vector3(3.8, 0.1, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3avgp"]
+albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_i4nt6"]
+material = SubResource("StandardMaterial3D_3avgp")
 size = Vector3(3.8, 0.1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvd6j"]
 size = Vector3(5, 0.1, 5.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3ler"]
+albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_cy884"]
+material = SubResource("StandardMaterial3D_b3ler")
 size = Vector3(5, 0.1, 5.2)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nkw2w"]
@@ -209,7 +229,7 @@ transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
-transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, -3.9362, 23.9367, -6.34444)
+transform = Transform3D(-0.804894, -0.419611, 0.419611, 0, 0.707107, 0.707107, -0.593419, 0.569146, -0.569146, -1.01919, 23.9367, -2.50551)
 fov = 90.0
 
 [node name="Gracz" parent="." instance=ExtResource("22_ytskt")]
