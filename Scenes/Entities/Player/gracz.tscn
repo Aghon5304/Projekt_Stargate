@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgmp0s0yqctpj"]
+[gd_scene load_steps=5 format=3 uid="uid://bgmp0s0yqctpj"]
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
 
@@ -14,9 +14,7 @@ material = SubResource("StandardMaterial3D_vyoov")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
-
-[node name="Gracz" type="CharacterBody3D" node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
+[node name="Gracz" type="CharacterBody3D" groups=["Player"]]
 input_ray_pickable = false
 script = ExtResource("1_h75k5")
 main_game_mesh = NodePath("MainGameMesh")
