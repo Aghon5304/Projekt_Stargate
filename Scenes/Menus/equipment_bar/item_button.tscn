@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://e8a4bbg4u8cf"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/equipment_bar/item_button.gd" id="2_gn2om"]
+[ext_resource type="Script" uid="uid://dc20kwhmg0f7y" path="res://Scenes/Menus/equipment_bar/item_button.gd" id="2_gn2om"]
 
 [node name="ItemButton" type="Button"]
 offset_right = 136.0

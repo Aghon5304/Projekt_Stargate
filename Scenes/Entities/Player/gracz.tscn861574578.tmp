@@ -33,10 +33,10 @@ target_desired_distance = 0.1
 avoidance_enabled = true
 debug_enabled = true
 
-[node name="Area3D" type="Area3D" parent="." groups=["Player"]]
+[node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, 0)
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 1.19897, 0)
 shape = SubResource("BoxShape3D_2sxh3")
