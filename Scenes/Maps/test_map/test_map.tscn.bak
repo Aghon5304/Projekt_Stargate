@@ -1,6 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://drw23ealwufd"]
+[gd_scene load_steps=9 format=3 uid="uid://drw23ealwufd"]
 
-[ext_resource type="Script" uid="uid://crx680c2xyaw4" path="res://Scenes/Maps/test_map/test_level_change.gd" id="1_e455k"]
+[ext_resource type="Script" path="res://Scenes/Maps/test_map/test_level_change.gd" id="1_e455k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wbdte"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pogoe"]
+size = Vector3(10, 0, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wglia"]
 size = Vector3(10, 0, 5)
@@ -63,6 +69,7 @@ shape = SubResource("BoxShape3D_wglia")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana2"]
 mesh = SubResource("PlaneMesh_8ahdw")
 
+<<<<<<< HEAD
 [node name="TestChangeMesh" type="Area3D" parent="."]
 script = ExtResource("1_e455k")
 
@@ -72,6 +79,8 @@ shape = SubResource("BoxShape3D_fl70j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestChangeMesh/CollisionShape3D"]
 mesh = SubResource("PlaneMesh_glaq0")
+
+[connection signal="body_entered" from="TestChangeMesh" to="TestChangeMesh" method="_on_body_entered"]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ah56n")
@@ -85,5 +94,3 @@ mesh = SubResource("PlaneMesh_wbdte")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor"]
 shape = SubResource("BoxShape3D_pogoe")
-
-[connection signal="body_entered" from="TestChangeMesh" to="TestChangeMesh" method="_on_body_entered"]
