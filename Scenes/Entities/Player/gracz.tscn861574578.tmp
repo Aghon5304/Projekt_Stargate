@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgmp0s0yqctpj"]
+[gd_scene load_steps=7 format=3 uid="uid://bgmp0s0yqctpj"]
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
 
@@ -14,11 +14,7 @@ material = SubResource("StandardMaterial3D_vyoov")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
-
-[node name="Gracz" type="CharacterBody3D" node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
+[node name="Gracz" type="CharacterBody3D" groups=["Player"]]
 input_ray_pickable = false
 script = ExtResource("1_h75k5")
 
@@ -37,10 +33,10 @@ target_desired_distance = 0.1
 avoidance_enabled = true
 debug_enabled = true
 
-[node name="Area3D" type="Area3D" parent="." groups=["Player"]]
+[node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, 0)
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 1.19897, 0)
 shape = SubResource("BoxShape3D_2sxh3")

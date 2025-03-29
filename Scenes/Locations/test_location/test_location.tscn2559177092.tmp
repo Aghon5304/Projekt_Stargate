@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d18fnrmmd5dqp"]
+[gd_scene load_steps=14 format=3 uid="uid://d4jvi1pwtr1ig"]
 
-[ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
-
+[ext_resource type="PackedScene" uid="uid://d4jvi1pwtr1ig" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
 [ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="3_aklht"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]

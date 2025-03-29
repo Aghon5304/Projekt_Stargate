@@ -25,11 +25,13 @@ func _on_static_body_3d_input_event(_camera: Node, event: InputEvent, _event_pos
 
 
 
-func _on_pick_up_range_area_entered(_area: Area3D) -> void:
-	playerInRange = true
+func _on_pick_up_range_area_entered(area: Area3D) -> void:
+	if area.is_in_group("Player"):
+		playerInRange = true
 	pass # Replace with function body.
 
 
-func _on_pick_up_range_area_exited(_area: Area3D) -> void:
-	playerInRange = false
+func _on_pick_up_range_area_exited(area: Area3D) -> void:
+	if area.is_in_group("Player"):
+		playerInRange = false
 	pass # Replace with function body.
