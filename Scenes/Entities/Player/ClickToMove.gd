@@ -23,7 +23,7 @@ func _process(delta):
 	pass
 
 func moveToPoint(_delta, speed):
-	var targetPos = navigationAgent.get_next_path_position()
+	var targetPos = navigationAgent.target_position
 	var direction = global_position.direction_to(targetPos)
 	faceDirection(targetPos)
 	velocity = direction * speed
@@ -56,6 +56,7 @@ func _input(_event):
 			var result = space.intersect_ray(rayQuery)
 			if (result != {} ):
 				navigationAgent.target_position = result.position
+				GlobalSignals.Item_used.emit()
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial

@@ -24,14 +24,14 @@ mesh = SubResource("CapsuleMesh_6lim0")
 [node name="TutorialMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_vyoov")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_18hyh")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.1
 target_desired_distance = 0.1
 avoidance_enabled = true
 debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_18hyh")
 
 [node name="Area3D" type="Area3D" parent="." groups=["Player"]]
 collision_layer = 2
