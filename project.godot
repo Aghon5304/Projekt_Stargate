@@ -18,6 +18,8 @@ config/icon="res://Assets/Images/icon.svg"
 [global_group]
 
 Cameras=""
+player=""
+doors=""
 
 [input]
 

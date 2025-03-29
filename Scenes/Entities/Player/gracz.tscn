@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_vyoov")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
 
 [node name="Gracz" type="CharacterBody3D" node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
+
 script = ExtResource("1_h75k5")
 main_game_mesh = NodePath("MainGameMesh")
 tutorial_mesh = NodePath("TutorialMesh")
