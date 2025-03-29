@@ -44,6 +44,8 @@ scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(558.333, 66.6666)
 columns = 8
 script = ExtResource("2_81wq6")
+Icons = null
+NoIcon = null
 metadata/_edit_use_anchors_ = true
 
 [node name="ItemButton" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
