@@ -1,11 +1,16 @@
 extends CharacterBody3D
 
+
+	
+@export var main_game_mesh: MeshInstance3D
+@export var tutorial_mesh: MeshInstance3D
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
 var Speed = 5
+var tutorial = true #Okreslamy czy tutorial trwa czy sie skonczyl
+#i na jego podstawie ustawiamy skorke ziomka
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	update_appearance()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,3 +45,7 @@ func _input(event):
 		var result = space.intersect_ray(rayQuery)
 		if (result != {} ):
 			navigationAgent.target_position = result.position
+
+func update_appearance():
+		main_game_mesh.visible = not tutorial
+		tutorial_mesh.visible = tutorial
