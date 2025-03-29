@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://5knrd7f2waax"]
+[gd_scene load_steps=10 format=3 uid="uid://5knrd7f2waax"]
 
+[ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="1_p2c8o"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="1_s0ufy"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="3_h5rqa"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hif2c"]
-vertices = PackedVector3Array(-9.4439, 0.0271593, -10.113, -9.4439, 0.0271593, 10.137, 9.5561, 0.0271593, 10.137, 9.5561, 0.0271593, -10.113)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(-1.1939, 0.0242613, -4.363, 0.0560989, 0.0242613, -4.613, 0.0560989, 0.0242613, -10.113, -9.4439, 0.0242613, -2.113, -0.943901, 0.0242613, -2.363, -9.4439, 0.0242613, -10.113, 1.0561, 0.0242613, -4.363, 1.0561, 0.0242613, -2.863, 7.8061, 0.0242613, -1.613, 9.5561, 0.0242613, -1.363, 9.5561, 0.0242613, -10.113, 0.806099, 0.0242613, -2.363, 0.0560989, 0.0242613, -2.363, 0.0560989, 0.0242613, 1.137, 1.0561, 0.0242613, 1.137, 1.3061, 0.0242613, 2.387, 7.8061, 0.0242613, 0.636999, 7.3061, 0.0242613, 0.386999, 7.3061, 0.0242613, -1.363, -0.693901, 0.0242613, 1.137, -0.943901, 0.0242613, 1.637, -9.4439, 0.0242613, 1.637, 1.0561, 0.0242613, 3.387, 0.306099, 0.0242613, 3.387, 0.306099, 0.0242613, 10.137, 9.5561, 0.0242613, 10.137, 9.5561, 0.0242613, 0.386999, -5.6939, 0.0242613, 10.137, -5.9439, 0.0242613, 8.637, -6.1939, 0.0242613, 9.137, -8.1939, 0.0242613, 8.887, -9.4439, 0.0242613, 10.137, -8.1939, 0.0242613, 7.137, -6.4439, 0.0242613, 6.887, -0.943901, 0.0242613, 3.137, -5.9439, 0.0242613, 7.137)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(2, 0, 5), PackedInt32Array(5, 0, 3), PackedInt32Array(6, 1, 2), PackedInt32Array(8, 7, 6), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 2), PackedInt32Array(9, 2, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(17, 16, 15), PackedInt32Array(11, 7, 14), PackedInt32Array(14, 7, 15), PackedInt32Array(15, 7, 17), PackedInt32Array(17, 7, 18), PackedInt32Array(7, 8, 18), PackedInt32Array(13, 19, 12), PackedInt32Array(12, 19, 4), PackedInt32Array(19, 20, 4), PackedInt32Array(4, 20, 3), PackedInt32Array(3, 20, 21), PackedInt32Array(24, 23, 22), PackedInt32Array(15, 16, 22), PackedInt32Array(22, 16, 26), PackedInt32Array(22, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(30, 27, 31), PackedInt32Array(32, 21, 33), PackedInt32Array(33, 21, 34), PackedInt32Array(34, 21, 20), PackedInt32Array(30, 31, 32), PackedInt32Array(32, 31, 21), PackedInt32Array(28, 35, 27), PackedInt32Array(27, 35, 24), PackedInt32Array(24, 35, 34), PackedInt32Array(24, 34, 23), PackedInt32Array(35, 33, 34)]
 cell_height = 0.01
 
 [sub_resource type="BoxMesh" id="BoxMesh_q8a4c"]
@@ -28,17 +30,38 @@ navigation_mesh = SubResource("NavigationMesh_hif2c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(19.8878, 0, 0, 0, 0.0256813, 0, 0, 0, 21.226, 0, 0, 0)
+layers = 5
 mesh = SubResource("BoxMesh_q8a4c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_vvx0g")
 
+[node name="boxes" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95573, 0.486397, 2.6671)
+
+[node name="TestBox" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9474, 0.0289007, 5.39372)
+
+[node name="TestBox2" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83828, 0.0440706, -0.427087)
+
+[node name="TestBox3" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98603, -0.0121357, -6.22284)
+
+[node name="TestBox4" parent="NavigationRegion3D/boxes" instance=ExtResource("1_p2c8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45868, 0, -3.08043)
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_s0ufy")]
+transform = Transform3D(0.865711, -0.00452335, 0.500524, 0.00714779, 0.999969, -0.00332592, -0.500494, 0.00645692, 0.865716, 0.0820746, 0.957463, 0.205862)
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7.92028, 13.1512)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_re82b")
+
+[node name="Equipment" parent="." instance=ExtResource("3_h5rqa")]

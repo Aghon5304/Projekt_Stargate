@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbisdli0xa84q"]
 
-[ext_resource type="Script" path="res://Scenes/Entities/Door/door.gd" id="1_7jd47"]
+[ext_resource type="Script" uid="uid://5ecgbwuqfvmg" path="res://Scenes/Entities/Door/door.gd" id="1_7jd47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp4mn"]
 size = Vector3(1.5, 3, 4)
@@ -13,15 +13,17 @@ material = SubResource("StandardMaterial3D_jbl50")
 size = Vector3(0.25, 3, 2.5)
 
 [node name="Door" type="Area3D" groups=["doors"]]
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_7jd47")
 next_scene = "res://Scenes/Maps/test_map/test_map.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, -5, 1.5, 0)
+transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_dp4mn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, -6.00267e-11, 2.98023e-08, 5.00222e-12, 1, 1.05501e-10, 2.98023e-08, 9.82254e-11, 1, -5, 1.5, 0)
+transform = Transform3D(1, -6.00267e-11, 2.98023e-08, 5.00222e-12, 1, 1.05501e-10, 2.98023e-08, 9.82254e-11, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_w35u6")
 skeleton = NodePath("../CollisionShape3D")
 

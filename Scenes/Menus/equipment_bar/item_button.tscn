@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://e8a4bbg4u8cf"]
+
+[ext_resource type="Script" uid="uid://dc20kwhmg0f7y" path="res://Scenes/Menus/equipment_bar/item_button.gd" id="2_gn2om"]
+
+[node name="ItemButton" type="Button"]
+offset_right = 136.0
+offset_bottom = 136.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_gn2om")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
