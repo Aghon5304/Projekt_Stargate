@@ -26,7 +26,6 @@ func _on_static_body_3d_input_event(_camera: Node, event: InputEvent, _event_pos
 						self.visible = false	
 						var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
 						collision_shape_3d.disabled = true
-						var navigation_region_3d: NavigationRegion3D = $"../.."
 						return
 				#jeżeli masz pełny ekwipunkek to wypisuje wiadomość
 				print("masz za duzo itemów w eq")
