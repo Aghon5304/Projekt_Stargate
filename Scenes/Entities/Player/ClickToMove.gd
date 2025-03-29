@@ -1,10 +1,9 @@
 extends CharacterBody3D
 
-
-	
 @export var main_game_mesh: MeshInstance3D
 @export var tutorial_mesh: MeshInstance3D
-@onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
+@onready var navigationAgent: NavigationAgent3D = $NavigationAgent3D
+
 var Speed = 5
 var tutorial = true #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka

@@ -18,6 +18,7 @@ main_game_mesh = NodePath("MainGameMesh")
 tutorial_mesh = NodePath("TutorialMesh")
 
 [node name="MainGameMesh" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_6lim0")
 
 [node name="TutorialMesh" type="MeshInstance3D" parent="."]

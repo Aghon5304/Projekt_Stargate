@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ktbcdknboumy"
+path.s3tc="res://.godot/imported/Wind_Machine_WindMachine_Metallic-WindMachine_Roughness.png-7dddf856e914337c0603b1d0b81a183c.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a82c6a610dc8f6128b8138eca9246faf"
+}
+
+[deps]
+
+source_file="res://Assets/models/livingRoom/Wind_Machine_WindMachine_Metallic-WindMachine_Roughness.png"
+dest_files=["res://.godot/imported/Wind_Machine_WindMachine_Metallic-WindMachine_Roughness.png-7dddf856e914337c0603b1d0b81a183c.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
