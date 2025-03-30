@@ -64,6 +64,7 @@ navigation_layers = 4
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, -4.09273e-12, 2.98023e-08, 5.00222e-12, 1, 3.63798e-12, 2.98023e-08, 8.6402e-12, 1, 0, 0, 0)
+collision_layer = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor"]
