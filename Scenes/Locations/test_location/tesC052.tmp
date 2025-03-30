@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://d18fnrmmd5dqp"]
+
+[ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
+[ext_resource type="Script" path="res://Scenes/Locations/test_location/test_location.gd" id="1_kjdpp"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
+[ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="3_aklht"]
+
+[sub_resource type="GDScript" id="GDScript_ftxyt"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	navigation_region3d.bake_navigation_mesh()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
+
+[sub_resource type="Sky" id="Sky_bc1m6"]
+sky_material = SubResource("ProceduralSkyMaterial_qrjnr")
+
+[sub_resource type="Environment" id="Environment_pf2r1"]
+background_mode = 2
+sky = SubResource("Sky_bc1m6")
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_kjdpp")
+
+[node name="level" parent="." instance=ExtResource("1_5fyyu")]
+
+[node name="TestBox" parent="level" instance=ExtResource("3_aklht")]
+transform = Transform3D(0.707235, 0.000204592, 0.706979, -0.000298424, 1, 9.146e-06, -0.706978, -0.000217447, 0.707235, -3.17016, 0.504302, 3.21892)
+script = SubResource("GDScript_ftxyt")
+
+[node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43429, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pf2r1")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://c022k2pduvwhn"]
+
+[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_yt4th"]
+[ext_resource type="Script" uid="uid://cmh06ndmslw5a" path="res://Scenes/Menus/equipment_bar/items.gd" id="2_81wq6"]
+[ext_resource type="PackedScene" uid="uid://e8a4bbg4u8cf" path="res://Scenes/Menus/equipment_bar/item_button.tscn" id="3_gk8qt"]
+
+[node name="Equipment" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ObramowanieEkwipunku" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_top = -128.0
+offset_right = 574.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_yt4th")
+
+[node name="items" type="GridContainer" parent="ObramowanieEkwipunku"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500435
+anchor_top = 0.5
+anchor_right = 0.500435
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -68.0
+offset_right = 558.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(558.333, 66.6666)
+columns = 8
+script = ExtResource("2_81wq6")
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemButton" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton2" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton3" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton4" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton5" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton6" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton7" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[node name="ItemButton8" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
+layout_mode = 2
+
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
