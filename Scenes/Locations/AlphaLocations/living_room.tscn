@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://ca8jmeovriklg"]
+[gd_scene load_steps=44 format=3 uid="uid://ca8jmeovriklg"]
 
+[ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="1_3avgp"]
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="1_kggl8"]
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="2_ojfkl"]
 [ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="3_ne18r"]
@@ -22,19 +23,21 @@
 [ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="20_rkx84"]
 [ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="21_ecysp"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="22_ytskt"]
+[ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="23_ojfkl"]
+[ext_resource type="PackedScene" uid="uid://dmny36eu2idf6" path="res://Assets/models/doors/Door_Bathroom.glb" id="24_ne18r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkxop"]
 size = Vector3(10, 0.2, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kggl8"]
-albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+albedo_color = Color(0.439216, 0.172549, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dd2pb"]
 material = SubResource("StandardMaterial3D_kggl8")
 size = Vector3(7.3, 0.2, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojfkl"]
-albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+albedo_color = Color(0.439216, 0.172549, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r8n4t"]
 material = SubResource("StandardMaterial3D_ojfkl")
@@ -44,7 +47,7 @@ size = Vector3(10, 0.2, 5)
 size = Vector3(7.2, 0.2, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne18r"]
-albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+albedo_color = Color(0.439216, 0.172549, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ps3pg"]
 material = SubResource("StandardMaterial3D_ne18r")
@@ -54,7 +57,7 @@ size = Vector3(7.2, 0.2, 5)
 size = Vector3(3.8, 0.1, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3avgp"]
-albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+albedo_color = Color(0.439216, 0.172549, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i4nt6"]
 material = SubResource("StandardMaterial3D_3avgp")
@@ -64,7 +67,7 @@ size = Vector3(3.8, 0.1, 5)
 size = Vector3(5, 0.1, 5.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3ler"]
-albedo_color = Color(0.309804, 0.141176, 0.0784314, 1)
+albedo_color = Color(0.439216, 0.172549, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cy884"]
 material = SubResource("StandardMaterial3D_b3ler")
@@ -140,6 +143,13 @@ shape = SubResource("BoxShape3D_mvd6j")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana5/CollisionShape3D"]
 transform = Transform3D(1, 0, 2.68703e-16, 0, 1, 0, 2.68657e-16, 0, 1, 0, 1.86265e-09, 0.0155072)
 mesh = SubResource("BoxMesh_cy884")
+
+[node name="sciana6" type="StaticBody3D" parent="sciany"]
+transform = Transform3D(-3.49691e-09, -8.36651e-17, -0.08, 0.08, -3.49691e-09, -3.49691e-09, -3.49691e-09, -0.08, 6.91898e-17, 2.30348, 5.70585, 3.79493)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana6"]
+transform = Transform3D(6.01866e-14, -1.09278e-06, 220, -31.5, -1.09278e-06, -5.86796e-20, 1.37691e-06, -25, -9.61651e-06, 10.3529, 47.6867, 0.398487)
+mesh = ExtResource("1_3avgp")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
@@ -230,8 +240,19 @@ transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 [node name="Pot" parent="Kitchen" instance=ExtResource("21_ecysp")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="Door_Main" parent="Doors" instance=ExtResource("23_ojfkl")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.149125, -0.127224, 0)
+
+[node name="Door_Main2" parent="Doors" instance=ExtResource("23_ojfkl")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 9.79666, -0.127224, 0)
+
+[node name="Door_Bathroom" parent="Doors" instance=ExtResource("24_ne18r")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, -0.12908)
+
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
-transform = Transform3D(-0.804894, -0.419611, 0.419611, 0, 0.707107, 0.707107, -0.593419, 0.569146, -0.569146, -1.01919, 23.9367, -2.50551)
+transform = Transform3D(-0.87462, -0.317425, 0.366445, 0, 0.755853, 0.654741, -0.48481, 0.572649, -0.661084, -0.004, 22.372, -2.521)
 fov = 90.0
 
 [node name="Gracz" parent="." instance=ExtResource("22_ytskt")]
