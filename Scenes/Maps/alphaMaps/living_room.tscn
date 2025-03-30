@@ -1,27 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://ca8jmeovriklg"]
+[gd_scene load_steps=21 format=3 uid="uid://ca8jmeovriklg"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="1_nlxrx"]
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="2_c8s7a"]
-[ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="3_k2fa6"]
-[ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="4_egej1"]
-[ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="5_4pl31"]
-[ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="6_y6bwq"]
-[ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="7_t7g7s"]
-[ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="8_r8y6m"]
-[ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="9_ehkeu"]
-[ext_resource type="PackedScene" uid="uid://yy0vd016xecy" path="res://Assets/models/livingRoom/Wind_Machine.glb" id="10_p7g4u"]
-[ext_resource type="PackedScene" uid="uid://cotl0q37fo3iv" path="res://Assets/models/livingRoom/Dresser.glb" id="11_gq6wo"]
-[ext_resource type="PackedScene" uid="uid://ceapin468e1vd" path="res://Assets/models/kitchen/Fridge.glb" id="12_ujj5o"]
-[ext_resource type="PackedScene" uid="uid://0hgnlmika5yy" path="res://Assets/models/kitchen/Kitchentop_above_Fridge.glb" id="13_o605l"]
-[ext_resource type="PackedScene" uid="uid://bptcvksgi6ybj" path="res://Assets/models/kitchen/Kitchentop.glb" id="14_wfga1"]
-[ext_resource type="PackedScene" uid="uid://di56sbmlfn4ne" path="res://Assets/models/kitchen/Oven.glb" id="15_t845i"]
-[ext_resource type="PackedScene" uid="uid://d2j7e2sjv878e" path="res://Assets/models/kitchen/Dishrack.glb" id="16_hbnho"]
-[ext_resource type="PackedScene" uid="uid://gqr3r5vlxgu4" path="res://Assets/models/kitchen/Countertop_sink.glb" id="17_fnh41"]
-[ext_resource type="PackedScene" uid="uid://bqp0yhsvbkql7" path="res://Assets/models/kitchen/Countertop_by_Oven.glb" id="18_i8bra"]
-[ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="19_8j6tv"]
-[ext_resource type="PackedScene" uid="uid://dy6618ucep6ps" path="res://Assets/models/kitchen/Cooker_Hood.glb" id="20_v8woa"]
-[ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="21_njlyj"]
-[ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="22_2531g"]
 [ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="24_sb6ya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkxop"]
@@ -125,6 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, -3.2200
 shape = SubResource("BoxShape3D_m400d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana4/CollisionShape3D"]
+visible = false
 mesh = SubResource("BoxMesh_i4nt6")
 
 [node name="sciana5" type="StaticBody3D" parent="sciany"]
@@ -135,6 +116,7 @@ shape = SubResource("BoxShape3D_mvd6j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana5/CollisionShape3D"]
 transform = Transform3D(1, 0, 2.68703e-16, 0, 1, 0, 2.68657e-16, 0, 1, 0, 1.86265e-09, 0.0155072)
+visible = false
 mesh = SubResource("BoxMesh_cy884")
 
 [node name="sciana6" type="StaticBody3D" parent="sciany"]
@@ -144,85 +126,13 @@ transform = Transform3D(-3.49691e-09, -8.36651e-17, -0.08, 0.08, -3.49691e-09, -
 transform = Transform3D(6.01866e-14, -1.09278e-06, 220, -31.5, -1.09278e-06, -5.86796e-20, 1.37691e-06, -25, -9.61651e-06, 10.3529, 47.6867, 0.398487)
 mesh = ExtResource("1_nlxrx")
 
-[node name="LivingArea" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0871315, 0)
-
-[node name="Mug" parent="LivingArea" instance=ExtResource("3_k2fa6")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Newspaper" parent="LivingArea" instance=ExtResource("4_egej1")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Armchair" parent="LivingArea" instance=ExtResource("5_4pl31")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Sidetable" parent="LivingArea" instance=ExtResource("6_y6bwq")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Bank_Lamp" parent="LivingArea" instance=ExtResource("7_t7g7s")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Chair" parent="LivingArea" instance=ExtResource("8_r8y6m")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Chair2" parent="LivingArea" instance=ExtResource("8_r8y6m")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 1.16448)
-
-[node name="Chair3" parent="LivingArea" instance=ExtResource("8_r8y6m")]
-transform = Transform3D(0.0207055, 0, -0.0772741, 0, 0.08, 0, 0.0772741, 0, 0.0207055, 0.958539, 0, 1.20667)
-
-[node name="Table" parent="LivingArea" instance=ExtResource("9_ehkeu")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Wind_Machine" parent="LivingArea" instance=ExtResource("10_p7g4u")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Dresser" parent="LivingArea" instance=ExtResource("11_gq6wo")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Kitchen" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101826, 0)
-
-[node name="Fridge" parent="Kitchen" instance=ExtResource("12_ujj5o")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Kitchentop_above_Fridge" parent="Kitchen" instance=ExtResource("13_o605l")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Kitchentop" parent="Kitchen" instance=ExtResource("14_wfga1")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Oven" parent="Kitchen" instance=ExtResource("15_t845i")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Dishrack" parent="Kitchen" instance=ExtResource("16_hbnho")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Countertop_sink" parent="Kitchen" instance=ExtResource("17_fnh41")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Countertop_by_Oven2" parent="Kitchen" instance=ExtResource("18_i8bra")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Countertop_by_Fridge" parent="Kitchen" instance=ExtResource("19_8j6tv")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Cooker_Hood" parent="Kitchen" instance=ExtResource("20_v8woa")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Pan" parent="Kitchen" instance=ExtResource("21_njlyj")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
-[node name="Pot" parent="Kitchen" instance=ExtResource("22_2531g")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
-
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="Door_Main" parent="Doors" instance=ExtResource("24_sb6ya")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.149125, -0.127224, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
-transform = Transform3D(-0.87462, -0.317425, 0.366445, 0, 0.755853, 0.654741, -0.48481, 0.572649, -0.661084, -0.004, 22.372, -2.521)
+transform = Transform3D(0.67559, -0.564787, 0.473913, 0, 0.642788, 0.766044, -0.737277, -0.517532, 0.434261, -0.294, 23.022, 2.904)
 fov = 90.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

@@ -89,8 +89,6 @@ mesh = SubResource("PlaneMesh_glaq0")
 
 [node name="Door" parent="." instance=ExtResource("1_8vgkg")]
 transform = Transform3D(-1, -5.72982e-11, -8.9407e-08, -4.54747e-12, 1, -4.77485e-11, 8.9407e-08, 7.18501e-11, -1, -4.83123, 0.481147, 0.700315)
-collision_layer = 5
-collision_mask = 5
 next_scene = "res://Scenes/Locations/test_location_2/test_location_2.tscn"
 
 [connection signal="body_entered" from="TestChangeMesh" to="TestChangeMesh" method="_on_body_entered"]

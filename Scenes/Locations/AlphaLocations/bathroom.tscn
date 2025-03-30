@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://clhragvyk17ce"]
+[gd_scene load_steps=15 format=3 uid="uid://clhragvyk17ce"]
 
 [ext_resource type="PackedScene" uid="uid://jqqk1ep8ntie" path="res://Scenes/Maps/alphaMaps/bathroom.tscn" id="1_6lw8h"]
+[ext_resource type="PackedScene" uid="uid://b4dy7lpwa0ybc" path="res://Assets/models/bathroom/Bathroom_Carpet.glb" id="5_t0y0j"]
+[ext_resource type="PackedScene" uid="uid://1fshckwgf8v0" path="res://Assets/models/bathroom/Bathroom_Mirror.glb" id="6_fjj6k"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="7_cl3hg"]
+[ext_resource type="PackedScene" uid="uid://c3pey1btj0vtk" path="res://Assets/models/bathroom/Bathroom_Sink.glb" id="7_stsrd"]
+[ext_resource type="PackedScene" uid="uid://cqcg704ar4itn" path="res://Assets/models/bathroom/Shower.glb" id="8_kjie3"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="9_t0y0j"]
+[ext_resource type="PackedScene" uid="uid://cnbf8klcbvbjo" path="res://Assets/models/bathroom/Toilet.glb" id="9_va2pa"]
 [ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="10_fjj6k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ld3bg"]
@@ -36,8 +41,6 @@ environment = SubResource("Environment_56qcj")
 
 [node name="LivingRoomDoor" parent="." instance=ExtResource("10_fjj6k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.7091, 18.6715, 0.173135)
-collision_layer = 5
-collision_mask = 5
 next_scene = "res://Scenes/Locations/AlphaLocations/livingRoom.tscn"
 door_type = "bathroom"
 
@@ -48,3 +51,16 @@ navigation_mesh = SubResource("NavigationMesh_56qcj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 visible = false
 mesh = SubResource("BoxMesh_56qcj")
+
+[node name="furniture" type="Node3D" parent="."]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, -0.114729, 0)
+
+[node name="Bathroom_Carpet" parent="furniture" instance=ExtResource("5_t0y0j")]
+
+[node name="Bathroom_Mirror" parent="furniture" instance=ExtResource("6_fjj6k")]
+
+[node name="Bathroom_Sink" parent="furniture" instance=ExtResource("7_stsrd")]
+
+[node name="Shower2" parent="furniture" instance=ExtResource("8_kjie3")]
+
+[node name="Toilet2" parent="furniture" instance=ExtResource("9_va2pa")]

@@ -1,11 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://jqqk1ep8ntie"]
+[gd_scene load_steps=17 format=3 uid="uid://jqqk1ep8ntie"]
 
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="2_vhowq"]
-[ext_resource type="PackedScene" uid="uid://b4dy7lpwa0ybc" path="res://Assets/models/bathroom/Bathroom_Carpet.glb" id="3_cl3hg"]
-[ext_resource type="PackedScene" uid="uid://1fshckwgf8v0" path="res://Assets/models/bathroom/Bathroom_Mirror.glb" id="4_qllyr"]
-[ext_resource type="PackedScene" uid="uid://c3pey1btj0vtk" path="res://Assets/models/bathroom/Bathroom_Sink.glb" id="5_t0y0j"]
-[ext_resource type="PackedScene" uid="uid://cqcg704ar4itn" path="res://Assets/models/bathroom/Shower.glb" id="6_fjj6k"]
-[ext_resource type="PackedScene" uid="uid://cnbf8klcbvbjo" path="res://Assets/models/bathroom/Toilet.glb" id="7_stsrd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vhowq"]
 size = Vector3(5.3, 0.1, 5)
@@ -99,19 +94,6 @@ mesh = SubResource("BoxMesh_abcp0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="walls/sciana4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.38599, 5.44529, 0.58923)
 shape = SubResource("ConvexPolygonShape3D_tq0ye")
-
-[node name="furniture" type="Node3D" parent="."]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, -0.114729, 0)
-
-[node name="Bathroom_Carpet" parent="furniture" instance=ExtResource("3_cl3hg")]
-
-[node name="Bathroom_Mirror" parent="furniture" instance=ExtResource("4_qllyr")]
-
-[node name="Bathroom_Sink" parent="furniture" instance=ExtResource("5_t0y0j")]
-
-[node name="Shower2" parent="furniture" instance=ExtResource("6_fjj6k")]
-
-[node name="Toilet2" parent="furniture" instance=ExtResource("7_stsrd")]
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
 transform = Transform3D(0.5, 0.609158, -0.615571, 0, 0.710799, 0.703395, 0.866025, -0.351697, 0.3554, -9.009, 22.222, 3.435)

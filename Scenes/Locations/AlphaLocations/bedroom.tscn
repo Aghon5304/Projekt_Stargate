@@ -1,7 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://6vrebrgdmdbl"]
+[gd_scene load_steps=23 format=3 uid="uid://6vrebrgdmdbl"]
 
 [ext_resource type="PackedScene" uid="uid://dhr7hk2d067pj" path="res://Scenes/Maps/alphaMaps/bedroom.tscn" id="3_5k6j1"]
+[ext_resource type="PackedScene" uid="uid://bvh1pqn4hqpy7" path="res://Assets/models/bedroom/Wardrobe.glb" id="5_swtys"]
+[ext_resource type="PackedScene" uid="uid://bk822gkb4af1a" path="res://Assets/models/bedroom/Nightstand.glb" id="6_bdr3i"]
+[ext_resource type="PackedScene" uid="uid://cv0v2innmeacu" path="res://Assets/models/bedroom/Desk_Chair.glb" id="7_ncmxj"]
+[ext_resource type="PackedScene" uid="uid://ba3t8sx613kt2" path="res://Assets/models/bedroom/Desk.glb" id="8_q16dc"]
+[ext_resource type="PackedScene" uid="uid://cf755mvnat6vi" path="res://Assets/models/bedroom/Newspaper_Colorado_Courier.glb" id="9_ttqxq"]
+[ext_resource type="PackedScene" uid="uid://cldtt6mj5jsfe" path="res://Assets/models/bedroom/Corkboard.glb" id="10_q8pu7"]
+[ext_resource type="PackedScene" uid="uid://43p03npka50l" path="res://Assets/models/bedroom/Computer.glb" id="11_gdjkv"]
+[ext_resource type="PackedScene" uid="uid://dah1xw1a1m81j" path="res://Assets/models/bedroom/Carpet.glb" id="12_qbfv2"]
+[ext_resource type="PackedScene" uid="uid://cmqujwvtgn6ck" path="res://Assets/models/bedroom/Blinds.glb" id="13_oda00"]
+[ext_resource type="PackedScene" uid="uid://3ygvcdjhtg18" path="res://Assets/models/bedroom/Bedside_Lamp.glb" id="14_48npw"]
+[ext_resource type="PackedScene" uid="uid://cvdawgt54ph13" path="res://Assets/models/bedroom/Bed.glb" id="15_143xw"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="15_rm5eu"]
+[ext_resource type="PackedScene" uid="uid://d2nc5c3qpxgik" path="res://Assets/models/bedroom/Bank_Lamp.glb" id="16_3s1pi"]
+[ext_resource type="PackedScene" uid="uid://c0mtdgbh5x38p" path="res://Assets/models/bedroom/Ashtray.glb" id="17_84r5e"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="18_bdr3i"]
 [ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="18_ncmxj"]
 
@@ -28,8 +41,6 @@ size = Vector3(7, 0, 8)
 
 [node name="LivingRoomDoor" parent="." instance=ExtResource("18_ncmxj")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.712268, 18.6909, 0.713965)
-collision_layer = 5
-collision_mask = 5
 next_scene = "res://Scenes/Locations/AlphaLocations/livingRoom.tscn"
 
 [node name="Bedroom" parent="." instance=ExtResource("3_5k6j1")]
@@ -48,3 +59,44 @@ navigation_layers = 5
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 visible = false
 mesh = SubResource("BoxMesh_xucua")
+
+[node name="furniture" type="Node3D" parent="."]
+
+[node name="Wardrobe" parent="furniture" instance=ExtResource("5_swtys")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Nightstand" parent="furniture" instance=ExtResource("6_bdr3i")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0.5)
+
+[node name="Desk_Chair" parent="furniture" instance=ExtResource("7_ncmxj")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Desk" parent="furniture" instance=ExtResource("8_q16dc")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Newspaper_Colorado_Courier" parent="furniture" instance=ExtResource("9_ttqxq")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Corkboard" parent="furniture" instance=ExtResource("10_q8pu7")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Computer" parent="furniture" instance=ExtResource("11_gdjkv")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Carpet" parent="furniture" instance=ExtResource("12_qbfv2")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Blinds" parent="furniture" instance=ExtResource("13_oda00")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Bedside_Lamp" parent="furniture" instance=ExtResource("14_48npw")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0.5)
+
+[node name="Bed" parent="furniture" instance=ExtResource("15_143xw")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0.5)
+
+[node name="Bank_Lamp" parent="furniture" instance=ExtResource("16_3s1pi")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Ashtray" parent="furniture" instance=ExtResource("17_84r5e")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)

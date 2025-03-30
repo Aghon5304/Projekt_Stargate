@@ -39,7 +39,6 @@ func _on_pick_up_range_area_entered(area: Area3D) -> void:
 		playerInRange = true
 	pass
 
-
 func _on_pick_up_range_area_exited(area: Area3D) -> void:
 	if area.is_in_group("Player"):
 		playerInRange = false
