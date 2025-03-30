@@ -13,8 +13,9 @@ material = SubResource("StandardMaterial3D_vyoov")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
+size = Vector3(1.5, 1, 1.5)
 
-[node name="Gracz" type="CharacterBody3D"]
+[node name="Gracz" type="CharacterBody3D" groups=["Player"]]
 input_ray_pickable = false
 script = ExtResource("1_h75k5")
 

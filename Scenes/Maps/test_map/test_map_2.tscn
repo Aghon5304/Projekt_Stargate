@@ -66,5 +66,5 @@ mesh = SubResource("PlaneMesh_ve7ro")
 shape = SubResource("BoxShape3D_putd4")
 
 [node name="Door" parent="." instance=ExtResource("1_15bba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98448, 1.51629, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.64025, 0.415853, 0)
 next_scene = "res://Scenes/Locations/test_location/test_location.tscn"

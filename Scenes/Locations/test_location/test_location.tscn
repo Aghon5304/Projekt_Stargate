@@ -4,16 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]
 [ext_resource type="Script" uid="uid://crx680c2xyaw4" path="res://Scenes/Maps/test_map/test_level_change.gd" id="5_dpt41"]
-[ext_resource type="Script" uid="uid://dhu7vpwea6nit" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
+[ext_resource type="Script" uid="uid://buv74i7yf0eci" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
 
-[sub_resource type="Sky" id="Sky_bc1m6"]
+[sub_resource type="Sky" id="Sky_dpt41"]
 sky_material = SubResource("ProceduralSkyMaterial_qrjnr")
 
 [sub_resource type="Environment" id="Environment_pf2r1"]
 background_mode = 2
-sky = SubResource("Sky_bc1m6")
+sky = SubResource("Sky_dpt41")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1gyjd"]
 vertices = PackedVector3Array(-4.47187, 0.5, -4.47187, -4.47187, 0.5, 4.52813, 4.52813, 0.5, 4.52813, 4.52813, 0.5, -4.47187)
@@ -44,7 +44,6 @@ material = SubResource("StandardMaterial3D_jibvm")
 [node name="level" parent="." instance=ExtResource("1_5fyyu")]
 
 [node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
-
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993462, 1.47845, 0.963092)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

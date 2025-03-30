@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3jtqwbc5f4r1"]
+
+[ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
+[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="2_lhkf3"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="3_acxqq"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_cfqtg"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_lhkf3"]
+vertices = PackedVector3Array(-4.5, 0.02, -4.5, -4.5, 0.02, 4.5, 4.5, 0.02, 4.5, 4.5, 0.02, -4.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.01
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lhkf3"]
+
+[sub_resource type="Sky" id="Sky_acxqq"]
+sky_material = SubResource("ProceduralSkyMaterial_lhkf3")
+
+[sub_resource type="Environment" id="Environment_cfqtg"]
+background_mode = 2
+sky = SubResource("Sky_acxqq")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_acxqq"]
+vertices = PackedVector3Array(-4.5, 0.02, -4.5, -4.5, 0.02, 4.5, 4.5, 0.02, 4.5, 4.5, 0.02, -4.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhkf3"]
+size = Vector3(10, 0, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
+
+[node name="WorkingDoors" type="Node3D" parent="."]
+
+[node name="bedroomDoor" parent="WorkingDoors" instance=ExtResource("2_lhkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219181, 18.3175, -0.804449)
+collision_layer = 5
+collision_mask = 5
+next_scene = "res://Scenes/Locations/AlphaLocations/bedroom.tscn"
+
+[node name="bathroomDoor" parent="WorkingDoors" instance=ExtResource("2_lhkf3")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.60892, 18.3175, -0.144485)
+collision_layer = 5
+collision_mask = 5
+next_scene = "res://Scenes/Locations/AlphaLocations/bathroom.tscn"
+door_type = "bathroom"
+
+[node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
+
+[node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
+navigation_mesh = SubResource("NavigationMesh_lhkf3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfqtg")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
+navigation_mesh = SubResource("NavigationMesh_acxqq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2"]
+visible = false
+mesh = SubResource("BoxMesh_lhkf3")

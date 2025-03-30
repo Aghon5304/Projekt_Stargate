@@ -88,7 +88,7 @@ shape = SubResource("BoxShape3D_fl70j")
 mesh = SubResource("PlaneMesh_glaq0")
 
 [node name="Door" parent="." instance=ExtResource("1_8vgkg")]
-transform = Transform3D(1, -1.54614e-11, 2.98023e-08, 5.00222e-12, 1, 3.27418e-11, 2.98023e-08, 2.63753e-11, 1, -4.93762, 1.53124, 0.0769632)
+transform = Transform3D(-1, -5.72982e-11, -8.9407e-08, -4.54747e-12, 1, -4.77485e-11, 8.9407e-08, 7.18501e-11, -1, -4.83123, 0.481147, 0.700315)
 collision_layer = 5
 collision_mask = 5
 next_scene = "res://Scenes/Locations/test_location_2/test_location_2.tscn"

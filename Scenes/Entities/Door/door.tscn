@@ -1,16 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbisdli0xa84q"]
+[gd_scene load_steps=4 format=3 uid="uid://cbisdli0xa84q"]
 
 [ext_resource type="Script" uid="uid://5ecgbwuqfvmg" path="res://Scenes/Entities/Door/door.gd" id="1_7jd47"]
+[ext_resource type="ArrayMesh" uid="uid://dq83jhfljgyoe" path="res://Assets/mesh/doors/MainDoorMesh.tres" id="3_15ps2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp4mn"]
-size = Vector3(1.5, 3, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbl50"]
-albedo_color = Color(0.14268, 0.0989764, 0.0321296, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_w35u6"]
-material = SubResource("StandardMaterial3D_jbl50")
-size = Vector3(0.25, 3, 2.5)
+size = Vector3(2, 3.94, 2.045)
 
 [node name="Door" type="Area3D" groups=["doors"]]
 collision_layer = 6
@@ -19,12 +13,12 @@ script = ExtResource("1_7jd47")
 next_scene = "res://Scenes/Maps/test_map/test_map.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0, 0, 0)
+transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, -0.426828, 1.55415, 0)
 shape = SubResource("BoxShape3D_dp4mn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, -6.00267e-11, 2.98023e-08, 5.00222e-12, 1, 1.05501e-10, 2.98023e-08, 9.82254e-11, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_w35u6")
+[node name="meshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-08, 0.7, -3.0598e-08, 0, -3.0598e-08, -0.7, -0.7, -3.0598e-08, 1.33748e-15, 0, 0, 0)
+mesh = ExtResource("3_15ps2")
 skeleton = NodePath("../CollisionShape3D")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
