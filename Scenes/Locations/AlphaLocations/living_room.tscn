@@ -144,12 +144,14 @@ mesh = SubResource("BoxMesh_cy884")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
 navigation_mesh = SubResource("NavigationMesh_nkw2w")
+navigation_layers = 4
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, -4.09273e-12, 2.98023e-08, 5.00222e-12, 1, 3.63798e-12, 2.98023e-08, 8.6402e-12, 1, 0, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor"]
+layers = 4
 material_override = SubResource("StandardMaterial3D_w5rb0")
 mesh = SubResource("PlaneMesh_umunx")
 

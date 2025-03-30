@@ -47,6 +47,7 @@ size = Vector3(5, 0.1, 3.7)
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14852, 18.1216, 2.4962)
 navigation_mesh = SubResource("NavigationMesh_ld3bg")
+navigation_layers = 4
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, -4.09273e-12, 2.98023e-08, 5.00222e-12, 1, 3.63798e-12, 2.98023e-08, 8.6402e-12, 1, 0, 0, 0)
@@ -58,6 +59,7 @@ shape = SubResource("BoxShape3D_56qcj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor/CollisionShape3D"]
 transform = Transform3D(1, 1.76183e-19, 0, -1.0842e-19, 1, 0, 0, 0, 1, -0.23729, 0, -0.347473)
+layers = 4
 material_override = SubResource("StandardMaterial3D_tknmc")
 mesh = SubResource("PlaneMesh_4vni6")
 skeleton = NodePath("../..")
