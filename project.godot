@@ -27,6 +27,10 @@ GlobalSignals="*res://Scenes/Global/Signals/Global_signals.gd"
 MainMenu="*res://Scenes/Menus/main_menu/main_menu.gd"
 GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
 
+[dotnet]
+
+project/assembly_name="Projekt-Stargate"
+
 [global_group]
 
 Cameras=""

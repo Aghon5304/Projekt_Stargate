@@ -2,11 +2,11 @@ extends Control
 
 @onready var pause_menu = $MarginContainer/PauseMenu
 @export var option_menu: PackedScene = preload("res://Scenes/Menus/options_menu/options_menu.tscn")
-var id_not_paused = true
+var id_not_paused = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MainMenu.is_main_menu = false
-
+	pause_menu.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
