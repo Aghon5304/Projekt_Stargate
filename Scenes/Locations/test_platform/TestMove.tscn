@@ -7,7 +7,6 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_hif2c"]
 vertices = PackedVector3Array(-1.1939, 0.0242613, -4.363, 0.0560989, 0.0242613, -4.613, 0.0560989, 0.0242613, -10.113, -9.4439, 0.0242613, -2.113, -0.943901, 0.0242613, -2.363, -9.4439, 0.0242613, -10.113, 1.0561, 0.0242613, -4.363, 1.0561, 0.0242613, -2.863, 7.8061, 0.0242613, -1.613, 9.5561, 0.0242613, -1.363, 9.5561, 0.0242613, -10.113, 0.806099, 0.0242613, -2.363, 0.0560989, 0.0242613, -2.363, 0.0560989, 0.0242613, 1.137, 1.0561, 0.0242613, 1.137, 1.3061, 0.0242613, 2.387, 7.8061, 0.0242613, 0.636999, 7.3061, 0.0242613, 0.386999, 7.3061, 0.0242613, -1.363, -0.693901, 0.0242613, 1.137, -0.943901, 0.0242613, 1.637, -9.4439, 0.0242613, 1.637, 1.0561, 0.0242613, 3.387, 0.306099, 0.0242613, 3.387, 0.306099, 0.0242613, 10.137, 9.5561, 0.0242613, 10.137, 9.5561, 0.0242613, 0.386999, -5.6939, 0.0242613, 10.137, -5.9439, 0.0242613, 8.637, -6.1939, 0.0242613, 9.137, -8.1939, 0.0242613, 8.887, -9.4439, 0.0242613, 10.137, -8.1939, 0.0242613, 7.137, -6.4439, 0.0242613, 6.887, -0.943901, 0.0242613, 3.137, -5.9439, 0.0242613, 7.137)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(2, 0, 5), PackedInt32Array(5, 0, 3), PackedInt32Array(6, 1, 2), PackedInt32Array(8, 7, 6), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 2), PackedInt32Array(9, 2, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(17, 16, 15), PackedInt32Array(11, 7, 14), PackedInt32Array(14, 7, 15), PackedInt32Array(15, 7, 17), PackedInt32Array(17, 7, 18), PackedInt32Array(7, 8, 18), PackedInt32Array(13, 19, 12), PackedInt32Array(12, 19, 4), PackedInt32Array(19, 20, 4), PackedInt32Array(4, 20, 3), PackedInt32Array(3, 20, 21), PackedInt32Array(24, 23, 22), PackedInt32Array(15, 16, 22), PackedInt32Array(22, 16, 26), PackedInt32Array(22, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(30, 27, 31), PackedInt32Array(32, 21, 33), PackedInt32Array(33, 21, 34), PackedInt32Array(34, 21, 20), PackedInt32Array(30, 31, 32), PackedInt32Array(32, 31, 21), PackedInt32Array(28, 35, 27), PackedInt32Array(27, 35, 24), PackedInt32Array(24, 35, 34), PackedInt32Array(24, 34, 23), PackedInt32Array(35, 33, 34)]
-
 cell_height = 0.01
 
 [sub_resource type="BoxMesh" id="BoxMesh_q8a4c"]
@@ -31,7 +30,6 @@ navigation_mesh = SubResource("NavigationMesh_hif2c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(19.8878, 0, 0, 0, 0.0256813, 0, 0, 0, 21.226, 0, 0, 0)
-
 layers = 5
 mesh = SubResource("BoxMesh_q8a4c")
 

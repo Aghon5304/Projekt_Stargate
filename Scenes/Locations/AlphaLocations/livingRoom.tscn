@@ -1,0 +1,157 @@
+[gd_scene load_steps=31 format=3 uid="uid://d3jtqwbc5f4r1"]
+
+[ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
+[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="2_lhkf3"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="3_acxqq"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_cfqtg"]
+[ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="5_rdptd"]
+[ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="6_5gcgh"]
+[ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="7_kbdc1"]
+[ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
+[ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
+[ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="10_0ym7e"]
+[ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="11_lwy5w"]
+[ext_resource type="PackedScene" uid="uid://yy0vd016xecy" path="res://Assets/models/livingRoom/Wind_Machine.glb" id="12_2o20f"]
+[ext_resource type="PackedScene" uid="uid://cotl0q37fo3iv" path="res://Assets/models/livingRoom/Dresser.glb" id="13_hd6kh"]
+[ext_resource type="PackedScene" uid="uid://ceapin468e1vd" path="res://Assets/models/kitchen/Fridge.glb" id="14_ql7q7"]
+[ext_resource type="PackedScene" uid="uid://0hgnlmika5yy" path="res://Assets/models/kitchen/Kitchentop_above_Fridge.glb" id="15_dpgo2"]
+[ext_resource type="PackedScene" uid="uid://bptcvksgi6ybj" path="res://Assets/models/kitchen/Kitchentop.glb" id="16_yoj2b"]
+[ext_resource type="PackedScene" uid="uid://di56sbmlfn4ne" path="res://Assets/models/kitchen/Oven.glb" id="17_abfwv"]
+[ext_resource type="PackedScene" uid="uid://d2j7e2sjv878e" path="res://Assets/models/kitchen/Dishrack.glb" id="18_jfri7"]
+[ext_resource type="PackedScene" uid="uid://gqr3r5vlxgu4" path="res://Assets/models/kitchen/Countertop_sink.glb" id="19_mvcnl"]
+[ext_resource type="PackedScene" uid="uid://bqp0yhsvbkql7" path="res://Assets/models/kitchen/Countertop_by_Oven.glb" id="20_v4mej"]
+[ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="21_g34lq"]
+[ext_resource type="PackedScene" uid="uid://dy6618ucep6ps" path="res://Assets/models/kitchen/Cooker_Hood.glb" id="22_fjv2g"]
+[ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="23_wg53g"]
+[ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="24_p12un"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lhkf3"]
+
+[sub_resource type="Sky" id="Sky_acxqq"]
+sky_material = SubResource("ProceduralSkyMaterial_lhkf3")
+
+[sub_resource type="Environment" id="Environment_cfqtg"]
+background_mode = 2
+sky = SubResource("Sky_acxqq")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_acxqq"]
+vertices = PackedVector3Array(-4.08715, 0.02, -4.11524, -4.08715, 0.02, -1.11524, 0.162847, 0.02, -1.11524, 4.66285, 0.02, -4.11524, 0.412847, 0.02, 1.88476, 4.66285, 0.02, 1.88476)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 3)]
+cell_height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdptd"]
+size = Vector3(5, 0, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5gcgh"]
+size = Vector3(6, 0, 4)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
+
+[node name="WorkingDoors" type="Node3D" parent="."]
+
+[node name="bedroomDoor" parent="WorkingDoors" instance=ExtResource("2_lhkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219181, 18.3175, -0.804449)
+next_scene = "res://Scenes/Locations/AlphaLocations/bedroom.tscn"
+
+[node name="bathroomDoor" parent="WorkingDoors" instance=ExtResource("2_lhkf3")]
+process_mode = 4
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.60892, 18.3175, -0.144485)
+visible = false
+next_scene = "res://Scenes/Locations/AlphaLocations/bathroom.tscn"
+door_type = "bathroom"
+
+[node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
+
+[node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfqtg")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
+navigation_mesh = SubResource("NavigationMesh_acxqq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5862, 0, -1.09953)
+visible = false
+mesh = SubResource("BoxMesh_rdptd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58715, 0, -2.61524)
+visible = false
+mesh = SubResource("BoxMesh_5gcgh")
+
+[node name="LivingArea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0871315, 0)
+
+[node name="Mug" parent="LivingArea" instance=ExtResource("5_rdptd")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Newspaper" parent="LivingArea" instance=ExtResource("6_5gcgh")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Armchair" parent="LivingArea" instance=ExtResource("7_kbdc1")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Sidetable" parent="LivingArea" instance=ExtResource("8_p0ubc")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Bank_Lamp" parent="LivingArea" instance=ExtResource("9_t1347")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Chair" parent="LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Chair2" parent="LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 1.16448)
+
+[node name="Chair3" parent="LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.0207055, 0, -0.0772741, 0, 0.08, 0, 0.0772741, 0, 0.0207055, 0.958539, 0, 1.20667)
+
+[node name="Table" parent="LivingArea" instance=ExtResource("11_lwy5w")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Wind_Machine" parent="LivingArea" instance=ExtResource("12_2o20f")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Dresser" parent="LivingArea" instance=ExtResource("13_hd6kh")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Kitchen" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101826, 0)
+
+[node name="Fridge" parent="Kitchen" instance=ExtResource("14_ql7q7")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Kitchentop_above_Fridge" parent="Kitchen" instance=ExtResource("15_dpgo2")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Kitchentop" parent="Kitchen" instance=ExtResource("16_yoj2b")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Oven" parent="Kitchen" instance=ExtResource("17_abfwv")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Dishrack" parent="Kitchen" instance=ExtResource("18_jfri7")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_sink" parent="Kitchen" instance=ExtResource("19_mvcnl")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_by_Oven2" parent="Kitchen" instance=ExtResource("20_v4mej")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_by_Fridge" parent="Kitchen" instance=ExtResource("21_g34lq")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Cooker_Hood" parent="Kitchen" instance=ExtResource("22_fjv2g")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Pan" parent="Kitchen" instance=ExtResource("23_wg53g")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Pot" parent="Kitchen" instance=ExtResource("24_p12un")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)

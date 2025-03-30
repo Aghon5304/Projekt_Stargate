@@ -1,28 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgmp0s0yqctpj"]
+<<<<<<< HEAD
+[gd_scene load_steps=6 format=3 uid="uid://bgmp0s0yqctpj"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://bgmp0s0yqctpj"]
+>>>>>>> 6c59e81367109bc8845ed3dc790902aa9b9b963b
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6lim0"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyoov"]
+albedo_color = Color(0.357764, 0.72814, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vyoov"]
+material = SubResource("StandardMaterial3D_vyoov")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
 
-[node name="Gracz" type="CharacterBody3D"]
+<<<<<<< HEAD
+[node name="Gracz" type="CharacterBody3D" node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
 script = ExtResource("1_h75k5")
-main_game_mesh = NodePath("mainCharacterMesh")
-tutorial_mesh = NodePath("tutorialMesh")
-node_paths=PackedStringArray("main_game_mesh", "tutorial_mesh")]
+main_game_mesh = NodePath("MainGameMesh")
+tutorial_mesh = NodePath("TutorialMesh")
 
-[node name="tutorialMesh" type="MeshInstance3D" parent="CharacterBody3D"]
-mesh = SubResource("CapsuleMesh_gdvll")
+=======
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
 
-[node name="mainCharacterMesh" type="MeshInstance3D" parent="CharacterBody3D"]
-visible = false
-mesh = SubResource("CapsuleMesh_nxwrj")
+[node name="Gracz" type="CharacterBody3D"]
+input_ray_pickable = false
+script = ExtResource("1_h75k5")
 
+>>>>>>> 6c59e81367109bc8845ed3dc790902aa9b9b963b
+[node name="MainGameMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6lim0")
+
+[node name="TutorialMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vyoov")
+
+<<<<<<< HEAD
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12774, 0)
 shape = SubResource("CapsuleShape3D_18hyh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.1
 target_desired_distance = 0.1
+=======
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_18hyh")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, 0)
+shape = SubResource("BoxShape3D_2sxh3")
+>>>>>>> 6c59e81367109bc8845ed3dc790902aa9b9b963b

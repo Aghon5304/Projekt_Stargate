@@ -20,6 +20,7 @@ func _process(delta):
 	moveToPoint(delta, Speed)
 	pass
 
+
 func moveToPoint(_delta, speed):
 	var targetPos = navigationAgent.target_position
 	var direction = global_position.direction_to(targetPos)
