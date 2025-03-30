@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-
-	
 @onready var main_game_mesh: MeshInstance3D = $MainGameMesh
 @onready var tutorial_mesh: MeshInstance3D = $TutorialMesh
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D

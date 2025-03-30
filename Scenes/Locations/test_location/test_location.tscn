@@ -44,6 +44,7 @@ material = SubResource("StandardMaterial3D_jibvm")
 [node name="level" parent="." instance=ExtResource("1_5fyyu")]
 
 [node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
+
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993462, 1.47845, 0.963092)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

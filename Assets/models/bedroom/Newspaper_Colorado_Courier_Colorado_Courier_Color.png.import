@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://oxtsgf0jqilo"
+path.s3tc="res://.godot/imported/Newspaper_Colorado_Courier_Colorado_Courier_Color.png-ee35e0fca0ff4d190bb93fe26e510bef.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "9244d7023818b31b1c5050d103bbd4ec"
+}
+
+[deps]
+
+source_file="res://Assets/models/bedroom/Newspaper_Colorado_Courier_Colorado_Courier_Color.png"
+dest_files=["res://.godot/imported/Newspaper_Colorado_Courier_Colorado_Courier_Color.png-ee35e0fca0ff4d190bb93fe26e510bef.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
