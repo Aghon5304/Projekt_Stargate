@@ -105,13 +105,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="zagadka z lodówką" parent="gui" instance=ExtResource("1_tcve0")]
+visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 28.75
-anchor_bottom = 16.2
-offset_left = 3000.0
-offset_right = 3000.0
-metadata/_edit_use_anchors_ = true
+offset_left = 4000.0
+offset_top = 4000.0
+offset_right = 4000.0
+offset_bottom = 4000.0
 
 [node name="sciany" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -9.48273, 20.6216, -1.42433)

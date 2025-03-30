@@ -69,5 +69,3 @@ layout_mode = 2
 
 [node name="ItemButton8" parent="ObramowanieEkwipunku/items" instance=ExtResource("3_gk8qt")]
 layout_mode = 2
-
-[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
