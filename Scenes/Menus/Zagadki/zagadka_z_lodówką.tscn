@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh2exf58tq2ry"]
+
+[ext_resource type="Texture2D" uid="uid://bum6nkj52lp60" path="res://Assets/Images/Fridge_Inside_Key_v2.png" id="1_gnfls"]
+[ext_resource type="Script" uid="uid://c55pa40iiu107" path="res://Scenes/Menus/Zagadki/lodówka.gd" id="2_rhlp2"]
+
+[node name="zagadka z lodówką" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gnfls")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30816
+anchor_top = 0.389
+anchor_right = 0.589
+anchor_bottom = 0.734568
+offset_top = -0.0720215
+offset_right = -0.528076
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("2_rhlp2")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
