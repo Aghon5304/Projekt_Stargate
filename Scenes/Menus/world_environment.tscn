@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://do1yrb82t2ui"]
+
+[sub_resource type="Environment" id="Environment_a8i1s"]
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_a8i1s")
