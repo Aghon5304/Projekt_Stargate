@@ -60,6 +60,7 @@ func _input(_event):
 			var result = space.intersect_ray(rayQuery)
 			if (result != {} ):
 				navigationAgent.target_position = result.position
+				GlobalInput.Last_clicked = null
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial

@@ -39,7 +39,7 @@ func _on_item_used():
 #jeżeli zostanie wybrany item z ekwipunku to zmienia ikone kursora
 func _on_item_button_wybrano_item(Position) -> void:
 	if GlobalItems.Ekwipunek[Position]!= -1:
-		Input.set_custom_mouse_cursor(buttons[Position].get_node("TextureRect").texture)
+		Input.set_custom_mouse_cursor(buttons[Position].get_node("TextureRect").texture,0,Vector2(100,100))
 		GlobalInput.Active_Item = GlobalItems.Ekwipunek[Position]
 	else:
 		Input.set_custom_mouse_cursor(null)
