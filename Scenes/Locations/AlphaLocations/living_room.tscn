@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://y5pvu2yfhasc"]
+[gd_scene load_steps=51 format=3 uid="uid://y5pvu2yfhasc"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="1_3avgp"]
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="1_kggl8"]
 [ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="1_tcve0"]
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="2_ojfkl"]
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="2_xe3cf"]
 [ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="3_ne18r"]
 [ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="4_3avgp"]
 [ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="5_b3ler"]
@@ -98,16 +99,11 @@ size = Vector3(2, 2, 2)
 
 [node name="LivingRoom" type="Node3D"]
 
-[node name="gui" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("2_xe3cf")]
 
 [node name="zagadka z lodówką" parent="gui" instance=ExtResource("1_tcve0")]
-layout_mode = 1
 anchors_preset = -1
 anchor_right = 28.75
 anchor_bottom = 16.2
@@ -243,7 +239,7 @@ script = ExtResource("12_tcve0")
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="PickUpRange" type="Area3D" parent="NavigationRegion3D/Kitchen/Lodówka"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90869, 20.7524, -2.0132)
+transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -7.90854, 20.7525, -1.42636)
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false

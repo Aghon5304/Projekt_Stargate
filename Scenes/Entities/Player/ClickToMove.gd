@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var main_game_mesh: MeshInstance3D = $MainGameMesh
 @onready var tutorial_mesh: MeshInstance3D = $TutorialMesh
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
-@onready var Gui: Control = $"../gui"
+@onready var Gui: Node = $"../gui"
 var Speed = 5
 var tutorial = true #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka
@@ -60,7 +60,7 @@ func _input(_event):
 			var result = space.intersect_ray(rayQuery)
 			if (result != {} ):
 				navigationAgent.target_position = result.position
-				GlobalInput.Last_clicked = null
+			GlobalInput.Last_clicked = null
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial

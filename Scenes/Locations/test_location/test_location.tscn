@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]
 [ext_resource type="Script" uid="uid://crx680c2xyaw4" path="res://Scenes/Maps/test_map/test_level_change.gd" id="5_dpt41"]
-[ext_resource type="Script" uid="uid://buv74i7yf0eci" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
+[ext_resource type="Script" uid="uid://dhu7vpwea6nit" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
 

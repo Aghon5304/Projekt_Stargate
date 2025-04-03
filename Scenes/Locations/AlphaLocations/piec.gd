@@ -1,5 +1,6 @@
 extends Node3D
 @export var playerInRange: bool = false 
+@onready var transition_screen: AnimationPlayer = $"../../../gui/Transition_screen/AnimationPlayer"
 
 func _on_pick_up_range_area_entered(area: Area3D) -> void:
 	playerInRange = true
@@ -24,6 +25,8 @@ func _on_teren_do_klikniecia_input_event(camera: Node, event: InputEvent, event_
 			if GlobalInput.Active_Item == GlobalItems.ItemTypes.KLUCZ_W_LODZIE:
 				for x in GlobalItems.Ekwipunek.size():
 					if GlobalItems.Ekwipunek[x] == GlobalItems.ItemTypes.KLUCZ_W_LODZIE:
+						transition_screen.play("fade_to_black")
+						await transition_screen.animation_changed
 						GlobalItems.Ekwipunek[x] = GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU
 						GlobalSignals.Item_used.emit()
 	pass # Replace with function body.

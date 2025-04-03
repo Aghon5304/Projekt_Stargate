@@ -1,7 +1,6 @@
 extends TextureButton
 var ItemId = GlobalItems.ItemTypes.KLUCZ_W_LODZIE
-@onready var fadeout: AnimationPlayer = $"../Fadeout"
-
+@onready var transition_screen: AnimationPlayer = $"../../Transition_screen/AnimationPlayer"
 @onready var texture_rect: TextureRect = $"../TextureRect"
 var lodowka_bez_lodu :Texture2D = preload("res://Assets/Images/Fridge_Inside_Empty.png")
 func _ready() -> void:
@@ -15,8 +14,10 @@ func _on_pressed() -> void:
 			if GlobalItems.Ekwipunek[item] == -1:
 				GlobalItems.Ekwipunek[item] = ItemId
 				#przedmiot staje się niewidzalny oraz colishion shape się wyłącza aby symulować podniesienie
-				fadeout.play("Fadeout_lodówka")
+				transition_screen.play("fade_to_black")
+				await transition_screen.animation_changed
 				texture_rect.texture = lodowka_bez_lodu
+				self.visible = false
 				GlobalZagadkiState.klucz_w_lodówce = true
 				GlobalSignals.Item_used.emit()
 				return
