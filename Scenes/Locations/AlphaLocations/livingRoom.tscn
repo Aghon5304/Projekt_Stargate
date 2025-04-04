@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d3jtqwbc5f4r1"]
+[gd_scene load_steps=44 format=3 uid="uid://d3jtqwbc5f4r1"]
 
 [ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
@@ -74,7 +74,10 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Arr
 cell_height = 0.01
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hd6kh"]
-size = Vector3(1, 57.9855, 16.8447)
+size = Vector3(6.66547, 57.9855, 16.8447)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ql7q7"]
+size = Vector3(39.2349, 19.7744, 24.1862)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ym7e"]
 size = Vector3(2, 2, 2)
@@ -164,20 +167,20 @@ collision_mask = 5
 script = ExtResource("8_hd6kh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.624, 241.864, -14.3095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.791, 246.505, -14.3095)
 shape = SubResource("BoxShape3D_hd6kh")
 
 [node name="testDoor" parent="NavigationRegion3D2/WorkingDoors/Node3D" instance=ExtResource("8_lwy5w")]
 
 [node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
-transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -7.97393, 20.7525, -1.59646)
+transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -124.306, 214.05, -1.59646)
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539499, -1.6298, -0.322864)
-shape = SubResource("BoxShape3D_0ym7e")
+transform = Transform3D(1, 7.00666e-18, -3.53015e-29, -2.1684e-19, 1, -2.87097e-16, 0, 0, 1, 0.892296, 25.7896, -10.0833)
+shape = SubResource("BoxShape3D_ql7q7")
 
 [node name="LivingArea" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2087, -0.917964)
@@ -301,7 +304,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58715, 0, -2.61524)
 visible = false
 mesh = SubResource("BoxMesh_5gcgh")
 
-[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="LivingRoom/StaticBody3D/MeshInstance3D" method="_on_static_body_3d_input_event"]
+[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_static_body_3d_input_event"]
 [connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_entered"]
 [connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_exited"]
 [connection signal="area_entered" from="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_entered"]
