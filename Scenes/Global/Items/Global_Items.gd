@@ -1,6 +1,8 @@
 extends Node
 var Ekwipunek := [-1,-1,-1,-1,-1,-1,-1,-1]
 enum ItemTypes {
+	KLUCZ_W_LODZIE,
+	KLUCZ_WYJETY_Z_LODU,
 	LATARKA,
 	PISTOLET,
 	NOTATNIK,

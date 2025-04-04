@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://e8a4bbg4u8cf"]
+[gd_scene load_steps=3 format=3 uid="uid://e8a4bbg4u8cf"]
 
+[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_xx3ps"]
 [ext_resource type="Script" uid="uid://dc20kwhmg0f7y" path="res://Scenes/Menus/equipment_bar/item_button.gd" id="2_gn2om"]
 
 [node name="ItemButton" type="Button"]
 offset_right = 136.0
 offset_bottom = 136.0
 scale = Vector2(0.5, 0.5)
+icon = ExtResource("1_xx3ps")
 script = ExtResource("2_gn2om")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -17,5 +19,6 @@ offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 3
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -71,3 +71,10 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton2" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton3" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton4" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton5" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton6" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton7" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]
+[connection signal="wybrano_item" from="ObramowanieEkwipunku/items/ItemButton8" to="ObramowanieEkwipunku/items" method="_on_item_button_wybrano_item"]

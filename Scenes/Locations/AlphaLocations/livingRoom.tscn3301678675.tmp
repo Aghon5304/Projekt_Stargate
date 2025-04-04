@@ -1,0 +1,326 @@
+[gd_scene load_steps=44 format=3 uid="uid://d3jtqwbc5f4r1"]
+
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
+[ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
+[ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="2_5gcgh"]
+[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="2_lhkf3"]
+[ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="2_lwy5w"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="3_acxqq"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_cfqtg"]
+[ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="5_rdptd"]
+[ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="6_5gcgh"]
+[ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="7_kbdc1"]
+[ext_resource type="Script" uid="uid://mawm45bmkhsx" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
+[ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="8_lwy5w"]
+[ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
+[ext_resource type="Script" uid="uid://dhu7vpwea6nit" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="9_2o20f"]
+[ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
+[ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="10_0ym7e"]
+[ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="11_lwy5w"]
+[ext_resource type="PackedScene" uid="uid://yy0vd016xecy" path="res://Assets/models/livingRoom/Wind_Machine.glb" id="12_2o20f"]
+[ext_resource type="PackedScene" uid="uid://cotl0q37fo3iv" path="res://Assets/models/livingRoom/Dresser.glb" id="13_hd6kh"]
+[ext_resource type="PackedScene" uid="uid://ceapin468e1vd" path="res://Assets/models/kitchen/Fridge.glb" id="14_ql7q7"]
+[ext_resource type="PackedScene" uid="uid://0hgnlmika5yy" path="res://Assets/models/kitchen/Kitchentop_above_Fridge.glb" id="15_dpgo2"]
+[ext_resource type="PackedScene" uid="uid://bptcvksgi6ybj" path="res://Assets/models/kitchen/Kitchentop.glb" id="16_yoj2b"]
+[ext_resource type="PackedScene" uid="uid://di56sbmlfn4ne" path="res://Assets/models/kitchen/Oven.glb" id="17_abfwv"]
+[ext_resource type="PackedScene" uid="uid://d2j7e2sjv878e" path="res://Assets/models/kitchen/Dishrack.glb" id="18_jfri7"]
+[ext_resource type="PackedScene" uid="uid://gqr3r5vlxgu4" path="res://Assets/models/kitchen/Countertop_sink.glb" id="19_mvcnl"]
+[ext_resource type="PackedScene" uid="uid://bqp0yhsvbkql7" path="res://Assets/models/kitchen/Countertop_by_Oven.glb" id="20_v4mej"]
+[ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="21_g34lq"]
+[ext_resource type="PackedScene" uid="uid://dy6618ucep6ps" path="res://Assets/models/kitchen/Cooker_Hood.glb" id="22_fjv2g"]
+[ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="23_wg53g"]
+[ext_resource type="Script" uid="uid://cxntbhm1ymdls" path="res://Scenes/Locations/AlphaLocations/lodówka.gd" id="24_p0ubc"]
+[ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="24_p12un"]
+[ext_resource type="Script" uid="uid://cd5siook8ljli" path="res://Scenes/Locations/AlphaLocations/piec.gd" id="26_t1347"]
+
+[sub_resource type="GDScript" id="GDScript_0ym7e"]
+script/source = "extends MeshInstance3D
+
+
+func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
+:		if GlobalInput.Active_Item == GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU:
+			#zapisanie wartości globalnej która mówi który item został ostatnio kliknięty
+			GlobalInput.Last_clicked = self
+			#oczekuje do momętu w którym gracz wejdzie w zasięg przedmiotu
+			while playerInRange == false:
+				#jeżeli klikniemy coś innego to wyjdzie z funkcji
+				if GlobalInput.Last_clicked != self:
+					return
+				#czeka jedną klatkę
+				await get_tree().process_frame
+			if (playerInRange == true):
+				#Jeżeli w zasięgu to przechodzi przez każdy item w eq
+				for item in GlobalItems.Ekwipunek.size():
+					#jeżeli pole jest puste (-1) to zamienia je na ItemId (enum przedmiotu)
+					if GlobalItems.Ekwipunek[item] == -1:
+						GlobalItems.Ekwipunek[item] = ItemId
+						#przedmiot staje się niewidzalny oraz colishion shape się wyłącza aby symulować podniesienie
+						self.visible = false	
+						var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
+						collision_shape_3d.disabled = true
+						return
+				#jeżeli masz pełny ekwipunkek to wypisuje wiadomość
+				print(\"masz za duzo itemów w eq\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2o20f"]
+size = Vector3(1.45837, 0.0448608, 0.520508)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lhkf3"]
+
+[sub_resource type="Sky" id="Sky_acxqq"]
+sky_material = SubResource("ProceduralSkyMaterial_lhkf3")
+
+[sub_resource type="Environment" id="Environment_cfqtg"]
+background_mode = 2
+sky = SubResource("Sky_acxqq")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_acxqq"]
+vertices = PackedVector3Array(3.3117, 1.5366, -3.61524, 4.0617, 1.4266, -2.86524, 3.8117, 1.5366, -3.61524, -4.1883, 0.0166047, -1.11524, -3.4383, 0.0166047, -1.11524, -3.1883, 0.0166047, -1.61524, -4.1883, 0.0166047, -2.36524, 1.5617, 0.0166047, -1.11524, 2.5617, 0.0166047, -2.61524, 2.5617, 0.0166047, -0.86524, 4.0617, 0.0166047, -1.61524, 1.8117, 0.0166047, 1.88476, 2.3117, 0.0166047, 1.88476, 3.3117, 1.4366, 1.38476, 3.5617, 1.3566, 1.88476, 4.3117, 1.5066, 1.88476, 4.3117, 1.3766, 0.88476, 3.8117, 1.3766, 0.63476)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(5, 6, 7), PackedInt32Array(7, 6, 8), PackedInt32Array(7, 8, 9), PackedInt32Array(9, 8, 10), PackedInt32Array(12, 11, 9), PackedInt32Array(9, 11, 7), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(16, 13, 17)]
+cell_height = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hd6kh"]
+size = Vector3(1, 57.9855, 16.8447)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ym7e"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwy5w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdptd"]
+size = Vector3(5, 0, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5gcgh"]
+size = Vector3(6, 0, 4)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("1_0ym7e")]
+
+[node name="zagadka z lodówką" parent="gui" instance=ExtResource("2_lwy5w")]
+anchors_preset = -1
+anchor_right = 28.75
+anchor_bottom = 16.2
+offset_left = 3000.0
+offset_right = -28968.0
+offset_bottom = -9849.6
+
+[node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
+
+[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LivingRoom"]
+input_ray_pickable = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LivingRoom/StaticBody3D"]
+transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, 0, -1.1365e-07, -8.70213, 6.7178e-07, -2.6, 3.80382e-07, -8.76044, 19.8397, 0.415334)
+mesh = ExtResource("2_5gcgh")
+skeleton = NodePath("../..")
+script = SubResource("GDScript_0ym7e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LivingRoom/StaticBody3D"]
+transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, -2.02266e-18, -1.13651e-07, -8.70213, 6.71751e-07, -2.6, 3.80382e-07, -7.49022, 18.2927, 0.56225)
+shape = SubResource("BoxShape3D_2o20f")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="LivingRoom"]
+input_ray_pickable = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LivingRoom/StaticBody3D2"]
+transform = Transform3D(2.3301e-07, -2.6, 3.80382e-07, 0, -1.1365e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.48274, 19.8371, 3.50633)
+mesh = ExtResource("2_5gcgh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LivingRoom/StaticBody3D2"]
+transform = Transform3D(2.32981e-07, -2.6, 3.80382e-07, -1.69822e-18, -1.13652e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.40329, 18.4167, 2.67724)
+shape = SubResource("BoxShape3D_2o20f")
+
+[node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
+floor_max_angle = 0.1309
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfqtg")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
+navigation_mesh = SubResource("NavigationMesh_acxqq")
+
+[node name="WorkingDoors" type="Node3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.1216, -0.917964)
+
+[node name="bedroomDoor" parent="NavigationRegion3D2/WorkingDoors" instance=ExtResource("2_lhkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219181, 18.3175, -0.804449)
+next_scene = "res://Scenes/Locations/AlphaLocations/bedroom.tscn"
+
+[node name="bathroomDoor" parent="NavigationRegion3D2/WorkingDoors" instance=ExtResource("2_lhkf3")]
+process_mode = 4
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.60892, 18.3175, -0.144485)
+visible = false
+next_scene = "res://Scenes/Locations/AlphaLocations/bathroom.tscn"
+door_type = "bathroom"
+
+[node name="Node3D" type="Node3D" parent="NavigationRegion3D2/WorkingDoors"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.149125, -0.127224, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("8_hd6kh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.624, 241.864, -14.3095)
+shape = SubResource("BoxShape3D_hd6kh")
+
+[node name="testDoor" parent="NavigationRegion3D2/WorkingDoors/Node3D" instance=ExtResource("8_lwy5w")]
+
+[node name="Test_go_the_end_credits" type="StaticBody3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
+transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0.482924, -45199.7, -4.51708)
+script = ExtResource("9_2o20f")
+
+[node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
+transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -7.97393, 20.7525, -1.59646)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539499, -1.6298, -0.322864)
+shape = SubResource("BoxShape3D_0ym7e")
+
+[node name="LivingArea" type="Node3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2087, -0.917964)
+
+[node name="Mug" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("5_rdptd")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Newspaper" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("6_5gcgh")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Armchair" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("7_kbdc1")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Sidetable" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("8_p0ubc")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Bank_Lamp" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("9_t1347")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Chair" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Chair2" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 1.16448)
+
+[node name="Chair3" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
+transform = Transform3D(0.0207055, 0, -0.0772741, 0, 0.08, 0, 0.0772741, 0, 0.0207055, 0.958539, 0, 1.20667)
+
+[node name="Table" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("11_lwy5w")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Wind_Machine" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("12_2o20f")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Dresser" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("13_hd6kh")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Kitchen" type="Node3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2234, -0.917964)
+
+[node name="Lodówka" type="Node3D" parent="NavigationRegion3D2/Kitchen"]
+script = ExtResource("24_p0ubc")
+
+[node name="Fridge" parent="NavigationRegion3D2/Kitchen/Lodówka" instance=ExtResource("14_ql7q7")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/Kitchen/Lodówka"]
+transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -7.97393, 20.7525, -1.59646)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539499, -1.6298, -0.322864)
+shape = SubResource("BoxShape3D_0ym7e")
+
+[node name="terenDoKlikniecia" type="StaticBody3D" parent="NavigationRegion3D2/Kitchen/Lodówka"]
+transform = Transform3D(1.11697, 0, 0, 0, 2.28809, 0, 0, 0, 1, -8.70345, 19.6716, -2.5999)
+collision_layer = 5
+collision_mask = 5
+
+[node name="terenDoKlikniecia" type="CollisionShape3D" parent="NavigationRegion3D2/Kitchen/Lodówka/terenDoKlikniecia"]
+shape = SubResource("BoxShape3D_lwy5w")
+
+[node name="Piec" type="Node3D" parent="NavigationRegion3D2/Kitchen"]
+script = ExtResource("26_t1347")
+
+[node name="Oven" parent="NavigationRegion3D2/Kitchen/Piec" instance=ExtResource("17_abfwv")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/Kitchen/Piec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23331, 20.7524, -2.0132)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/Kitchen/Piec/PickUpRange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539499, -1.6298, -0.322864)
+shape = SubResource("BoxShape3D_0ym7e")
+
+[node name="terenDoKlikniecia" type="StaticBody3D" parent="NavigationRegion3D2/Kitchen/Piec"]
+transform = Transform3D(1.41222, -5.04485e-13, 5.82077e-11, 1.09068e-12, 2.38334, 2.91038e-11, -2.91038e-11, -1.45519e-11, 0.999913, -3.831, 18.8417, -2.69798)
+
+[node name="terenDoKlikniecia" type="CollisionShape3D" parent="NavigationRegion3D2/Kitchen/Piec/terenDoKlikniecia"]
+shape = SubResource("BoxShape3D_lwy5w")
+
+[node name="Kitchentop_above_Fridge" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("15_dpgo2")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Kitchentop" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("16_yoj2b")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Dishrack" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("18_jfri7")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_sink" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("19_mvcnl")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_by_Oven2" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("20_v4mej")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Countertop_by_Fridge" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("21_g34lq")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Cooker_Hood" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("22_fjv2g")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Pan" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("23_wg53g")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Pot" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("24_p12un")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5862, 0, -1.09953)
+visible = false
+mesh = SubResource("BoxMesh_rdptd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58715, 0, -2.61524)
+visible = false
+mesh = SubResource("BoxMesh_5gcgh")
+
+[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="LivingRoom/StaticBody3D/MeshInstance3D" method="_on_static_body_3d_input_event"]
+[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/Test_go_the_end_credits" to="NavigationRegion3D2/WorkingDoors/Node3D/Test_go_the_end_credits" method="_on_input_event"]
+[connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_exited"]
+[connection signal="area_entered" from="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_exited"]
+[connection signal="input_event" from="NavigationRegion3D2/Kitchen/Lodówka/terenDoKlikniecia" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_teren_do_klikniecia_input_event"]
+[connection signal="area_entered" from="NavigationRegion3D2/Kitchen/Piec/PickUpRange" to="NavigationRegion3D2/Kitchen/Piec" method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="NavigationRegion3D2/Kitchen/Piec/PickUpRange" to="NavigationRegion3D2/Kitchen/Piec" method="_on_pick_up_range_area_exited"]
+[connection signal="input_event" from="NavigationRegion3D2/Kitchen/Piec/terenDoKlikniecia" to="NavigationRegion3D2/Kitchen/Piec" method="_on_teren_do_klikniecia_input_event"]
