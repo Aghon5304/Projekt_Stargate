@@ -21,9 +21,6 @@ GlobalItems="*res://Scenes/Global/Items/Global_Items.gd"
 GlobalInput="*res://Scenes/Global/Input/Global_input.gd"
 GlobalSignals="*res://Scenes/Global/Signals/Global_signals.gd"
 GlobalZagadkiState="*res://Scenes/Global/Zagadki/Global_zagadki_state.gd"
-
-[autoload]
-
 MainMenu="*res://Scenes/Menus/main_menu/main_menu.gd"
 GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
 

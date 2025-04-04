@@ -7,6 +7,7 @@ var id_not_paused = false
 func _ready() -> void:
 	MainMenu.is_main_menu = false
 	pause_menu.hide()
+	pause_menu.position = Vector2(5000,5000)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -16,9 +17,11 @@ func _process(delta: float) -> void:
 func pauseMenu():
 	if id_not_paused:
 		pause_menu.hide()
+		pause_menu.position = Vector2(5000,5000)
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
+		pause_menu.position = Vector2(0,0)
 		Engine.time_scale = 0
 	id_not_paused = !id_not_paused
 
@@ -26,6 +29,7 @@ func pauseMenu():
 func _on_resume_button_pressed() -> void:
 	pauseMenu()
 	pause_menu.hide()
+	pause_menu.position = Vector2(5000,5000)
 
 func _on_options_button_pressed() -> void:
 	var new_scene = option_menu.instantiate()
