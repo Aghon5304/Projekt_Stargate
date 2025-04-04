@@ -33,11 +33,11 @@ size = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5mo7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jibvm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpt41"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3cnv8"]
-material = SubResource("StandardMaterial3D_jibvm")
+material = SubResource("StandardMaterial3D_dpt41")
 
 [node name="Test" type="Node3D"]
 

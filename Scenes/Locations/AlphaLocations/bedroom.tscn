@@ -1,5 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://6vrebrgdmdbl"]
+[gd_scene load_steps=25 format=3 uid="uid://6vrebrgdmdbl"]
 
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_ncmxj"]
+[ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="2_q16dc"]
 [ext_resource type="PackedScene" uid="uid://dhr7hk2d067pj" path="res://Scenes/Maps/alphaMaps/bedroom.tscn" id="3_5k6j1"]
 [ext_resource type="PackedScene" uid="uid://bvh1pqn4hqpy7" path="res://Assets/models/bedroom/Wardrobe.glb" id="5_swtys"]
 [ext_resource type="PackedScene" uid="uid://bk822gkb4af1a" path="res://Assets/models/bedroom/Nightstand.glb" id="6_bdr3i"]
@@ -36,6 +38,18 @@ cell_height = 0.01
 size = Vector3(7, 0, 8)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("1_ncmxj")]
+
+[node name="zagadka z lodówką" parent="gui" instance=ExtResource("2_q16dc")]
+anchors_preset = -1
+anchor_right = 28.75
+anchor_bottom = 16.2
+offset_left = 3000.0
+offset_right = -28968.0
+offset_bottom = -9849.6
 
 [node name="Equipment" parent="." instance=ExtResource("18_bdr3i")]
 

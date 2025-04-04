@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca8jmeovriklg"]
+[gd_scene load_steps=20 format=3 uid="uid://ca8jmeovriklg"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="1_nlxrx"]
 [ext_resource type="Texture2D" uid="uid://da0slhl6ty8hl" path="res://Assets/models/floor/Floor_Floor_Color.png" id="2_c8s7a"]
-[ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="24_sb6ya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkxop"]
 size = Vector3(10, 0.2, 5)
@@ -99,6 +98,8 @@ shape = SubResource("BoxShape3D_whffc")
 mesh = SubResource("BoxMesh_ps3pg")
 
 [node name="sciana4" type="StaticBody3D" parent="sciany"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, -3.56203, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana4"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, -3.22009, 5.20602, 0)
@@ -109,9 +110,12 @@ visible = false
 mesh = SubResource("BoxMesh_i4nt6")
 
 [node name="sciana5" type="StaticBody3D" parent="sciany"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, -3.56203, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sciany/sciana5"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 1.64203e-15, -4.37114e-08, -1, -1, -4.37119e-08, 3.55271e-15, -1.39458, 2.6739, -0.0528049)
+visible = false
 shape = SubResource("BoxShape3D_mvd6j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sciany/sciana5/CollisionShape3D"]
@@ -127,9 +131,6 @@ transform = Transform3D(6.01866e-14, -1.09278e-06, 220, -31.5, -1.09278e-06, -5.
 mesh = ExtResource("1_nlxrx")
 
 [node name="Doors" type="Node3D" parent="."]
-
-[node name="Door_Main" parent="Doors" instance=ExtResource("24_sb6ya")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.149125, -0.127224, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
 transform = Transform3D(0.67559, -0.564787, 0.473913, 0, 0.642788, 0.766044, -0.737277, -0.517532, 0.434261, -0.294, 23.022, 2.904)

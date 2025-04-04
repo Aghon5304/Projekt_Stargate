@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d3jtqwbc5f4r1"]
+[gd_scene load_steps=44 format=3 uid="uid://d3jtqwbc5f4r1"]
 
 [ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://mawm45bmkhsx" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="8_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
+[ext_resource type="Script" uid="uid://dhu7vpwea6nit" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="9_2o20f"]
 [ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
 [ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="10_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="11_lwy5w"]
@@ -34,26 +35,36 @@
 
 [sub_resource type="GDScript" id="GDScript_0ym7e"]
 script/source = "extends MeshInstance3D
-var playerInRange :=false
+
 
 func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
-			if GlobalInput.Active_Item == GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU:
-				#zapisanie wartości globalnej która mówi który item został ostatnio kliknięty
-				GlobalInput.Last_clicked = self
-				#oczekuje do momętu w którym gracz wejdzie w zasięg przedmiotu
-				while playerInRange == false:
-					#jeżeli klikniemy coś innego to wyjdzie z funkcji
-					if GlobalInput.Last_clicked != self:
+	if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
+:		if GlobalInput.Active_Item == GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU:
+			#zapisanie wartości globalnej która mówi który item został ostatnio kliknięty
+			GlobalInput.Last_clicked = self
+			#oczekuje do momętu w którym gracz wejdzie w zasięg przedmiotu
+			while playerInRange == false:
+				#jeżeli klikniemy coś innego to wyjdzie z funkcji
+				if GlobalInput.Last_clicked != self:
+					return
+				#czeka jedną klatkę
+				await get_tree().process_frame
+			if (playerInRange == true):
+				#Jeżeli w zasięgu to przechodzi przez każdy item w eq
+				for item in GlobalItems.Ekwipunek.size():
+					#jeżeli pole jest puste (-1) to zamienia je na ItemId (enum przedmiotu)
+					if GlobalItems.Ekwipunek[item] == -1:
+						GlobalItems.Ekwipunek[item] = ItemId
+						#przedmiot staje się niewidzalny oraz colishion shape się wyłącza aby symulować podniesienie
+						self.visible = false	
+						var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
+						collision_shape_3d.disabled = true
 						return
-					#czeka jedną klatkę
-					await get_tree().process_frame
-				if (playerInRange == true):
-					var new_scene = load(\"res://Scenes/Locations/end_location/end_credits.tscn\")
-					get_tree().change_scene_to_packed(new_scene)
-					print(\"masz za duzo itemów w eq\")
-	pass # Replace with function body.
+				#jeżeli masz pełny ekwipunkek to wypisuje wiadomość
+				print(\"masz za duzo itemów w eq\")
+		else:
+		pass # Replace with function body.
+	.
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2o20f"]
@@ -168,6 +179,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.624, 241.864, -14.3095)
 shape = SubResource("BoxShape3D_hd6kh")
 
 [node name="testDoor" parent="NavigationRegion3D2/WorkingDoors/Node3D" instance=ExtResource("8_lwy5w")]
+
+[node name="Test_go_the_end_credits" type="StaticBody3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
+transform = Transform3D(1, -2.86491e-11, 2.98023e-08, 5.00222e-12, 1, 4.72937e-11, 2.98023e-08, 4.22915e-11, 1, 0.482924, -45199.7, -4.51708)
+script = ExtResource("9_2o20f")
 
 [node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
 transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -7.97393, 20.7525, -1.59646)
@@ -302,8 +317,9 @@ visible = false
 mesh = SubResource("BoxMesh_5gcgh")
 
 [connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="LivingRoom/StaticBody3D/MeshInstance3D" method="_on_static_body_3d_input_event"]
-[connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_entered"]
-[connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_exited"]
+[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/Test_go_the_end_credits" to="NavigationRegion3D2/WorkingDoors/Node3D/Test_go_the_end_credits" method="_on_input_event"]
+[connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_exited"]
 [connection signal="area_entered" from="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_entered"]
 [connection signal="area_exited" from="NavigationRegion3D2/Kitchen/Lodówka/PickUpRange" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_pick_up_range_area_exited"]
 [connection signal="input_event" from="NavigationRegion3D2/Kitchen/Lodówka/terenDoKlikniecia" to="NavigationRegion3D2/Kitchen/Lodówka" method="_on_teren_do_klikniecia_input_event"]
