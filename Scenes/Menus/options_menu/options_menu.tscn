@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://b85invvhea2wa"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/options_menu.gd" id="1_fxulr"]
+[ext_resource type="Shader" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="1_wjtcd"]
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/master_volume_slider.gd" id="2_hafqh"]
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/sfx_volume_slider.gd" id="3_q07b1"]
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/brightness_slider.gd" id="3_xv7hx"]
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/music_volume_slider.gd" id="4_4h60w"]
+[ext_resource type="Script" path="res://Scenes/Menus/options_menu/return_to_paused_menu.gd" id="7_1q56i"]
+
+[sub_resource type="Animation" id="Animation_fbqq0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/OptionsMenu/OptionsBlur:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7drhi"]
+resource_name = "pause_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/OptionsMenu/OptionsBlur:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsjft"]
+_data = {
+"RESET": SubResource("Animation_fbqq0"),
+"pause_animation": SubResource("Animation_7drhi")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twyo4"]
+shader = ExtResource("1_wjtcd")
+shader_parameter/lod = 0.8
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -527.0
+offset_top = -340.0
+offset_right = -527.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxulr")
+
+[node name="Blur" type="AnimationPlayer" parent="."]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_dsjft")
+}
+
+[node name="OptionsBlur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_twyo4")
+layout_mode = 0
+offset_left = -43.0
+offset_top = 20.0
+offset_right = 1109.0
+offset_bottom = 662.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 161.0
+offset_right = 669.0
+offset_bottom = 493.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Brightness" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Brightness"
+
+[node name="BrightnessSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_xv7hx")
+
+[node name="MasterVolume" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_hafqh")
+
+[node name="Sfx" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sfx Volume"
+
+[node name="SfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_q07b1")
+
+[node name="MusicVolume" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_4h60w")
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 111.0
+offset_right = 751.0
+offset_bottom = 142.0
+text = "Return"
+script = ExtResource("7_1q56i")
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/BrightnessSlider" to="MarginContainer/VBoxContainer/BrightnessSlider" method="_on_value_changed"]
+[connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
