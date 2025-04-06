@@ -1,6 +1,6 @@
 extends Button
 
-@export var main_menu:PackedScene
+@onready var new_game = "res://Scenes/Locations/AlphaLocations/livingRoom.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_exit_to_menu_button_pressed() -> void:
-	get_tree().change_scene_to_packed(main_menu)
-	MainMenu.is_main_menu = true
-	GlobalSignals.is_not_paused = true
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(new_game)
