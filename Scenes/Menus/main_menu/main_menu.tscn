@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ssqfaww01xdp" path="res://Scenes/Menus/main_menu/continue_button.gd" id="2_1n54x"]
 [ext_resource type="Script" uid="uid://behyxt8168oxb" path="res://Scenes/Menus/main_menu/options_button.gd" id="3_rn2ap"]
 [ext_resource type="Script" uid="uid://cq0jv2cpx031v" path="res://Scenes/Menus/main_menu/exit_button.gd" id="4_m0rhh"]
+
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_x7u6f"]
 
 [node name="MainMenu" type="Control"]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_a2t2h"]
 [ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
 [ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
