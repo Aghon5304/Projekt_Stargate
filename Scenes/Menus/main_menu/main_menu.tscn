@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqewmmaj4vnyp"]
 
-[ext_resource type="Script" uid="uid://l6c47gr1lyjy" path="res://Scenes/Menus/main_menu/new_game_button.gd" id="1_7p7p3"]
-[ext_resource type="Script" uid="uid://dc6gd5qm28yon" path="res://Scenes/Menus/main_menu/main_menu.gd" id="1_e237b"]
-[ext_resource type="Script" uid="uid://bweo3oy7j4m77" path="res://Scenes/Menus/main_menu/continue_button.gd" id="2_1n54x"]
-[ext_resource type="Script" uid="uid://njfybqyncwr3" path="res://Scenes/Menus/main_menu/options_button.gd" id="3_rn2ap"]
-[ext_resource type="Script" uid="uid://cisgr7a3tuq5m" path="res://Scenes/Menus/main_menu/exit_button.gd" id="4_m0rhh"]
+[ext_resource type="Script" uid="uid://c2ruwnn346n7k" path="res://Scenes/Menus/main_menu/new_game_button.gd" id="1_7p7p3"]
+[ext_resource type="Script" uid="uid://bb8bupt44ed5w" path="res://Scenes/Menus/main_menu/main_menu.gd" id="1_e237b"]
+[ext_resource type="Script" uid="uid://ssqfaww01xdp" path="res://Scenes/Menus/main_menu/continue_button.gd" id="2_1n54x"]
+[ext_resource type="Script" uid="uid://behyxt8168oxb" path="res://Scenes/Menus/main_menu/options_button.gd" id="3_rn2ap"]
+[ext_resource type="Script" uid="uid://cq0jv2cpx031v" path="res://Scenes/Menus/main_menu/exit_button.gd" id="4_m0rhh"]
+
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_x7u6f"]
 
 [node name="MainMenu" type="Control"]

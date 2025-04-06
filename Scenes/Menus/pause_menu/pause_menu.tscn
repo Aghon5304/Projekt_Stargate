@@ -1,12 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://d1imfipilgb4h"]
 
-[ext_resource type="Script" uid="uid://dujw0bbrnyi34" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
-[ext_resource type="Shader" uid="uid://beeqs4ph4v7d3" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
-[ext_resource type="Script" uid="uid://cj6oidtmag8q2" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
-[ext_resource type="Script" uid="uid://njfybqyncwr3" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
+[ext_resource type="Script" uid="uid://b7aksx6v5bdnk" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
+[ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
+[ext_resource type="Script" uid="uid://bmjawkjymlfhf" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
+[ext_resource type="Script" uid="uid://behyxt8168oxb" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_a2t2h"]
-[ext_resource type="Script" uid="uid://cu3p0vq8fuq7u" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
-[ext_resource type="Script" uid="uid://bhvc4wt1iqdp0" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+[ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
+[ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
@@ -49,21 +50,23 @@ shader_parameter/lod = 0.8
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_top = 0.035
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -22.68
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vyio3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = -574.0
-offset_top = -325.0
-offset_right = 581.0
-offset_bottom = 319.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PauseMenu" type="Control" parent="MarginContainer"]
 layout_mode = 2

@@ -1,7 +1,6 @@
 extends Button
-
-@onready var new_game_scene = "res://Scenes/Locations/test_location/test_location.tscn"
-
+#tymczasowa mapa alpha :) 
+@onready var new_game_scene = "res://Scenes/Locations/AlphaLocations/livingRoom.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
