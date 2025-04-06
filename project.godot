@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Projekt-Stargate"
 run/main_scene="uid://dqewmmaj4vnyp"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"
 
 [autoload]
