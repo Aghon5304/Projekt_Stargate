@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://b85invvhea2wa"]
 
-[ext_resource type="Script" uid="uid://dmw55ucjeb8b4" path="res://Scenes/Menus/options_menu/options_menu.gd" id="1_fxulr"]
-[ext_resource type="Shader" uid="uid://beeqs4ph4v7d3" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="1_wjtcd"]
-[ext_resource type="Script" uid="uid://gn3cf7q4kd8w" path="res://Scenes/Menus/options_menu/master_volume_slider.gd" id="2_hafqh"]
-[ext_resource type="Script" uid="uid://74xs3qv2k7v8" path="res://Scenes/Menus/options_menu/sfx_volume_slider.gd" id="3_q07b1"]
-[ext_resource type="Script" uid="uid://bodk6tra3omvn" path="res://Scenes/Menus/options_menu/brightness_slider.gd" id="3_xv7hx"]
-[ext_resource type="Script" uid="uid://bab3txlslab8i" path="res://Scenes/Menus/options_menu/music_volume_slider.gd" id="4_4h60w"]
-[ext_resource type="Script" uid="uid://g0g0883ec0jc" path="res://Scenes/Menus/options_menu/return_to_paused_menu.gd" id="7_1q56i"]
+[ext_resource type="Script" uid="uid://dco7c0reed62y" path="res://Scenes/Menus/options_menu/options_menu.gd" id="1_fxulr"]
+[ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="1_wjtcd"]
+[ext_resource type="Script" uid="uid://bwifm8ho3ytx5" path="res://Scenes/Menus/options_menu/master_volume_slider.gd" id="2_hafqh"]
+[ext_resource type="Script" uid="uid://brgblhkifv43q" path="res://Scenes/Menus/options_menu/sfx_volume_slider.gd" id="3_q07b1"]
+[ext_resource type="Script" uid="uid://c0kslfb6kq7qj" path="res://Scenes/Menus/options_menu/brightness_slider.gd" id="3_xv7hx"]
+[ext_resource type="Script" uid="uid://dne0gxe4s2uyy" path="res://Scenes/Menus/options_menu/music_volume_slider.gd" id="4_4h60w"]
+[ext_resource type="Script" uid="uid://bgaq033n5d5we" path="res://Scenes/Menus/options_menu/return_to_paused_menu.gd" id="7_1q56i"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
 length = 0.001
