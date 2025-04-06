@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c022k2pduvwhn"]
 
-[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_yt4th"]
+[ext_resource type="Texture2D" uid="uid://dtvguu5mpukcu" path="res://Assets/Images/equipment_tile.png" id="1_w111f"]
 [ext_resource type="Script" uid="uid://cmh06ndmslw5a" path="res://Scenes/Menus/equipment_bar/items.gd" id="2_81wq6"]
 [ext_resource type="PackedScene" uid="uid://e8a4bbg4u8cf" path="res://Scenes/Menus/equipment_bar/item_button.tscn" id="3_gk8qt"]
 
@@ -25,7 +25,7 @@ offset_top = -128.0
 offset_right = 574.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_yt4th")
+texture = ExtResource("1_w111f")
 
 [node name="items" type="GridContainer" parent="ObramowanieEkwipunku"]
 layout_mode = 1
