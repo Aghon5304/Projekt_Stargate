@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Projekt-Stargate"
-run/main_scene="res://Scenes/Entities/Player/gracz.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="uid://dqewmmaj4vnyp"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"
 
 [autoload]
@@ -27,6 +27,11 @@ GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
 [dotnet]
 
 project/assembly_name="Projekt-Stargate"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [global_group]
 

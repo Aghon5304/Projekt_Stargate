@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://e8a4bbg4u8cf"]
 
-[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_xx3ps"]
 [ext_resource type="Script" uid="uid://dc20kwhmg0f7y" path="res://Scenes/Menus/equipment_bar/item_button.gd" id="2_gn2om"]
+[ext_resource type="Texture2D" uid="uid://dtvguu5mpukcu" path="res://Assets/Images/equipment_tile.png" id="3_3wrj7"]
 
 [node name="ItemButton" type="Button"]
 offset_right = 136.0
 offset_bottom = 136.0
 scale = Vector2(0.5, 0.5)
-icon = ExtResource("1_xx3ps")
+icon = ExtResource("3_3wrj7")
 script = ExtResource("2_gn2om")
 
 [node name="TextureRect" type="TextureRect" parent="."]

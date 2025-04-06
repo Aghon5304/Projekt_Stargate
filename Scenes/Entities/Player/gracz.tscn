@@ -30,7 +30,6 @@ mesh = SubResource("CapsuleMesh_vyoov")
 path_desired_distance = 0.1
 target_desired_distance = 0.1
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_18hyh")

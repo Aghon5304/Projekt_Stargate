@@ -1,6 +1,6 @@
 extends GridContainer
 @export var Icons : Array[Texture2D] = []
-@export	 var NoIcon : Texture2D = preload("res://Assets/Images/icon.svg")
+@export	 var NoIcon : Texture2D = null
 @onready var buttons := get_children()
 
 func _ready() -> void:

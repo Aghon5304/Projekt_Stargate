@@ -37,7 +37,7 @@ cell_height = 0.01
 [sub_resource type="BoxMesh" id="BoxMesh_xucua"]
 size = Vector3(7, 0, 8)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="gui" type="Node" parent="."]
 
