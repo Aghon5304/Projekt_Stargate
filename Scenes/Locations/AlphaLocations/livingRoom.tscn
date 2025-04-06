@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="5_rdptd"]
 [ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="6_5gcgh"]
 [ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="7_kbdc1"]
-[ext_resource type="Script" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
+[ext_resource type="Script" uid="uid://mawm45bmkhsx" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="8_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
 [ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
@@ -29,9 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="21_g34lq"]
 [ext_resource type="PackedScene" uid="uid://dy6618ucep6ps" path="res://Assets/models/kitchen/Cooker_Hood.glb" id="22_fjv2g"]
 [ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="23_wg53g"]
-[ext_resource type="Script" path="res://Scenes/Locations/AlphaLocations/lodówka.gd" id="24_p0ubc"]
+[ext_resource type="Script" uid="uid://cxntbhm1ymdls" path="res://Scenes/Locations/AlphaLocations/lodówka.gd" id="24_p0ubc"]
 [ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="24_p12un"]
-[ext_resource type="Script" path="res://Scenes/Locations/AlphaLocations/piec.gd" id="26_t1347"]
+[ext_resource type="Script" uid="uid://cd5siook8ljli" path="res://Scenes/Locations/AlphaLocations/piec.gd" id="26_t1347"]
 
 [sub_resource type="GDScript" id="GDScript_0ym7e"]
 script/source = "extends MeshInstance3D
