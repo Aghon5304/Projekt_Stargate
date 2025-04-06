@@ -1,10 +1,12 @@
 extends Control
 @onready var pause_menu: Control = $"."
 @export var option_menu: PackedScene = preload("res://Scenes/Menus/options_menu/options_menu.tscn")
-var id_not_paused = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MainMenu.is_main_menu = false
+	pauseMenu()
+	
 	pause_menu.position = Vector2(5000,5000)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -13,13 +15,14 @@ func _process(delta: float) -> void:
 		pauseMenu()
 		
 func pauseMenu():
-	if id_not_paused:
+	if GlobalSignals.is_not_paused:
+		pause_menu.hide()
 		pause_menu.position = Vector2(5000,5000)
 		Engine.time_scale = 1
 	else:
 		pause_menu.position = Vector2(0,0)
 		Engine.time_scale = 0
-	id_not_paused = !id_not_paused
+	GlobalSignals.is_not_paused = !GlobalSignals.is_not_paused
 
 
 func _on_resume_button_pressed() -> void:

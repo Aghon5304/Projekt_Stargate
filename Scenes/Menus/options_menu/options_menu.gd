@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("return_back"):
 			get_tree().change_scene_to_file(return_to_main_menu)
 	else:
-		if Input.is_action_just_pressed("close_option_menu"):
+		if Input.is_action_just_pressed("pause"):
 			options_menu.hide()

@@ -61,7 +61,8 @@ offset_top = -290.0
 offset_right = 1007.0
 offset_bottom = -185.0
 theme_override_font_sizes/font_size = 45
-text = "NAZWA NASZEJ GRY"
+text = "Project Stargate"
+editable = false
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameButton" to="MarginContainer/VBoxContainer/NewGameButton" method="_on_pressed_new_game_button"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueButton" to="MarginContainer/VBoxContainer/ContinueButton" method="_on_continue_button_pressed"]

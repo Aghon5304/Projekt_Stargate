@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dguj0veeys3bo"]
+
+[ext_resource type="Script" path="res://prologue_button.gd" id="1_h3rjh"]
+
+[node name="Prologue" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 650.0
+
+[node name="PrologueButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "Jesteś dziennikarzem śledczym, którego celem jest odnalezienie swojego współpracownika “Juniora”. Podążając za jego tropem udało ci się znaleźć mieszkanie, w którym przebywał. Wiesz, że musiał tu gdzieś ukryć kasetę, na którą nagrał swoje odkrycia i przemyślenia. Potrzebujesz tych informacji, żeby rozwikłać tajemnicę zniknięcia twojego kolegi. Powodzenia.
+Kliknij aby kontynuuować"
+autowrap_mode = 2
+script = ExtResource("1_h3rjh")
+
+[connection signal="pressed" from="MarginContainer/PrologueButton" to="MarginContainer/PrologueButton" method="_on_pressed"]
