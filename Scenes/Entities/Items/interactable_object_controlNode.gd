@@ -46,6 +46,7 @@ func _on_teren_do_klikniecia_input_event(camera: Node, event: InputEvent, event_
 			if GlobalInput.Active_Item == requiredItem or requiredItem == GlobalItems.ItemTypes.BRAK_ITEMU:
 				animationPlayer.animation_set_next("fade_to_black","fade_out_of_black")
 				animationPlayer.play("fade_to_black")
+				GlobalSignals.Item_used.emit()
 				await  animationPlayer.animation_changed
 				zagadkaControlNode.visible = true
 				zagadkaControlNode.position = Vector2(0,0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d3jtqwbc5f4r1"]
+[gd_scene load_steps=42 format=3 uid="uid://d3jtqwbc5f4r1"]
 
 [ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
@@ -29,10 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="21_g34lq"]
 [ext_resource type="PackedScene" uid="uid://t45dpkw3rm00" path="res://Scenes/Entities/Items/interactable_object_controlNode.tscn" id="21_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://dy6618ucep6ps" path="res://Assets/models/kitchen/Cooker_Hood.glb" id="22_fjv2g"]
-[ext_resource type="PackedScene" uid="uid://bpwl6prsmg73q" path="res://Scenes/Entities/Items/interactable_object_signal.tscn" id="23_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="23_wg53g"]
+[ext_resource type="PackedScene" uid="uid://dorkpn36co2tr" path="res://Scenes/Entities/Items/interactable_object_item.tscn" id="24_dpgo2"]
 [ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="24_p12un"]
-[ext_resource type="Script" uid="uid://bkjebavaik3u5" path="res://Scenes/Locations/AlphaLocations/piec.gd" id="26_t1347"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2o20f"]
 size = Vector3(1.45837, 0.0448608, 0.520508)
@@ -206,15 +205,15 @@ zagadkaControlNode = NodePath("../../../../gui/zagadka z lodówką")
 transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="Piec" type="Node3D" parent="NavigationRegion3D2/Kitchen"]
-script = ExtResource("26_t1347")
 
 [node name="Oven" parent="NavigationRegion3D2/Kitchen/Piec" instance=ExtResource("17_abfwv")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="InteractableObjectSignal" parent="NavigationRegion3D2/Kitchen/Piec" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("23_hd6kh")]
-transform = Transform3D(1.03042, 0, 0, 0, 0.610288, 0, 0, 0, 1.29921, -3.79396, 18.4756, -2.76911)
+[node name="InteractableObjectSignal2" parent="NavigationRegion3D2/Kitchen/Piec" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("24_dpgo2")]
+transform = Transform3D(1.03, 0, 0, 0, 0.61, 0, 0, 0, 1.299, -3.794, 18.476, -2.769)
 transitionScreen = NodePath("../../../../gui/Transition_screen")
 requiredItem = 1
+givenItem = 2
 
 [node name="Kitchentop_above_Fridge" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("15_dpgo2")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
@@ -256,4 +255,3 @@ mesh = SubResource("BoxMesh_5gcgh")
 [connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_static_body_3d_input_event"]
 [connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_entered"]
 [connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_exited"]
-[connection signal="item_activated" from="NavigationRegion3D2/Kitchen/Piec/InteractableObjectSignal" to="NavigationRegion3D2/Kitchen/Piec" method="_on_interactable_object_signal_item_activated"]

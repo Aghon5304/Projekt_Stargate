@@ -49,11 +49,13 @@ func _on_teren_do_klikniecia_input_event(camera: Node, event: InputEvent, event_
 					if GlobalItems.Ekwipunek[x] == requiredItem:
 						animationPlayer.play("fade_to_black")
 						await animationPlayer.animation_changed
-						GlobalItems.Ekwipunek[x] = requiredItem
+						GlobalItems.Ekwipunek[x] = givenItem
+						GlobalSignals.Item_used.emit()
 			elif requiredItem == GlobalItems.ItemTypes.BRAK_ITEMU:
 				for x in GlobalItems.Ekwipunek.size():
 					if GlobalItems.Ekwipunek[x] == -1:
 						animationPlayer.play("fade_to_black")
 						await animationPlayer.animation_changed
-						GlobalItems.Ekwipunek[x] = requiredItem
+						GlobalItems.Ekwipunek[x] = givenItem
+						GlobalSignals.Item_used.emit()
 	pass # Replace with function body.

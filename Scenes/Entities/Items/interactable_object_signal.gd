@@ -49,6 +49,8 @@ func _on_teren_do_klikniecia_input_event(camera: Node, event: InputEvent, event_
 						animationPlayer.play("fade_to_black")
 						await animationPlayer.animation_changed
 						emit_signal("item_activated")
+						GlobalSignals.Item_used.emit()
 			elif requiredItem == GlobalItems.ItemTypes.BRAK_ITEMU:
 				emit_signal("item_activated")
+				GlobalSignals.Item_used.emit()
 	pass # Replace with function body.
