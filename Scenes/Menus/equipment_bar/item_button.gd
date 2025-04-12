@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 @export var button_number : int
 #sygnał ogłaszający że nowy item został wybrany
 signal wybrano_item(position)
