@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
-@onready var main_game_mesh: MeshInstance3D = $MainGameMesh
+@onready var main_game_mesh: Node3D = $MainGameProt
 @onready var tutorial_mesh: MeshInstance3D = $TutorialMesh
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
 @onready var Gui: Node = $"../gui"
 var Speed = 5
-var tutorial = true #Okreslamy czy tutorial trwa czy sie skonczyl
+var tutorial = false #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka
 # Called when the node enters the scene tree for the first time.
 func _ready():

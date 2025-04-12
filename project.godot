@@ -28,11 +28,6 @@ GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
 
 project/assembly_name="Projekt-Stargate"
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [global_group]
 
 Cameras=""

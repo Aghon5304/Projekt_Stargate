@@ -1,8 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgmp0s0yqctpj"]
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6lim0"]
+[ext_resource type="PackedScene" uid="uid://pwlbfltib2be" path="res://Assets/models/player/protag_1.tscn" id="2_47maw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyoov"]
 albedo_color = Color(0.357764, 0.72814, 0, 1)
@@ -20,8 +19,8 @@ input_ray_pickable = false
 wall_min_slide_angle = 1.59174
 script = ExtResource("1_h75k5")
 
-[node name="MainGameMesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_6lim0")
+[node name="MainGameProt" parent="." instance=ExtResource("2_47maw")]
+transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0, 0.852, 0)
 
 [node name="TutorialMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_vyoov")
