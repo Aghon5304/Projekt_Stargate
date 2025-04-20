@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://e8r1gmqwvgso" path="res://Scenes/Entities/Test_box/test_box.gd" id="1_0wvt8"]
 [ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="1_ypdc7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ufqto"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8out"]
 albedo_texture = ExtResource("1_ypdc7")
 
 [sub_resource type="BoxMesh" id="BoxMesh_otkwc"]
 material = SubResource("StandardMaterial3D_t8out")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufqto"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt5w6"]
 size = Vector3(2, 2, 2)
@@ -21,12 +21,12 @@ script = ExtResource("1_0wvt8")
 collision_layer = 5
 collision_mask = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_ufqto")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_otkwc")
 skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ufqto")
 
 [node name="PickUpRange" type="Area3D" parent="."]
 collision_layer = 2

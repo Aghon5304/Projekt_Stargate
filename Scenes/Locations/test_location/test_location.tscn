@@ -45,7 +45,7 @@ material = SubResource("StandardMaterial3D_dpt41")
 [node name="level" parent="." instance=ExtResource("1_5fyyu")]
 
 [node name="Gracz" parent="." instance=ExtResource("2_1krmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43429, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35728, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_8hy5b")]
 
@@ -55,13 +55,14 @@ environment = SubResource("Environment_pf2r1")
 [node name="Equipment" parent="." instance=ExtResource("4_xw5i1")]
 
 [node name="Navigation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
 
 [node name="AllTextBoxes" type="NavigationRegion3D" parent="Navigation"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 5.96046e-08, 0)
 navigation_mesh = SubResource("NavigationMesh_1gyjd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/AllTextBoxes"]
-transform = Transform3D(4.97187, 0, 0, 0, 1, 0, 0, 0, 4.97187, 0, 0, 0)
+transform = Transform3D(4.97187, 0, 0, 0, 1, 0, 0, 0, 4.97187, 0, -5.96046e-08, 0)
 mesh = SubResource("PlaneMesh_8hhku")
 
 [node name="TestChangeMesh" type="Area3D" parent="."]
