@@ -17,7 +17,7 @@ func _process(delta):
 	if(navigationAgent.is_navigation_finished()):
 		GlobalSignals.Item_used.emit()
 		return
-	
+		
 	moveToPoint(delta, Speed)
 	pass
 

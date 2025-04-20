@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbxtanw413p1d"]
+[gd_scene load_steps=10 format=3 uid="uid://dbxtanw413p1d"]
 
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="1_wm6k2"]
 [ext_resource type="PackedScene" uid="uid://8ipmn4ni3j6m" path="res://Scenes/Maps/test_map/test_map_2.tscn" id="2_4lutg"]
 [ext_resource type="PackedScene" uid="uid://dhcypk5xdp3rx" path="res://Scenes/Entities/Test_box/TestBox.tscn" id="3_4lutg"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_u6mv3"]
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="5_fx8ox"]
+[ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="6_s670h"]
+[ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="7_5jkgb"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_u6mv3"]
 vertices = PackedVector3Array(-4.47187, 0.5, -4.47187, -4.47187, 0.5, 4.52813, 4.52813, 0.5, 4.52813, 4.52813, 0.5, -4.47187)
@@ -59,3 +62,17 @@ visible = false
 mesh = SubResource("PlaneMesh_rrmq2")
 
 [node name="Equipment" parent="." instance=ExtResource("4_u6mv3")]
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("5_fx8ox")]
+
+[node name="zagadka z lodówką" parent="gui" instance=ExtResource("6_s670h")]
+anchors_preset = -1
+anchor_right = 28.75
+anchor_bottom = 16.2
+offset_left = 3000.0
+offset_right = -28968.0
+offset_bottom = -9849.6
+
+[node name="PauseMenu" parent="gui" instance=ExtResource("7_5jkgb")]

@@ -9,14 +9,14 @@ data = PackedVector3Array(0.9683, 0.0412, -2.3215, 1.0637, 0.0412, -4.7627, 0.96
 [sub_resource type="BoxShape3D" id="BoxShape3D_4f38a"]
 size = Vector3(2, 4.5, 2.5)
 
-[node name="Node3D" type="Node3D"]
+[node name="Door" type="Node3D"]
 script = ExtResource("1_7jd47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 5
 collision_mask = 5
 
-[node name="meshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(-3.0598e-08, 0.7, -3.0598e-08, 0, -3.0598e-08, -0.7, -0.7, -3.0598e-08, 1.33748e-15, 0, 0, 0)
 mesh = ExtResource("3_15ps2")
 skeleton = NodePath("")
@@ -35,5 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33674, 0)
 shape = SubResource("BoxShape3D_4f38a")
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
-[connection signal="area_entered" from="PickUpRange" to="PickUpRange" method="_on_area_entered"]
-[connection signal="area_exited" from="PickUpRange" to="PickUpRange" method="_on_area_exited"]
+[connection signal="area_entered" from="PickUpRange" to="." method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="PickUpRange" to="." method="_on_pick_up_range_area_exited"]
