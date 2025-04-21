@@ -65,3 +65,7 @@ func _input(_event):
 func update_appearance():
 		main_game_mesh.visible = not tutorial
 		tutorial_mesh.visible = tutorial
+
+
+func _on_monologue_object_signal_bohater_monolog(dialog: String) -> void:
+	pass # Replace with function body.
