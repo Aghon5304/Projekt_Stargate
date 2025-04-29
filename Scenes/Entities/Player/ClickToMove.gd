@@ -13,7 +13,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	if(navigationAgent.is_navigation_finished()):
 		GlobalSignals.Item_used.emit()
 		return
@@ -23,14 +23,18 @@ func _process(delta):
 
 
 func moveToPoint(_delta, speed):
-	var targetPos = navigationAgent.target_position
+	var targetPos = navigationAgent.get_next_path_position()
+	#if position == targetPos:
+		#navigationAgent.get_
 	var direction = global_position.direction_to(targetPos)
 	faceDirection(targetPos)
 	velocity = direction * speed
+	#if navigationAgent.target_position.is_equal_approx(targetPos):
 	move_and_slide()
 
 func faceDirection(direction):
 	look_at(Vector3(direction.x, global_position.y, direction.z), Vector3.UP)
+	pass
 
 #sprawdzanie czy nie zostało coś wciśnięte
 func _input(_event):
@@ -60,6 +64,7 @@ func _input(_event):
 			var result = space.intersect_ray(rayQuery)
 			if (result != {} ):
 				navigationAgent.target_position = result.position
+				navigationAgent.target_position.y = position.y
 			GlobalInput.Last_clicked = null
 
 func update_appearance():
