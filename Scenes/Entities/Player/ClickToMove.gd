@@ -14,6 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if(navigationAgent.is_navigation_finished()):
+		GlobalSignals.Item_used.emit()
+		return
 	
 	moveToPoint(delta, Speed)
 	pass
