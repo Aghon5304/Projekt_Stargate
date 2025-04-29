@@ -14,9 +14,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if(navigationAgent.is_navigation_finished()):
-		GlobalSignals.Item_used.emit()
-		return
 	
 	moveToPoint(delta, Speed)
 	pass
@@ -73,4 +70,9 @@ func update_appearance():
 
 
 func _on_monologue_object_signal_bohater_monolog(dialog: String) -> void:
+	pass # Replace with function body.
+
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	GlobalSignals.Item_used.emit()
 	pass # Replace with function body.
