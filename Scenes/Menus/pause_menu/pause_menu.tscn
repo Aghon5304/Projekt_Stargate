@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b7aksx6v5bdnk" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
 [ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
-[ext_resource type="Script" uid="uid://bmjawkjymlfhf" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
-[ext_resource type="Script" uid="uid://behyxt8168oxb" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
+[ext_resource type="Script" uid="uid://cj6oidtmag8q2" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
+[ext_resource type="Script" uid="uid://njfybqyncwr3" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_a2t2h"]
 [ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
-[ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+[ext_resource type="Script" uid="uid://bhvc4wt1iqdp0" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
