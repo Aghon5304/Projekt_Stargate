@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://kk431jncnnvy"]
+
+[ext_resource type="Script" uid="uid://igi3gwhg72f0" path="res://Scenes/Menus/notebook/notatnik.gd" id="1_45cfe"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_45cfe"]
+
+[node name="Notatnik" type="Control"]
+layout_mode = 3
+anchor_left = 0.03
+anchor_right = 0.459
+anchor_bottom = 0.76
+offset_left = -34.56
+offset_right = -528.768
+offset_bottom = -492.48
+script = ExtResource("1_45cfe")
+
+[node name="PageContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = -4.0
+offset_right = 941.0
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageTexture" type="TextureRect" parent="PageContainer"]
+layout_mode = 2
+texture = SubResource("CanvasTexture_45cfe")
+stretch_mode = 1
+
+[node name="PageEdit" type="TextEdit" parent="PageContainer"]
+layout_mode = 2
+placeholder_text = "Moje notatki:"
+wrap_mode = 1
+
+[node name="NextPageBtn" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 429.0
+offset_right = 939.0
+offset_bottom = 493.0
+
+[node name="PrevPageBtn" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 430.0
+offset_right = 529.0
+offset_bottom = 490.0
+
+[node name="PageNumber" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 453.0
+offset_right = 831.0
+offset_bottom = 491.0
+
+[node name="PageTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 408.0
+offset_right = 459.0
+offset_bottom = 493.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_45cfe")
+stretch_mode = 1
+
+[connection signal="gui_input" from="PageTexture" to="." method="_on_page_texture_gui_input"]
