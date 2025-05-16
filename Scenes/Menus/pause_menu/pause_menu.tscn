@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1imfipilgb4h"]
+[gd_scene load_steps=15 format=3 uid="uid://d1imfipilgb4h"]
 
 [ext_resource type="Script" uid="uid://b7aksx6v5bdnk" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
 [ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
 [ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
+[ext_resource type="Script" uid="uid://ihwep0ukleu7" path="res://Scenes/Menus/pause_menu/save_button.gd" id="6_y5j25"]
+[ext_resource type="Script" uid="uid://b82kt43lopboa" path="res://Scenes/Menus/pause_menu/load_button.gd" id="7_b3na1"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
 length = 0.001
@@ -107,6 +109,18 @@ text = "Options"
 script = ExtResource("4_acaqb")
 options_menu = ExtResource("5_a2t2h")
 
+[node name="SaveButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Save Game"
+script = ExtResource("6_y5j25")
+
+[node name="LoadButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+text = "Load Game"
+script = ExtResource("7_b3na1")
+
 [node name="ExitToMenuButton" type="Button" parent="MarginContainer/PauseMenu/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 60)
 layout_mode = 2
@@ -122,5 +136,7 @@ script = ExtResource("5_djvnr")
 
 [connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/SaveButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/LoadButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/LoadButton" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitToMenuButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitToMenuButton" method="_on_exit_to_menu_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitGameButton" to="MarginContainer/PauseMenu/MarginContainer/VBoxContainer/ExitGameButton" method="_on_exit_game_button_pressed"]

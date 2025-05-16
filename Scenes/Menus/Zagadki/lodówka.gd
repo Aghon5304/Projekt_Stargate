@@ -5,7 +5,7 @@ var ItemId = GlobalItems.ItemTypes.KLUCZ_W_LODZIE
 var lodowka_bez_lodu :Texture2D = preload("res://Assets/Images/Fridge_Inside_Empty.png")
 var kliknięto := false
 func _ready() -> void:
-	if GlobalGameProgress.progress["klucz_w_lodówce"] == true:
+	if GlobalGameProgress.Progress["klucz_w_lodówce"] == true:
 		texture_rect.texture = lodowka_bez_lodu
 
 func _on_pressed() -> void:
@@ -20,7 +20,7 @@ func _on_pressed() -> void:
 				await transition_screen.animation_changed
 				texture_rect.texture = lodowka_bez_lodu
 				self.visible = false
-				GlobalZagadkiState.klucz_w_lodówce = true
+				GlobalGameProgress.Progress["klucz_w_lodówce"] = true
 				GlobalSignals.Item_used.emit()
 				return
 	#jeżeli masz pełny ekwipunkek to wypisuje wiadomość
