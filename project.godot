@@ -23,6 +23,7 @@ GlobalSignals="*res://Scenes/Global/Signals/Global_signals.gd"
 GlobalGameProgress="*res://Scenes/Global/Game_Progress/Global_game_progress.gd"
 MainMenu="*res://Scenes/Menus/main_menu/main_menu.gd"
 GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
+GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
 
 [dotnet]
 

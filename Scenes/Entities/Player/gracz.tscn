@@ -27,7 +27,9 @@ transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0
 mesh = SubResource("CapsuleMesh_vyoov")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 1.3
 target_desired_distance = 0.1
+path_postprocessing = 1
 avoidance_enabled = true
 debug_enabled = true
 

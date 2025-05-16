@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
 @onready var Gui: Node = $"../gui"
 var Speed = 5
+var end_position :Vector3
 var tutorial = false #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka
 # Called when the node enters the scene tree for the first time.
@@ -14,19 +15,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
+	if navigationAgent.is_navigation_finished():
+		faceDirection(end_position)
 	moveToPoint(delta, Speed)
 	pass
 
 
 func moveToPoint(_delta, speed):
 	var targetPos = navigationAgent.get_next_path_position()
-	#if position == targetPos:
-		#navigationAgent.get_
 	var direction = global_position.direction_to(targetPos)
 	faceDirection(targetPos)
 	velocity = direction * speed
-	#if navigationAgent.target_position.is_equal_approx(targetPos):
 	move_and_slide()
 
 func faceDirection(direction):
@@ -63,6 +62,7 @@ func _input(_event):
 				navigationAgent.target_position = result.position
 				navigationAgent.target_position.y = position.y
 			GlobalInput.Last_clicked = null
+			
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial
