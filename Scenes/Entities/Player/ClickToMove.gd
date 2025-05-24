@@ -15,9 +15,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if navigationAgent.is_navigation_finished():
-		faceDirection(end_position)
-	moveToPoint(delta, Speed)
+	if !navigationAgent.is_navigation_finished():
+		moveToPoint(delta, Speed)
 	pass
 
 
@@ -46,7 +45,7 @@ func _input(_event):
 			var camera = get_tree().get_nodes_in_group("Cameras")[0]
 			# sprawdzenie pozycji myszki na ekranie i wystrzelenie rayu o długości 100 w stronę myszki
 			var mousePos = get_viewport().get_mouse_position()
-			var rayLength = 100
+			var rayLength = 10000
 			var from = camera.project_ray_origin(mousePos)
 			var to = from + camera.project_ray_normal(mousePos) * rayLength
 			var space = get_world_3d().direct_space_state

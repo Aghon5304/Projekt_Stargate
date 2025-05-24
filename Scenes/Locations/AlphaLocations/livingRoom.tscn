@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d3jtqwbc5f4r1"]
+[gd_scene load_steps=40 format=3 uid="uid://d3jtqwbc5f4r1"]
 
 [ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
@@ -18,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="10_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="11_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://yy0vd016xecy" path="res://Assets/models/livingRoom/Wind_Machine.glb" id="12_2o20f"]
-[ext_resource type="PackedScene" uid="uid://cotl0q37fo3iv" path="res://Assets/models/livingRoom/Dresser.glb" id="13_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://ceapin468e1vd" path="res://Assets/models/kitchen/Fridge.glb" id="14_ql7q7"]
 [ext_resource type="PackedScene" uid="uid://0hgnlmika5yy" path="res://Assets/models/kitchen/Kitchentop_above_Fridge.glb" id="15_dpgo2"]
 [ext_resource type="PackedScene" uid="uid://bptcvksgi6ybj" path="res://Assets/models/kitchen/Kitchentop.glb" id="16_yoj2b"]
 [ext_resource type="PackedScene" uid="uid://di56sbmlfn4ne" path="res://Assets/models/kitchen/Oven.glb" id="17_abfwv"]
 [ext_resource type="PackedScene" uid="uid://d2j7e2sjv878e" path="res://Assets/models/kitchen/Dishrack.glb" id="18_jfri7"]
+[ext_resource type="PackedScene" uid="uid://gtf1pkepluap" path="res://Scenes/Maps/alphaMaps/dresser.tscn" id="19_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://gqr3r5vlxgu4" path="res://Assets/models/kitchen/Countertop_sink.glb" id="19_mvcnl"]
 [ext_resource type="PackedScene" uid="uid://bqp0yhsvbkql7" path="res://Assets/models/kitchen/Countertop_by_Oven.glb" id="20_v4mej"]
 [ext_resource type="PackedScene" uid="uid://8spcs4tp4qn5" path="res://Assets/models/kitchen/Countertop_by_Fridge.glb" id="21_g34lq"]
@@ -32,9 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://x5kflk7uqah7" path="res://Assets/models/kitchen/Pan.glb" id="23_wg53g"]
 [ext_resource type="PackedScene" uid="uid://dorkpn36co2tr" path="res://Scenes/Entities/Items/interactable_object_item.tscn" id="24_dpgo2"]
 [ext_resource type="PackedScene" uid="uid://wgt3vja34xxd" path="res://Assets/models/kitchen/Pot.glb" id="24_p12un"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2o20f"]
-size = Vector3(1.45837, 0.0448608, 0.520508)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lhkf3"]
 
@@ -46,22 +43,20 @@ background_mode = 2
 sky = SubResource("Sky_acxqq")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_acxqq"]
-vertices = PackedVector3Array(3.25854, 1.53216, -3.57524, 4.03854, 1.52216, -3.05524, 4.03854, 1.54216, -3.57524, 1.95854, 0.0121568, -0.19524, 1.95854, 0.0121568, 1.88476, 2.21854, 0.0121568, -0.45524, -3.76145, 0.0121568, -2.27524, -3.76145, 0.0121568, -0.97524, -3.24145, 0.0121568, -1.75524, 1.43855, 0.0121568, -1.23524, 3.25854, 0.0121568, -1.49524, 4.03854, 0.0121568, -1.49524, 2.73854, 0.0121568, -2.53524, -0.901455, 0.0121568, -1.75524, -0.641455, 0.0121568, -0.97524, 3.51855, 1.37216, 1.36476, 4.29854, 1.51216, 1.88476, 4.29854, 1.37216, 0.84476)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(6, 8, 7), PackedInt32Array(5, 3, 9), PackedInt32Array(12, 11, 10), PackedInt32Array(5, 9, 10), PackedInt32Array(10, 9, 12), PackedInt32Array(8, 6, 13), PackedInt32Array(13, 6, 12), PackedInt32Array(14, 13, 9), PackedInt32Array(9, 13, 12), PackedInt32Array(17, 16, 15)]
+vertices = PackedVector3Array(3.24724, 1.50634, -3.52328, 4.02724, 1.49634, -3.00328, 4.02724, 1.53634, -3.52328, -3.77276, 0.0163364, -2.48328, -3.77276, 0.0163364, -1.18328, -3.25276, 0.0163364, -1.70328, 1.94724, 0.0163364, 0.116722, 1.68724, 0.0163364, 1.93672, 2.20724, 0.0163364, 1.93672, 2.20724, 0.0163364, -0.403278, 1.42724, 0.0163364, -1.18328, 1.94724, 0.0163364, -2.74328, 3.50724, 0.0163364, -1.44328, 3.50724, 0.0163364, -1.96328, -4.29276, 0.0163364, 0.376722, -4.29276, 0.0163364, 1.93672, -0.652761, 0.0163364, 1.93672, -0.652761, 0.0163364, 0.376722, 3.50724, 1.37634, 1.41672, 4.28724, 1.50634, 1.93672, 4.28724, 1.37634, 0.896722, -4.29276, 0.0163364, 3.49672, -4.29276, 0.0163364, 4.53672, -0.652761, 0.0163364, 4.53672, -0.652761, 0.0163364, 3.49672, 0.90724, 0.0163364, 3.75672, 0.90724, 0.0163364, 4.53672, 4.54724, 0.0163364, 4.53672, 4.54724, 0.0163364, 3.49672)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(5, 3, 10), PackedInt32Array(10, 3, 11), PackedInt32Array(9, 6, 10), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 10), PackedInt32Array(13, 10, 11), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(20, 19, 18), PackedInt32Array(24, 23, 21), PackedInt32Array(21, 23, 22), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28)]
 cell_size = 0.26
 cell_height = 0.01
+vertices_per_polygon = 10.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2o20f"]
+size = Vector3(1.45837, 0.0448608, 0.520508)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hd6kh"]
 size = Vector3(6.66547, 57.9855, 16.8447)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ql7q7"]
 size = Vector3(39.2349, 19.7744, 24.1862)
-
-[sub_resource type="BoxMesh" id="BoxMesh_rdptd"]
-size = Vector3(5, 0, 7)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5gcgh"]
-size = Vector3(6, 0, 4)
 
 [node name="Node3D" type="Node3D"]
 
@@ -81,32 +76,6 @@ offset_bottom = 0.000976563
 
 [node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
 
-[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="LivingRoom"]
-input_ray_pickable = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LivingRoom/StaticBody3D"]
-transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, 0, -1.1365e-07, -8.70213, 6.7178e-07, -2.6, 3.80382e-07, -8.76044, 19.8397, 0.415334)
-mesh = ExtResource("2_5gcgh")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LivingRoom/StaticBody3D"]
-transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, -2.02266e-18, -1.13651e-07, -8.70213, 6.71751e-07, -2.6, 3.80382e-07, -7.49022, 18.2927, 0.56225)
-shape = SubResource("BoxShape3D_2o20f")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="LivingRoom"]
-input_ray_pickable = false
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="LivingRoom/StaticBody3D2"]
-transform = Transform3D(2.3301e-07, -2.6, 3.80382e-07, 0, -1.1365e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.48274, 19.8371, 3.50633)
-mesh = ExtResource("2_5gcgh")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LivingRoom/StaticBody3D2"]
-transform = Transform3D(2.32981e-07, -2.6, 3.80382e-07, -1.69822e-18, -1.13652e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.40329, 18.4167, 2.67724)
-shape = SubResource("BoxShape3D_2o20f")
-
 [node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
 floor_max_angle = 0.1309
@@ -117,6 +86,33 @@ environment = SubResource("Environment_cfqtg")
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, 18.1216, 0.917964)
 navigation_mesh = SubResource("NavigationMesh_acxqq")
+
+[node name="LivingRoom" parent="NavigationRegion3D2" instance=ExtResource("1_w2ghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.1216, -0.917964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/LivingRoom"]
+input_ray_pickable = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2/LivingRoom/StaticBody3D"]
+transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, 0, -1.1365e-07, -8.70213, 6.7178e-07, -2.6, 3.80382e-07, -8.76044, 19.8397, 0.415334)
+mesh = ExtResource("2_5gcgh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/LivingRoom/StaticBody3D"]
+transform = Transform3D(-4.449, -3.92589e-07, 5.74361e-14, -2.02266e-18, -1.13651e-07, -8.70213, 6.71751e-07, -2.6, 3.80382e-07, -7.49022, 18.2927, 0.56225)
+shape = SubResource("BoxShape3D_2o20f")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="NavigationRegion3D2/LivingRoom"]
+input_ray_pickable = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2/LivingRoom/StaticBody3D2"]
+transform = Transform3D(2.3301e-07, -2.6, 3.80382e-07, 0, -1.1365e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.48274, 19.8371, 3.50633)
+mesh = ExtResource("2_5gcgh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/LivingRoom/StaticBody3D2"]
+transform = Transform3D(2.32981e-07, -2.6, 3.80382e-07, -1.69822e-18, -1.13652e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.40329, 18.4167, 2.67724)
+shape = SubResource("BoxShape3D_2o20f")
 
 [node name="WorkingDoors" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.1216, -0.917964)
@@ -189,8 +185,8 @@ transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 [node name="Wind_Machine" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("12_2o20f")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Dresser" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("13_hd6kh")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+[node name="Dresser" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("19_hd6kh")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0.35568)
 
 [node name="Kitchen" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2234, -0.917964)
@@ -243,15 +239,13 @@ transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 [node name="Pot" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("24_p12un")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5862, 0, -1.09953)
-visible = false
-mesh = SubResource("BoxMesh_rdptd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58715, 0, -2.61524)
-visible = false
-mesh = SubResource("BoxMesh_5gcgh")
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0347099, 0, -0.295524)
+height = 4.91
+vertices = PackedVector3Array(0.21116, 0, -0.535007, 1.34127, 0, -0.53577, 1.41131, 0, 3.91187, -0.389976, 0, 4.14165, -0.0680437, 0, -0.425931)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+use_3d_avoidance = true
 
 [connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_static_body_3d_input_event"]
 [connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_entered"]

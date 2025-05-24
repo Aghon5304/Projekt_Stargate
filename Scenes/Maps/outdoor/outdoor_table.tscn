@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bub6nxgs3h8wp"]
+
+[ext_resource type="PackedScene" uid="uid://7r3ajv7217uu" path="res://Assets/models/Dekoracje_Outdoor/Outdoor_Table.glb" id="1_ax7pk"]
+
+[node name="Outdoor_Table" instance=ExtResource("1_ax7pk")]
+
+[node name="Cube_031" parent="." index="0"]
+transform = Transform3D(0, 0.0494866, 0, -0.502585, 0, 0, 0, 0, 0.650456, 0, 0, 0)

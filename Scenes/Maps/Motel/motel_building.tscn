@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://csix8v2puu5d7"]
+
+[ext_resource type="PackedScene" uid="uid://cp8kwhf6q0g2v" path="res://Assets/models/Motel_Exports/Motel_Building.glb" id="1_vnpaa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etn06"]
+size = Vector3(0.777344, 1, 0.745605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnpaa"]
+size = Vector3(0.479492, 0.274414, 0.769287)
+
+[node name="Motel_Building" instance=ExtResource("1_vnpaa")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(13.5355, 0, 0, 0, 13.5355, 0, 0, 0, 41.9974, -9.18154, 1.61924, 11.1402)
+shape = SubResource("BoxShape3D_etn06")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(13.5355, 0, 0, 0, 13.5355, 0, 0, 0, 41.9974, -3.15256, 1.61924, 5.79823)
+shape = SubResource("BoxShape3D_vnpaa")
+
+[node name="Plane_020" parent="." index="2"]
+transform = Transform3D(13.5355, 0, 0, 0, 13.5355, 0, 0, 0, 41.9974, 0, 0, 0)

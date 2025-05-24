@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://px0usv0vec7e"]
+
+[ext_resource type="PackedScene" uid="uid://ck0gbrqldjpbo" path="res://Assets/models/Motel_Exports/Station_Wagon.glb" id="1_ex2ma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ex2ma"]
+size = Vector3(2.18158, 0.648438, 1)
+
+[node name="Station_Wagon" instance=ExtResource("1_ex2ma")]
+
+[node name="Circle_004" parent="." index="0"]
+transform = Transform3D(-0.149088, -2.42895e-08, -2.42895e-08, 2.42895e-08, 0, -0.149088, 2.42895e-08, -0.149088, 3.95727e-15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602203, 0.175781, 0.409611)
+shape = SubResource("BoxShape3D_ex2ma")
