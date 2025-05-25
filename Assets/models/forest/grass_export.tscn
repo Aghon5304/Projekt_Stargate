@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvvtyo0guxrll"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kn6niuhfhl" path="res://Assets/models/forest/Grass Export.glb" id="1_tb3mm"]
+
+[node name="Grass Export" instance=ExtResource("1_tb3mm")]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b1hplai8cmd0w"]
+
+[node name="WejścieMap" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, -2.72848e-12, 2.72968e-23, 2.72848e-12, 1, -1.00044e-11, 0, 1.00044e-11, 1, -6.07331, 24.9331, 6.12506)
+light_energy = 4.159
+omni_range = 34.5848

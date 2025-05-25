@@ -12,6 +12,7 @@ func _ready() -> void:
 	Icons[GlobalItems.ItemTypes.NOTATNIK] = preload("res://Assets/Images/icon.svg")
 	Icons[GlobalItems.ItemTypes.KLUCZ_W_LODZIE] = preload("res://Assets/Images/Key_in_Ice_cursor.png")
 	Icons[GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU] = preload("res://Assets/Images/Key_v1_cursor.png")
+	Icons[GlobalItems.ItemTypes.PRZEPUSTKA] = preload("res://Assets/Images/Access_Pass.png")
 	#przy starcie sceny wypełnia gui ekwipunkek porpawnymi ikonami
 		
 	for x in buttons.size():
