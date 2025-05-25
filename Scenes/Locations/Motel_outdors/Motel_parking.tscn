@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqdavcxs67suo"]
+[gd_scene load_steps=30 format=3 uid="uid://dqdavcxs67suo"]
 
 [ext_resource type="PackedScene" uid="uid://btxn66a1fgreq" path="res://Scenes/Maps/Motel/motel_outside_asphalt_parking.tscn" id="1_2fkvq"]
 [ext_resource type="PackedScene" uid="uid://csix8v2puu5d7" path="res://Scenes/Maps/Motel/motel_building.tscn" id="2_i86vt"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://ce14hik43sg5g" path="res://Scenes/Locations/Motel_outdors/go_to_reception.gd" id="9_nugkr"]
 [ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="9_s7k8s"]
 [ext_resource type="Script" uid="uid://b6l3dx6unud2d" path="res://Scenes/Locations/Motel_outdors/camera_controller.gd" id="10_mfy0j"]
-[ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="10_r0nqb"]
 [ext_resource type="Script" uid="uid://dl0mtkqchmvxk" path="res://Scenes/Locations/Motel_outdors/right_zone.gd" id="10_ukx7g"]
 [ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="11_5u7sm"]
 [ext_resource type="Script" uid="uid://c772hwl2inj21" path="res://Scenes/Locations/Motel_outdors/front_zone.gd" id="11_es54b"]
@@ -203,14 +202,6 @@ fov = 79.5031
 [node name="gui" type="Node" parent="."]
 
 [node name="Transition_screen" parent="gui" instance=ExtResource("9_ka1d6")]
-
-[node name="zagadka z lodówką" parent="gui" instance=ExtResource("10_r0nqb")]
-anchors_preset = -1
-anchor_left = 2.604
-anchor_right = 3.604
-offset_left = 0.191895
-offset_right = 0.191895
-offset_bottom = 0.000976563
 
 [node name="PauseMenu" parent="gui" instance=ExtResource("11_5u7sm")]
 

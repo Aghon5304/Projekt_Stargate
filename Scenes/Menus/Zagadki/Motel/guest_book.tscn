@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://c322ks187lnpm"]
+
+[ext_resource type="Script" uid="uid://ci7b741a2g7wu" path="res://Scenes/Menus/Zagadki/Motel/button.gd" id="1_uwh0n"]
+
+[node name="Guest_book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwh0n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.148
+offset_bottom = 0.0960007
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Lista gości"
+horizontal_alignment = 1
+
+[node name="namesLeft" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.191
+anchor_right = 0.359
+anchor_bottom = 1.0
+offset_left = 0.199997
+offset_top = 0.231987
+offset_right = -0.568024
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "1. James Carter
+2. Emily Brooks 
+3. Vincent Black
+4. Samantha Smith
+5. Michael Tanner
+6. Alyssa Hayes
+7. Alex Reed
+8. Rachel Morgan"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.097
+anchor_bottom = 0.127
+offset_right = 0.255997
+offset_bottom = -0.296005
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
