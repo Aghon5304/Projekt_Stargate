@@ -2,6 +2,8 @@ extends Node
 # zapis wszystkich zagadek i elementów które wymagają zapisania stanu
 var Progress :={
 	"klucz_w_lodówce" = false,
+	"Motel_pierwsza_pani_od_fishcoli" = false,
+	"Motel_dano_fishcole" = false,
 }
 
 # enum wszystkich lokacji

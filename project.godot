@@ -29,11 +29,15 @@ GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"Recepcjoniskta": "res://Dialogic/Characters/Motel/Recepcjoniskta.dch",
 "guard_character": "res://Dialogic/Characters/guard_character.dch",
 "main_character": "res://Dialogic/Characters/main_character.dch",
 "woman_renting_room_nr_2": "res://Dialogic/Characters/Motel/woman_renting_room_nr_2.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
+"Reception": "res://Dialogic/Timelines/Motel/Reception.dtl"
+}
 layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"

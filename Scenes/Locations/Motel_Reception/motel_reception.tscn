@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc6miig13xvfv"]
+[gd_scene load_steps=37 format=3 uid="uid://cc6miig13xvfv"]
 
 [ext_resource type="Script" uid="uid://thl8421ilmux" path="res://Scenes/Locations/Motel_Reception/left_zone.gd" id="1_gdqk3"]
 [ext_resource type="PackedScene" uid="uid://dwg37og6x8t2c" path="res://Scenes/Maps/Motel_reception/reception_desk.tscn" id="2_jjjcb"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="20_eccyy"]
 [ext_resource type="PackedScene" uid="uid://t45dpkw3rm00" path="res://Scenes/Entities/Items/interactable_object_controlNode.tscn" id="21_eccyy"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="21_j81a4"]
+[ext_resource type="Script" uid="uid://dmu2fdcggc22v" path="res://Scenes/Locations/Motel_Reception/receptionist.gd" id="25_1dgym"]
+[ext_resource type="Texture2D" uid="uid://cu1d38vt061tu" path="res://Assets/Images/Portraits/recepcjonistka.png" id="27_lcfuc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_modci"]
 vertices = PackedVector3Array(0.0490117, -2.28147, -5.14612, -1.20099, -2.28147, -5.14612, -1.20099, -2.28147, -3.39612, 0.0490117, -2.28147, -2.14612, 0.0490117, -2.28147, 3.35388, -0.450988, -2.28147, 3.85388, 3.79901, -2.28147, 3.85388, -1.95099, -2.28147, -3.14612, -2.20099, -2.28147, -1.14612, 3.79901, -2.28147, 0.353883, 2.29901, -2.28147, 0.103883, 0.0490117, -2.28147, 0.853883, -4.20099, -2.28147, -0.646117, -4.20099, -2.28147, 0.603883, 2.29901, -2.28147, -1.89612, -3.95099, -1.03147, -2.64612, -3.70099, -1.03147, -1.64612, -2.95099, -1.03147, -2.14612, -2.95099, -1.03147, -2.64612, 3.29901, -1.78147, -1.14612, 3.29901, -1.78147, -0.646117, 3.79901, -1.28147, -0.646117, 3.79901, -1.28147, -1.89612)
@@ -155,7 +157,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29723, -0.917111, 4.203)
 
 [node name="GuestListBook" type="Sprite3D" parent="NavigationRegion3D/objects"]
-transform = Transform3D(-0.109119, -0.0187298, 0.143219, 2.91567e-09, 0.139801, 0.0767506, -0.063, 0.0324409, -0.248062, -3.10581, -0.821288, 1.71933)
+transform = Transform3D(-0.109119, -0.0187298, 0.143219, 2.91567e-09, 0.139801, 0.0767506, -0.063, 0.0324409, -0.248062, -3.57794, -0.861893, 1.62173)
 texture = ExtResource("20_1jy1j")
 
 [node name="Node3D" parent="NavigationRegion3D/objects/GuestListBook" node_paths=PackedStringArray("zagadkaControlNode", "transitionScreen") instance=ExtResource("21_eccyy")]
@@ -167,8 +169,10 @@ transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="Receptionist" type="StaticBody3D" parent="NavigationRegion3D/npc"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.12141, -1.84147, 2.54446)
+script = ExtResource("25_1dgym")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/npc/Receptionist"]
+visible = false
 shape = SubResource("CapsuleShape3D_gdqk3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/npc/Receptionist"]
@@ -177,7 +181,12 @@ mesh = SubResource("CapsuleMesh_modci")
 
 [node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/npc/Receptionist"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.54546, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-texture = ExtResource("15_u8oeg")
+pixel_size = 0.0005
+texture = ExtResource("27_lcfuc")
+
+[node name="InteractableObjectSignal" parent="NavigationRegion3D/npc/Receptionist" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("10_j81a4")]
+transform = Transform3D(1.30005, 0, 0, 0, 0.780691, 0, 0, 0, 1.27787, -0.45861, -0.258646, -0.0375426)
+transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="exit" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846304, 0, -2.94618)
@@ -199,8 +208,9 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.3
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -0.733691, -1.75164, -2.41157)
 
 [node name="ReceptionKeyCamera" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.35173, -0.45336, 2.79716)
+transform = Transform3D(-0.99923, -2.67755e-09, -0.0392423, -0.00127371, 0.999473, 0.0324324, 0.0392216, 0.0324574, -0.998703, -2.35173, -0.45336, 2.79716)
 
 [connection signal="pressed" from="gui/button/ReceptionKeysZoomOut" to="gui/button/ReceptionKeysZoomOut" method="_on_reception_keys_zoom_out_pressed"]
 [connection signal="area_entered" from="NavigationRegion3D/Areas/leave_zone" to="NavigationRegion3D/Areas/leave_zone" method="_on_area_entered"]
 [connection signal="item_activated" from="NavigationRegion3D/objects/Reception_Key_Shelf/InteractableObjectSignal" to="NavigationRegion3D/objects/Reception_Key_Shelf" method="_on_interactable_object_signal_item_activated"]
+[connection signal="item_activated" from="NavigationRegion3D/npc/Receptionist/InteractableObjectSignal" to="NavigationRegion3D/npc/Receptionist" method="_on_interactable_object_signal_item_activated"]

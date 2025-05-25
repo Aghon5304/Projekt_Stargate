@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dqdavcxs67suo"]
+[gd_scene load_steps=31 format=3 uid="uid://dqdavcxs67suo"]
 
 [ext_resource type="PackedScene" uid="uid://btxn66a1fgreq" path="res://Scenes/Maps/Motel/motel_outside_asphalt_parking.tscn" id="1_2fkvq"]
 [ext_resource type="PackedScene" uid="uid://csix8v2puu5d7" path="res://Scenes/Maps/Motel/motel_building.tscn" id="2_i86vt"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dl0mtkqchmvxk" path="res://Scenes/Locations/Motel_outdors/right_zone.gd" id="10_ukx7g"]
 [ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="11_5u7sm"]
 [ext_resource type="Script" uid="uid://c772hwl2inj21" path="res://Scenes/Locations/Motel_outdors/front_zone.gd" id="11_es54b"]
+[ext_resource type="Script" uid="uid://dkmsqatxmx281" path="res://Scenes/Locations/Motel_outdors/npc_renting_nr__2.gd" id="11_nugkr"]
 [ext_resource type="Script" uid="uid://66wgwxu3ch6d" path="res://Scenes/Locations/Motel_outdors/reset_right_zone.gd" id="12_6660k"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="12_mfy0j"]
 
@@ -40,13 +41,13 @@ size = Vector3(13.1086, 4.09521, 29.3921)
 size = Vector3(5.15283, 4.29578, 22.9771)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_es54b"]
-size = Vector3(12.9116, 4.54871, 8.04993)
+size = Vector3(13.6223, 1.47113, 8.79471)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6660k"]
-size = Vector3(13.22, 3.97461, 1)
+size = Vector3(13.8629, 3.97461, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s7k8s"]
-size = Vector3(1, 4.89783, 3.63867)
+size = Vector3(1, 4.89783, 8.41858)
 
 [node name="MotelParking" type="Node3D"]
 
@@ -119,19 +120,24 @@ use_3d_avoidance = true
 
 [node name="NPC" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="NPC renting nr_ 2" type="StaticBody3D" parent="NavigationRegion3D/NPC"]
+[node name="NPC renting nr_ 7" type="StaticBody3D" parent="NavigationRegion3D/NPC"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5183, 1.25257, 1.61652)
+script = ExtResource("11_nugkr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 7"]
 shape = SubResource("CapsuleShape3D_nefqt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 7"]
 visible = false
 mesh = SubResource("CapsuleMesh_aya7p")
 
-[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 2"]
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/NPC/NPC renting nr_ 7"]
 transform = Transform3D(0.279975, 0.336497, 0.93499, -0.038176, 1.5079, -0.21578, -0.959248, 0.0382021, 0.281483, 0, 0, 0)
 texture = ExtResource("9_s7k8s")
+
+[node name="InteractableObjectSignal" parent="NavigationRegion3D/NPC/NPC renting nr_ 7" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
+transform = Transform3D(0.611252, 0, 0, 0, 0.565275, 0, 0, 0, 1.56015, -0.154555, -0.258646, -0.0375426)
+transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="Areas" type="Node3D" parent="NavigationRegion3D"]
 
@@ -150,7 +156,7 @@ collision_mask = 2
 script = ExtResource("10_ukx7g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Areas/right_zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3606, 1.64789, 18.1741)
+transform = Transform3D(1, 0, 0, 0, 0.392806, 0, 0, 0, 1, -22.3606, 0.714423, 18.1741)
 shape = SubResource("BoxShape3D_ukx7g")
 
 [node name="front_zone" type="Area3D" parent="NavigationRegion3D/Areas"]
@@ -159,7 +165,7 @@ collision_mask = 2
 script = ExtResource("11_es54b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Areas/front_zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4839, 1.75867, 2.6498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1285, 0.219881, 2.27741)
 shape = SubResource("BoxShape3D_es54b")
 
 [node name="reset_right_zone" type="Area3D" parent="NavigationRegion3D/Areas"]
@@ -168,11 +174,11 @@ collision_mask = 2
 script = ExtResource("12_6660k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Areas/reset_right_zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.52, 2.14899, -1.92879)
+transform = Transform3D(1, 0, 0, 0, 0.54972, 0, 0, 0, 1, -18.1985, -0.257172, -2.64694)
 shape = SubResource("BoxShape3D_6660k")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/Areas/reset_right_zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5061, 1.44849, 0.0866941)
+transform = Transform3D(1, 0, 0, 0, 0.54972, 0, 0, 0, 1, -10.7801, -0.541496, 1.09372)
 shape = SubResource("BoxShape3D_s7k8s")
 
 [node name="Gracz" parent="." instance=ExtResource("8_snuut")]
@@ -211,6 +217,7 @@ fov = 79.5031
 transform = Transform3D(1, 0, 0, 0, -0.977101, 0.212775, 0, -0.212775, -0.977101, -11.098, 27.9873, -23.6318)
 
 [connection signal="item_activated" from="NavigationRegion3D/Objects/Reception/Reception_door" to="NavigationRegion3D/Objects/Reception" method="_on_reception_door_item_activated"]
+[connection signal="item_activated" from="NavigationRegion3D/NPC/NPC renting nr_ 7/InteractableObjectSignal" to="NavigationRegion3D/NPC/NPC renting nr_ 7" method="_on_interactable_object_signal_item_activated"]
 [connection signal="area_entered" from="NavigationRegion3D/Areas/left_zone" to="NavigationRegion3D/Areas/left_zone" method="_on_area_entered"]
 [connection signal="area_exited" from="NavigationRegion3D/Areas/left_zone" to="NavigationRegion3D/Areas/left_zone" method="_on_area_exited"]
 [connection signal="area_entered" from="NavigationRegion3D/Areas/right_zone" to="NavigationRegion3D/Areas/right_zone" method="_on_area_entered"]

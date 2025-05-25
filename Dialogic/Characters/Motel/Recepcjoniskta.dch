@@ -10,13 +10,23 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "temp_portrait",
+&"default_portrait": "recepcjonistka",
 &"description": "",
-&"display_name": "woman_renting_room_nr_2",
+&"display_name": "Recepcjonistka",
 &"mirror": false,
-&"nicknames": ["Kobieta"],
+&"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"recepcjonistka": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Portraits/recepcjonistka.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
 "temp_portrait": {
 "export_overrides": {
 "image": "\"res://Assets/Images/Portraits/temp_portrait.svg\""

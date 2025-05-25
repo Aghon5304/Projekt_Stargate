@@ -7,7 +7,8 @@ enum ItemTypes {
 	LATARKA,
 	PISTOLET,
 	NOTATNIK,
-	PISTOLET_Z_LATARKA
+	PISTOLET_Z_LATARKA,
+	FISHCOLA
 }
 #[item nr 1 , item nr 2 , wynik]
 var Crafting := {
