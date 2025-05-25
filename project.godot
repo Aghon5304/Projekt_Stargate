@@ -36,6 +36,8 @@ directories/dch_directory={
 "woman_renting_room_nr_2": "res://Dialogic/Characters/Motel/woman_renting_room_nr_2.dch"
 }
 directories/dtl_directory={
+"Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
+"Reception": "res://Dialogic/Timelines/Motel/Reception.dtl",
 "after_walkie-talkie_puzzle": "res://Dialogic/Timelines/after_walkie-talkie_puzzle.dtl",
 "burker_dors_interaction": "res://Dialogic/Timelines/burker_dors_interaction.dtl",
 "graffiti_interaction": "res://Dialogic/Timelines/graffiti_interaction.dtl",
@@ -43,8 +45,6 @@ directories/dtl_directory={
 "living_room_first_hint": "res://Dialogic/Timelines/living_room_first_hint.dtl",
 "thrash_pickup": "res://Dialogic/Timelines/thrash_pickup.dtl",
 "walkie_talkie": "res://Dialogic/Timelines/walkie_talkie.dtl"
-"Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
-"Reception": "res://Dialogic/Timelines/Motel/Reception.dtl"
 }
 layout/style_directory={}
 layout/style_list=[]
