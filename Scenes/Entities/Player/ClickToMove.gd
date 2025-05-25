@@ -13,6 +13,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta: float) -> void:
 	if !navigationAgent.is_navigation_finished():
 		moveToPoint(delta, Speed)

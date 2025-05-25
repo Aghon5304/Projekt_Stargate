@@ -37,9 +37,11 @@ func _on_pick_up_range_area_entered(area: Area3D) -> void:
 	#oczekiwanie na sygnał określający wejście w zasięg przedmiotu który zmienia zmienną
 	if area.is_in_group("Player"):
 		playerInRange = true
+	print(playerInRange)
 	pass
 
 func _on_pick_up_range_area_exited(area: Area3D) -> void:
 	if area.is_in_group("Player"):
 		playerInRange = false
+	print(playerInRange)
 	pass

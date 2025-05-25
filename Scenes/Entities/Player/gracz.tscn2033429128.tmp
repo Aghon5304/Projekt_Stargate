@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgmp0s0yqctpj"]
+
+[ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6lim0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyoov"]
+albedo_color = Color(0.357764, 0.72814, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vyoov"]
+material = SubResource("StandardMaterial3D_vyoov")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Gracz" type="CharacterBody3D"]
+input_ray_pickable = false
+wall_min_slide_angle = 1.59174
+script = ExtResource("1_h75k5")
+
+[node name="MainGameMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6lim0")
+
+[node name="TutorialMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vyoov")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_18hyh")
+
+[node name="PlayerArea" type="Area3D" parent="." groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea"]
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, 0)
+shape = SubResource("BoxShape3D_2sxh3")
