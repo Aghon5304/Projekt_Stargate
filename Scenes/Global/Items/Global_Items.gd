@@ -13,6 +13,7 @@ enum ItemTypes {
 	KAWALEK_ZLOMU,
 	ZEPSUTA_KROTKOFALOWKA,
 	DZIALAJACA_KROTKOFALOWKA
+	FISHCOLA
 }
 #[item nr 1 , item nr 2 , wynik]
 var Crafting := {

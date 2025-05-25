@@ -1,0 +1,6 @@
+main_character: Dzień dobry
+Recepcjoniskta: Co potrzeba? Tylko szybko zaraz zamykam.
+- Chciał bym się dowiedzieć czy mój kolega przebywa w waszym motelu
+	Recepcjoniskta: Coś się chyba pan pomylił. Tu jest recepcja, nie ośrodek informacji. Nocleg? To proszę do mnie, a jak nie to tam są drzwi.
+- Czy mógł bym zobaczyć listę gości?
+	main_character: Jak cię to tak bardzo obchodzi to tam lista leży chcesz to patrz, to nie jest jakaś tajemnica.

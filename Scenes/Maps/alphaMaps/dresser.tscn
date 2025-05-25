@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gtf1pkepluap"]
+
+[ext_resource type="PackedScene" uid="uid://cotl0q37fo3iv" path="res://Assets/models/livingRoom/Dresser.glb" id="1_e74ra"]
+
+[node name="Dresser" instance=ExtResource("1_e74ra")]
+
+[node name="CollisionShape3D" parent="Wardrobe_001/StaticBody3D" index="0"]
+disabled = true

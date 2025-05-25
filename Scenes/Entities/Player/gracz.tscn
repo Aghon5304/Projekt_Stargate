@@ -13,7 +13,7 @@ material = SubResource("StandardMaterial3D_vyoov")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18hyh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sxh3"]
-size = Vector3(1.5, 1, 1.5)
+size = Vector3(1.5, 1, 1.22064)
 
 [node name="Gracz" type="CharacterBody3D"]
 input_ray_pickable = false
@@ -21,15 +21,18 @@ wall_min_slide_angle = 1.59174
 script = ExtResource("1_h75k5")
 
 [node name="MainGameProt" parent="." instance=ExtResource("2_47maw")]
-transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0, 0.852, 0)
+transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0, 1.03574, 0)
 
 [node name="TutorialMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_vyoov")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 1.3
 target_desired_distance = 0.1
 avoidance_enabled = true
-debug_enabled = true
+height = 2.0
+radius = 1.0
+use_3d_avoidance = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.878419, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -41,7 +44,7 @@ collision_mask = 2
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea"]
-transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, 0)
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, -0.0352478)
 shape = SubResource("BoxShape3D_2sxh3")
 
 [node name="Label3D" type="Label3D" parent="."]

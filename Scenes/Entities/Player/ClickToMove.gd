@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var navigationAgent : NavigationAgent3D = $NavigationAgent3D
 @onready var Gui: Node = $"../gui"
 var Speed = 5
+var end_position :Vector3
 var tutorial = false #Okreslamy czy tutorial trwa czy sie skonczyl
 #i na jego podstawie ustawiamy skorke ziomka
 # Called when the node enters the scene tree for the first time.
@@ -13,19 +14,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
-	moveToPoint(delta, Speed)
+	if !navigationAgent.is_navigation_finished():
+		moveToPoint(delta, Speed)
 	pass
 
 
 func moveToPoint(_delta, speed):
 	var targetPos = navigationAgent.get_next_path_position()
-	#if position == targetPos:
-		#navigationAgent.get_
 	var direction = global_position.direction_to(targetPos)
 	faceDirection(targetPos)
 	velocity = direction * speed
-	#if navigationAgent.target_position.is_equal_approx(targetPos):
 	move_and_slide()
 
 func faceDirection(direction):
@@ -46,7 +44,7 @@ func _input(_event):
 			var camera = get_tree().get_nodes_in_group("Cameras")[0]
 			# sprawdzenie pozycji myszki na ekranie i wystrzelenie rayu o długości 100 w stronę myszki
 			var mousePos = get_viewport().get_mouse_position()
-			var rayLength = 100
+			var rayLength = 10000
 			var from = camera.project_ray_origin(mousePos)
 			var to = from + camera.project_ray_normal(mousePos) * rayLength
 			var space = get_world_3d().direct_space_state
@@ -62,6 +60,7 @@ func _input(_event):
 				navigationAgent.target_position = result.position
 				navigationAgent.target_position.y = position.y
 			GlobalInput.Last_clicked = null
+			
 
 func update_appearance():
 		main_game_mesh.visible = not tutorial
