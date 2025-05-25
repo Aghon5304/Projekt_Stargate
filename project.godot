@@ -29,12 +29,20 @@ GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"Michael": "res://Dialogic/Timelines/Michael.dch",
 "Recepcjoniskta": "res://Dialogic/Characters/Motel/Recepcjoniskta.dch",
 "guard_character": "res://Dialogic/Characters/guard_character.dch",
 "main_character": "res://Dialogic/Characters/main_character.dch",
 "woman_renting_room_nr_2": "res://Dialogic/Characters/Motel/woman_renting_room_nr_2.dch"
 }
 directories/dtl_directory={
+"after_walkie-talkie_puzzle": "res://Dialogic/Timelines/after_walkie-talkie_puzzle.dtl",
+"burker_dors_interaction": "res://Dialogic/Timelines/burker_dors_interaction.dtl",
+"graffiti_interaction": "res://Dialogic/Timelines/graffiti_interaction.dtl",
+"guard_timeline": "res://Dialogic/Timelines/guard_timeline.dtl",
+"living_room_first_hint": "res://Dialogic/Timelines/living_room_first_hint.dtl",
+"thrash_pickup": "res://Dialogic/Timelines/thrash_pickup.dtl",
+"walkie_talkie": "res://Dialogic/Timelines/walkie_talkie.dtl"
 "Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
 "Reception": "res://Dialogic/Timelines/Motel/Reception.dtl"
 }
