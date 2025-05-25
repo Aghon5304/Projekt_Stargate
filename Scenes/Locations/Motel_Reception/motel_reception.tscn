@@ -1,0 +1,163 @@
+[gd_scene load_steps=30 format=3 uid="uid://cc6miig13xvfv"]
+
+[ext_resource type="Script" uid="uid://thl8421ilmux" path="res://Scenes/Locations/Motel_Reception/left_zone.gd" id="1_gdqk3"]
+[ext_resource type="PackedScene" uid="uid://dwg37og6x8t2c" path="res://Scenes/Maps/Motel_reception/reception_desk.tscn" id="2_jjjcb"]
+[ext_resource type="PackedScene" uid="uid://ckn0l52aj437c" path="res://Scenes/Maps/Motel_reception/reception_lamp.tscn" id="4_jjjcb"]
+[ext_resource type="PackedScene" uid="uid://b7npqkhrmp6wa" path="res://Scenes/Maps/Motel_reception/potted_plant_l.tscn" id="5_6qqse"]
+[ext_resource type="PackedScene" uid="uid://cdtsmnatkc8tg" path="res://Scenes/Maps/Motel_reception/reception_shell_half.tscn" id="5_ef6fs"]
+[ext_resource type="PackedScene" uid="uid://be2kex7xbqpxr" path="res://Scenes/Maps/Motel_reception/reception_sofa.tscn" id="6_d0c65"]
+[ext_resource type="PackedScene" uid="uid://c3q3h4ds6my6j" path="res://Scenes/Maps/Motel_reception/reception_key_shelf.tscn" id="6_ef6fs"]
+[ext_resource type="PackedScene" uid="uid://dlmd4ot6k3iex" path="res://Scenes/Maps/Motel_reception/keys/motel_key_1.tscn" id="7_d0c65"]
+[ext_resource type="PackedScene" uid="uid://dey7xoa31tbij" path="res://Scenes/Maps/Motel_reception/keys/motel_key_2.tscn" id="8_oontd"]
+[ext_resource type="PackedScene" uid="uid://bg2aoe0hvo8ag" path="res://Scenes/Maps/Motel_reception/keys/motel_key_3.tscn" id="9_u8oeg"]
+[ext_resource type="PackedScene" uid="uid://8n5hpqb6pcan" path="res://Scenes/Maps/Motel_reception/keys/motel_key_4.tscn" id="10_gdqk3"]
+[ext_resource type="PackedScene" uid="uid://db0h847a2grwd" path="res://Scenes/Maps/Motel_reception/keys/motel_key_5.tscn" id="11_modci"]
+[ext_resource type="PackedScene" uid="uid://ch0jtrxoe0t36" path="res://Scenes/Maps/Motel_reception/keys/motel_key_6.tscn" id="12_jcow2"]
+[ext_resource type="PackedScene" uid="uid://no1veawnsjq2" path="res://Scenes/Maps/Motel_reception/keys/motel_key_7.tscn" id="13_vdywj"]
+[ext_resource type="PackedScene" uid="uid://ba116xxqfxjs4" path="res://Scenes/Maps/Motel_reception/keys/motel_key_8.tscn" id="14_w0m8q"]
+[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="15_u8oeg"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="17_modci"]
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="18_bqrp6"]
+[ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="19_1jy1j"]
+[ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="20_eccyy"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="21_j81a4"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_modci"]
+vertices = PackedVector3Array(0.0490117, -2.28147, -5.14612, -1.20099, -2.28147, -5.14612, -1.20099, -2.28147, -3.39612, 0.0490117, -2.28147, -2.14612, 0.0490117, -2.28147, 3.35388, -0.450988, -2.28147, 3.85388, 3.79901, -2.28147, 3.85388, -1.95099, -2.28147, -3.14612, -2.20099, -2.28147, -1.14612, 3.79901, -2.28147, 0.353883, 2.29901, -2.28147, 0.103883, 0.0490117, -2.28147, 0.853883, -4.20099, -2.28147, -0.646117, -4.20099, -2.28147, 0.603883, 2.29901, -2.28147, -1.89612, -3.95099, -1.03147, -2.64612, -3.70099, -1.03147, -1.64612, -2.95099, -1.03147, -2.14612, -2.95099, -1.03147, -2.64612, 3.29901, -1.78147, -1.14612, 3.29901, -1.78147, -0.646117, 3.79901, -1.28147, -0.646117, 3.79901, -1.28147, -1.89612)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(2, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 4), PackedInt32Array(4, 9, 6), PackedInt32Array(13, 12, 8), PackedInt32Array(14, 10, 3), PackedInt32Array(3, 10, 11), PackedInt32Array(3, 11, 8), PackedInt32Array(8, 11, 13), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_modci"]
+size = Vector3(2.04303, 1, 1.93152)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdqk3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nugkr"]
+albedo_texture = ExtResource("15_u8oeg")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_modci"]
+material = SubResource("StandardMaterial3D_nugkr")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ef6fs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0c65"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w2bp7"]
+material = SubResource("StandardMaterial3D_d0c65")
+
+[node name="MotelReception" type="Node3D"]
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("18_bqrp6")]
+
+[node name="zagadka z lodówką" parent="gui" instance=ExtResource("19_1jy1j")]
+anchors_preset = -1
+anchor_left = 2.604
+anchor_right = 3.604
+offset_left = 0.191895
+offset_right = 0.191895
+offset_bottom = 0.000976563
+
+[node name="PauseMenu" parent="gui" instance=ExtResource("20_eccyy")]
+
+[node name="Equipment" parent="." instance=ExtResource("21_j81a4")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_modci")
+
+[node name="Areas" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="leave_zone" type="Area3D" parent="NavigationRegion3D/Areas"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gdqk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Areas/leave_zone"]
+transform = Transform3D(0.99982, -0.0132007, -0.0136531, 0.0131549, 0.999908, -0.00344161, 0.0136973, 0.00326138, 0.999901, -0.501266, -2.28112, -4.66745)
+shape = SubResource("BoxShape3D_modci")
+
+[node name="objects" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Reception_Desk" parent="NavigationRegion3D/objects" instance=ExtResource("2_jjjcb")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.21817, -2.1445, 1.76024)
+
+[node name="ReceptionLamp" parent="NavigationRegion3D/objects" instance=ExtResource("4_jjjcb")]
+transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, -1.03971, -1.01548, 1.68589)
+
+[node name="Reception_Shell_Half" parent="NavigationRegion3D/objects" instance=ExtResource("5_ef6fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9541, -1.49907, -2.48765)
+
+[node name="Reception_Key_Shelf" parent="NavigationRegion3D/objects" instance=ExtResource("6_ef6fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20559, -0.465399, 4.27733)
+
+[node name="Potted_Plant_L" parent="NavigationRegion3D/objects" instance=ExtResource("5_6qqse")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.44467, -1.57164, -2.70989)
+
+[node name="Reception_Sofa" parent="NavigationRegion3D/objects" instance=ExtResource("6_d0c65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58882, -1.64223, -1.24485)
+
+[node name="Reception_Sofa2" parent="NavigationRegion3D/objects" instance=ExtResource("6_d0c65")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.75173, -1.64223, -2.99057)
+
+[node name="keys" type="Node3D" parent="NavigationRegion3D/objects"]
+
+[node name="Motel_Key_1" parent="NavigationRegion3D/objects/keys" instance=ExtResource("7_d0c65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24921, -0.0756927, 4.20207)
+
+[node name="Motel_Key_2" parent="NavigationRegion3D/objects/keys" instance=ExtResource("8_oontd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93107, -0.0728869, 4.2046)
+
+[node name="Motel_Key_3" parent="NavigationRegion3D/objects/keys" instance=ExtResource("9_u8oeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62739, -0.0817337, 4.17975)
+
+[node name="Motel_Key_4" parent="NavigationRegion3D/objects/keys" instance=ExtResource("10_gdqk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29973, -0.0765991, 4.18837)
+
+[node name="Motel_Key_5" parent="NavigationRegion3D/objects/keys" instance=ExtResource("11_modci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24333, -0.907339, 4.17328)
+
+[node name="Motel_Key_6" parent="NavigationRegion3D/objects/keys" instance=ExtResource("12_jcow2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93639, -0.914689, 4.21688)
+
+[node name="Motel_Key_7" parent="NavigationRegion3D/objects/keys" instance=ExtResource("13_vdywj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62264, -0.915192, 4.19313)
+
+[node name="Motel_Key_8" parent="NavigationRegion3D/objects/keys" instance=ExtResource("14_w0m8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29723, -0.917111, 4.203)
+
+[node name="npc" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="NPC renting nr_ 2" type="StaticBody3D" parent="NavigationRegion3D/npc"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.12141, -1.84147, 2.54446)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/npc/NPC renting nr_ 2"]
+shape = SubResource("CapsuleShape3D_gdqk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/npc/NPC renting nr_ 2"]
+visible = false
+mesh = SubResource("CapsuleMesh_modci")
+
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/npc/NPC renting nr_ 2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.54546, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("15_u8oeg")
+
+[node name="exit" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846304, 0, -2.94618)
+physics_material_override = SubResource("PhysicsMaterial_ef6fs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483602, -2.73678, -1.69994)
+mesh = SubResource("PlaneMesh_w2bp7")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
+transform = Transform3D(-0.779298, -0.375738, 0.501514, 0.0103829, 0.792453, 0.609845, -0.626568, 0.480458, -0.613655, 2.92796, 0.776418, -2.74113)
+fov = 91.6395
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.37956, -0.611293)
+
+[node name="Gracz" parent="." instance=ExtResource("17_modci")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -0.733691, -1.75164, -2.41157)
+
+[connection signal="area_entered" from="NavigationRegion3D/Areas/leave_zone" to="NavigationRegion3D/Areas/leave_zone" method="_on_area_entered"]

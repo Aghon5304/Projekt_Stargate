@@ -23,3 +23,4 @@ func Load_game_state():
 	GlobalGameProgress.Current_Location = config_file.get_value("World","Location", GlobalGameProgress.Location.Lokacja_testowa)
 	GlobalItems.Ekwipunek = config_file.get_value("Player","Items",[-1,-1,-1,-1,-1,-1,-1,-1])
 	GlobalGameProgress.Progress = config_file.get_value("GameState","Progress",null)
+	
