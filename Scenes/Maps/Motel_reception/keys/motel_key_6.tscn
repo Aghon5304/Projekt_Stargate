@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch0jtrxoe0t36"]
+
+[ext_resource type="PackedScene" uid="uid://csqusu00gx3js" path="res://Assets/models/Motel_Reception/Keys/Motel_Key_6.glb" id="1_vwabt"]
+
+[node name="Motel_Key_6" instance=ExtResource("1_vwabt")]
+
+[node name="Plane_014" parent="." index="0"]
+transform = Transform3D(-0.0140823, 0.00601946, -0.0373365, -0.102051, -0.001664, 0.004954, -0.00271684, 0.0313031, 0.00744299, 0, 0, 0)

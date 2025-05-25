@@ -1,0 +1,14 @@
+main_character: Dzień dobry
+woman_renting_room_nr_2: Dzień dobry, w czym mogę pomóc?
+label Pytania
+- Czy kojaży pani jakiś palących gości w tym motelu
+	woman_renting_room_nr_2: Czy kojażę? Oczywiście! Tego smrodu nie da się tak łatwo uniknąć. Udają że to nie oni ale ja dobże wiem kto pali. To ten ci z 2,6 i 7. 
+- mam dla ciebie fishcolę | [if GlobalGameProgress.Progress.get("Motel_pierwsza_pani_od_fishcoli") ==true and GlobalItems.Ekwipunek.has(GlobalItems.ItemTypes.FISHCOLA) ==true] [else="hide"]
+	woman_renting_room_nr_2: O bardzo dziękuje. Jak teraz sobie myślę to chyba widziałam kogoś kto niedawno przyjechał i tak jak ja lubi fishcolę. Ostatnio wnosił całą paletę fishcoli przed moim mieszkaniem numer 7. O tam przy końcu.
+	[signal arg="dano_fishcole"]
+- Szukam mojego przyjaciela. Powinien niedawno temu tu przyjechać | [if GlobalGameProgress.Progress.get("Motel_pierwsza_pani_od_fishcoli") !=true] [else="hide"]
+	woman_renting_room_nr_2: Przepraszam ale nie jestem w stanie teraz myśleć, ktoś wykupił całą fishcolę w okolicy, ale powodzenia w szukaniu.
+	[signal arg="Pierwsza_rozmowa"]
+- Do widzenia
+	[end_timeline]
+jump Kobieta z Fish Colą/Pytania

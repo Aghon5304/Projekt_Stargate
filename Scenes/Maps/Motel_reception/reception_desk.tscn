@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwg37og6x8t2c"]
+
+[ext_resource type="PackedScene" uid="uid://dgq3y4cmds5r5" path="res://Assets/models/Motel_Reception/Reception_Desk.glb" id="1_wnc0x"]
+
+[node name="Reception_Desk" instance=ExtResource("1_wnc0x")]
+
+[node name="Cube_044" parent="." index="0"]
+transform = Transform3D(0, 0, -0.728049, 0, 0.872057, 0, 0.671899, 0, 0, 0, 0, 0)
+layers = 5

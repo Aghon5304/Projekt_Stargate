@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6n4xi6rwg7tv"]
+
+[ext_resource type="PackedScene" uid="uid://cdm26d4hiityr" path="res://Assets/models/Motel_Exports/Juniors_Car.glb" id="1_0gofr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gofr"]
+size = Vector3(2.33459, 2.03345, 1.30554)
+
+[node name="Juniors_Car" instance=ExtResource("1_0gofr")]
+
+[node name="Cube_008" parent="." index="0"]
+transform = Transform3D(1.03313, 0, 0, 0, 0.832167, 0, 0, 0, 1.03313, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.81859, 0.0144653, -0.0892334, -0.869025)
+shape = SubResource("BoxShape3D_0gofr")

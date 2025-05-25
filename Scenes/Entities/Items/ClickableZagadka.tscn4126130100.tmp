@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://t45dpkw3rm00"]
+
+[ext_resource type="Script" uid="uid://cxntbhm1ymdls" path="res://Scenes/Entities/Items/Zagadka.gd" id="1_ijsly"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwy5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ym7e"]
+size = Vector3(1.43066, 1.03198, 1.39087)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ijsly")
+
+[node name="terenDoKlikniecia" type="StaticBody3D" parent="."]
+transform = Transform3D(1.11697, 0, 0, 0, 2.28809, 0, 0, 0, 1, 0, 1.13191, 0)
+collision_layer = 5
+collision_mask = 5
+
+[node name="terenDoKlikniecia" type="CollisionShape3D" parent="terenDoKlikniecia"]
+shape = SubResource("BoxShape3D_lwy5w")
+
+[node name="PickUpRange" type="Area3D" parent="."]
+transform = Transform3D(1.77751, 2.9906e-13, 0, 2.83542e-12, 1.45135, -1.33785e-11, 0, 0, 1.83873, 0.508273, 2.32762, 0.485645)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpRange"]
+transform = Transform3D(1, 0, -4.98955e-29, 0, 1, -1.37911e-16, 0, 0, 1.00004, -0.254831, -1.14579, -0.305895)
+shape = SubResource("BoxShape3D_0ym7e")
+
+[connection signal="input_event" from="terenDoKlikniecia" to="." method="_on_teren_do_klikniecia_input_event"]
+[connection signal="area_entered" from="PickUpRange" to="." method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="PickUpRange" to="." method="_on_pick_up_range_area_exited"]

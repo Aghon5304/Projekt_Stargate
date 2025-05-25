@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dorkpn36co2tr"]
+
+[ext_resource type="Script" uid="uid://bpn7faigjxm13" path="res://Scenes/Entities/Items/interactable_object_item.gd" id="1_y4js7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ym7e"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_61dv4"]
+
+[node name="InteractableObjectSignal" type="Node3D"]
+script = ExtResource("1_y4js7")
+
+[node name="PickUpRange" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201163, 1.34195, 0.130076)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpRange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.288944, -1.6298, -0.210045)
+shape = SubResource("BoxShape3D_0ym7e")
+
+[node name="terenDoKlikniecia" type="StaticBody3D" parent="."]
+transform = Transform3D(1.11697, 0, 0, 0, 2.28809, 0, 0, 0, 1, 0, 1.13191, 0)
+collision_layer = 5
+collision_mask = 5
+
+[node name="terenDoKlikniecia" type="CollisionShape3D" parent="terenDoKlikniecia"]
+shape = SubResource("BoxShape3D_61dv4")
+
+[connection signal="area_entered" from="PickUpRange" to="." method="_on_pick_up_range_area_entered"]
+[connection signal="area_exited" from="PickUpRange" to="." method="_on_pick_up_range_area_exited"]
+[connection signal="input_event" from="terenDoKlikniecia" to="." method="_on_teren_do_klikniecia_input_event"]
+[connection signal="mouse_entered" from="terenDoKlikniecia" to="." method="_on_teren_do_klikniecia_mouse_entered"]
+[connection signal="mouse_exited" from="terenDoKlikniecia" to="." method="_on_teren_do_klikniecia_mouse_exited"]

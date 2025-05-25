@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3q3h4ds6my6j"]
+
+[ext_resource type="PackedScene" uid="uid://v2kf6m2mjacl" path="res://Assets/models/Motel_Reception/Reception_Key_Shelf.glb" id="1_kvmxu"]
+
+[node name="Reception_Key_Shelf" instance=ExtResource("1_kvmxu")]
+
+[node name="Cube_045" parent="." index="0"]
+transform = Transform3D(1.4347, -7.9268e-08, 0, 1.25425e-07, 0.90672, 0, 0, 0, -0.10333, 0, 0, 0)

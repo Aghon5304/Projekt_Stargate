@@ -1,12 +1,14 @@
 extends Node
 var Ekwipunek := [-1,-1,-1,-1,-1,-1,-1,-1]
 enum ItemTypes {
+	BRAK_ITEMU,
 	KLUCZ_W_LODZIE,
 	KLUCZ_WYJETY_Z_LODU,
 	LATARKA,
 	PISTOLET,
 	NOTATNIK,
-	PISTOLET_Z_LATARKA
+	PISTOLET_Z_LATARKA,
+	FISHCOLA
 }
 #[item nr 1 , item nr 2 , wynik]
 var Crafting := {
