@@ -1,5 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://d1imfipilgb4h"]
 
+
 [ext_resource type="Script" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
 [ext_resource type="Shader" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
 [ext_resource type="Script" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
