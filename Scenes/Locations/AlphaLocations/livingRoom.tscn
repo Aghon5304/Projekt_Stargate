@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="5_rdptd"]
 [ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="6_5gcgh"]
 [ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="7_kbdc1"]
-[ext_resource type="Script" uid="uid://mawm45bmkhsx" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
+[ext_resource type="Script" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="8_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
 [ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
@@ -62,6 +62,8 @@ size = Vector3(39.2349, 19.7744, 24.1862)
 
 [node name="gui" type="Node" parent="."]
 
+[node name="PauseMenu" parent="gui" instance=ExtResource("3_xkked")]
+
 [node name="Transition_screen" parent="gui" instance=ExtResource("1_0ym7e")]
 
 [node name="zagadka z lodówką" parent="gui" instance=ExtResource("2_lwy5w")]
@@ -71,8 +73,6 @@ anchor_right = 3.604
 offset_left = 0.191895
 offset_right = 0.191895
 offset_bottom = 0.000976563
-
-[node name="PauseMenu" parent="gui" instance=ExtResource("3_xkked")]
 
 [node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
 

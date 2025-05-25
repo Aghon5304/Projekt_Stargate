@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://d1imfipilgb4h"]
 
-[ext_resource type="Script" uid="uid://b7aksx6v5bdnk" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
-[ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
-[ext_resource type="Script" uid="uid://bmjawkjymlfhf" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
-[ext_resource type="Script" uid="uid://behyxt8168oxb" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/pause.gd" id="1_vyio3"]
+[ext_resource type="Shader" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="2_o55xs"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/resume_button.gd" id="3_bpdg5"]
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu/options_button.gd" id="4_acaqb"]
 [ext_resource type="PackedScene" uid="uid://b85invvhea2wa" path="res://Scenes/Menus/options_menu/options_menu.tscn" id="5_a2t2h"]
-[ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
-[ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
 [ext_resource type="Script" uid="uid://ihwep0ukleu7" path="res://Scenes/Menus/pause_menu/save_button.gd" id="6_y5j25"]
 [ext_resource type="Script" uid="uid://b82kt43lopboa" path="res://Scenes/Menus/pause_menu/load_button.gd" id="7_b3na1"]
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dsjft"]
 _data = {
-&"RESET": SubResource("Animation_fbqq0"),
-&"pause_animation": SubResource("Animation_7drhi")
+"RESET": SubResource("Animation_fbqq0"),
+"pause_animation": SubResource("Animation_7drhi")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twyo4"]
@@ -75,7 +75,7 @@ layout_mode = 2
 [node name="Blur" type="AnimationPlayer" parent="MarginContainer/PauseMenu"]
 root_node = NodePath("../../..")
 libraries = {
-&"": SubResource("AnimationLibrary_dsjft")
+"": SubResource("AnimationLibrary_dsjft")
 }
 
 [node name="PauseBlur" type="ColorRect" parent="MarginContainer/PauseMenu"]

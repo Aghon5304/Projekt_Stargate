@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		
 func pauseMenu():
 	if GlobalSignals.is_not_paused:
-		pause_menu.hide()
+		pause_menu.show()
 		pause_menu.position = Vector2(5000,5000)
 		Engine.time_scale = 1
 	else:
