@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://caalwv30j14my"]
+
+[ext_resource type="PackedScene" uid="uid://cx0moxjwkkgbf" path="res://Assets/models/Motel_Exports/Ice_Machine.glb" id="1_q6vrx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6vrx"]
+size = Vector3(0.637878, 1.06726, 1.03052)
+
+[node name="Ice_Machine" instance=ExtResource("1_q6vrx")]
+
+[node name="Cube_006" parent="." index="0"]
+transform = Transform3D(0.302177, 0, 0, 0, 0.351431, 0, 0, 0, 0.514126, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00265503, 0.0336304, -0.00012207)
+shape = SubResource("BoxShape3D_q6vrx")

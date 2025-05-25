@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtqswqitj1eqw"]
+
+[ext_resource type="PackedScene" uid="uid://c2ofa8038mcnj" path="res://Assets/models/Motel_Exports/Garbage_Big.glb" id="1_0bk1i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bk1i"]
+size = Vector3(0.67749, 1, 1)
+
+[node name="Garbage_Big" instance=ExtResource("1_0bk1i")]
+
+[node name="Cube_004" parent="." index="0"]
+transform = Transform3D(0.300202, 0, 0, 0, 0.300202, 0, 0, 0, 0.441327, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172119, 0, 0)
+shape = SubResource("BoxShape3D_0bk1i")

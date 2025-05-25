@@ -1,0 +1,218 @@
+[gd_scene load_steps=38 format=3 uid="uid://cc6miig13xvfv"]
+
+[ext_resource type="Script" uid="uid://dfy5qnduplxlw" path="res://Scenes/Locations/Motel_Reception/motel_reception.gd" id="1_4706o"]
+[ext_resource type="Script" uid="uid://thl8421ilmux" path="res://Scenes/Locations/Motel_Reception/left_zone.gd" id="1_gdqk3"]
+[ext_resource type="PackedScene" uid="uid://dwg37og6x8t2c" path="res://Scenes/Maps/Motel_reception/reception_desk.tscn" id="2_jjjcb"]
+[ext_resource type="PackedScene" uid="uid://c322ks187lnpm" path="res://Scenes/Menus/Zagadki/Motel/guest_book.tscn" id="3_eccyy"]
+[ext_resource type="Script" uid="uid://d34gaor7goj30" path="res://Scenes/Locations/Motel_Reception/reception_keys_zoom_out.gd" id="4_2o21b"]
+[ext_resource type="PackedScene" uid="uid://ckn0l52aj437c" path="res://Scenes/Maps/Motel_reception/reception_lamp.tscn" id="4_jjjcb"]
+[ext_resource type="PackedScene" uid="uid://b7npqkhrmp6wa" path="res://Scenes/Maps/Motel_reception/potted_plant_l.tscn" id="5_6qqse"]
+[ext_resource type="PackedScene" uid="uid://cdtsmnatkc8tg" path="res://Scenes/Maps/Motel_reception/reception_shell_half.tscn" id="5_ef6fs"]
+[ext_resource type="PackedScene" uid="uid://be2kex7xbqpxr" path="res://Scenes/Maps/Motel_reception/reception_sofa.tscn" id="6_d0c65"]
+[ext_resource type="PackedScene" uid="uid://c3q3h4ds6my6j" path="res://Scenes/Maps/Motel_reception/reception_key_shelf.tscn" id="6_ef6fs"]
+[ext_resource type="PackedScene" uid="uid://dlmd4ot6k3iex" path="res://Scenes/Maps/Motel_reception/keys/motel_key_1.tscn" id="7_d0c65"]
+[ext_resource type="PackedScene" uid="uid://dey7xoa31tbij" path="res://Scenes/Maps/Motel_reception/keys/motel_key_2.tscn" id="8_oontd"]
+[ext_resource type="PackedScene" uid="uid://bg2aoe0hvo8ag" path="res://Scenes/Maps/Motel_reception/keys/motel_key_3.tscn" id="9_u8oeg"]
+[ext_resource type="PackedScene" uid="uid://8n5hpqb6pcan" path="res://Scenes/Maps/Motel_reception/keys/motel_key_4.tscn" id="10_gdqk3"]
+[ext_resource type="PackedScene" uid="uid://bpwl6prsmg73q" path="res://Scenes/Entities/Items/interactable_object_signal.tscn" id="10_j81a4"]
+[ext_resource type="Script" uid="uid://boui87jrbumkk" path="res://Scenes/Maps/Motel_reception/reception_key_shelf.gd" id="11_1dgym"]
+[ext_resource type="PackedScene" uid="uid://db0h847a2grwd" path="res://Scenes/Maps/Motel_reception/keys/motel_key_5.tscn" id="11_modci"]
+[ext_resource type="PackedScene" uid="uid://ch0jtrxoe0t36" path="res://Scenes/Maps/Motel_reception/keys/motel_key_6.tscn" id="12_jcow2"]
+[ext_resource type="PackedScene" uid="uid://no1veawnsjq2" path="res://Scenes/Maps/Motel_reception/keys/motel_key_7.tscn" id="13_vdywj"]
+[ext_resource type="PackedScene" uid="uid://ba116xxqfxjs4" path="res://Scenes/Maps/Motel_reception/keys/motel_key_8.tscn" id="14_w0m8q"]
+[ext_resource type="Texture2D" uid="uid://bxy2d10l78a2b" path="res://Assets/Images/icon.svg" id="15_u8oeg"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="17_modci"]
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="18_bqrp6"]
+[ext_resource type="Texture2D" uid="uid://damta142cxs1l" path="res://Assets/Images/Reception_book_temp.png" id="20_1jy1j"]
+[ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="20_eccyy"]
+[ext_resource type="PackedScene" uid="uid://t45dpkw3rm00" path="res://Scenes/Entities/Items/interactable_object_controlNode.tscn" id="21_eccyy"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="21_j81a4"]
+[ext_resource type="Script" uid="uid://dmu2fdcggc22v" path="res://Scenes/Locations/Motel_Reception/receptionist.gd" id="25_1dgym"]
+[ext_resource type="Texture2D" uid="uid://cu1d38vt061tu" path="res://Assets/Images/Portraits/recepcjonistka.png" id="27_lcfuc"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_modci"]
+vertices = PackedVector3Array(0.0490117, -2.28147, -5.14612, -1.20099, -2.28147, -5.14612, -1.20099, -2.28147, -3.39612, 0.0490117, -2.28147, -2.14612, 0.0490117, -2.28147, 3.35388, -0.450988, -2.28147, 3.85388, 3.79901, -2.28147, 3.85388, -1.95099, -2.28147, -3.14612, -2.20099, -2.28147, -1.14612, 3.79901, -2.28147, 0.353883, 2.29901, -2.28147, 0.103883, 0.0490117, -2.28147, 0.853883, -4.20099, -2.28147, -0.646117, -4.20099, -2.28147, 0.603883, 2.29901, -2.28147, -1.89612, -3.95099, -1.03147, -2.64612, -3.70099, -1.03147, -1.64612, -2.95099, -1.03147, -2.14612, -2.95099, -1.03147, -2.64612, 3.29901, -1.78147, -1.14612, 3.29901, -1.78147, -0.646117, 3.79901, -1.28147, -0.646117, 3.79901, -1.28147, -1.89612)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(2, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 4), PackedInt32Array(4, 9, 6), PackedInt32Array(13, 12, 8), PackedInt32Array(14, 10, 3), PackedInt32Array(3, 10, 11), PackedInt32Array(3, 11, 8), PackedInt32Array(8, 11, 13), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_modci"]
+size = Vector3(2.04303, 1, 1.93152)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdqk3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nugkr"]
+albedo_texture = ExtResource("15_u8oeg")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_modci"]
+material = SubResource("StandardMaterial3D_nugkr")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ef6fs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0c65"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w2bp7"]
+material = SubResource("StandardMaterial3D_d0c65")
+
+[node name="MotelReception" type="Node3D"]
+script = ExtResource("1_4706o")
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("18_bqrp6")]
+
+[node name="PauseMenu" parent="gui" instance=ExtResource("20_eccyy")]
+
+[node name="Guest_book" parent="gui" node_paths=PackedStringArray("transition_screen") instance=ExtResource("3_eccyy")]
+offset_left = 4444.0
+offset_right = 4444.0
+transition_screen = NodePath("../Transition_screen")
+
+[node name="button" type="Control" parent="gui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ReceptionKeysZoomOut" type="Button" parent="gui/button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.7
+anchor_bottom = 2.05
+offset_left = 9000.0
+offset_right = 9000.0
+text = "X"
+script = ExtResource("4_2o21b")
+
+[node name="Equipment" parent="." instance=ExtResource("21_j81a4")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_modci")
+
+[node name="Areas" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="leave_zone" type="Area3D" parent="NavigationRegion3D/Areas"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gdqk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Areas/leave_zone"]
+transform = Transform3D(0.99982, -0.0132007, -0.0136531, 0.0131549, 0.999908, -0.00344161, 0.0136973, 0.00326138, 0.999901, -0.501266, -2.28112, -4.66745)
+shape = SubResource("BoxShape3D_modci")
+
+[node name="objects" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Reception_Desk" parent="NavigationRegion3D/objects" instance=ExtResource("2_jjjcb")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.21817, -2.1445, 1.76024)
+
+[node name="ReceptionLamp" parent="NavigationRegion3D/objects" instance=ExtResource("4_jjjcb")]
+transform = Transform3D(0.213968, 0, -0.976841, 0, 1, 0, 0.976841, 0, 0.213968, -1.03971, -1.01548, 1.68589)
+
+[node name="Reception_Shell_Half" parent="NavigationRegion3D/objects" instance=ExtResource("5_ef6fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9541, -1.49907, -2.48765)
+
+[node name="Reception_Key_Shelf" parent="NavigationRegion3D/objects" instance=ExtResource("6_ef6fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20559, -0.465399, 4.27733)
+script = ExtResource("11_1dgym")
+
+[node name="InteractableObjectSignal" parent="NavigationRegion3D/objects/Reception_Key_Shelf" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("10_j81a4")]
+transform = Transform3D(2.72884, 0, 0, 0, 1, 0, 0, 0, 1.14387, 0.275229, -1.24117, 0.364969)
+transitionScreen = NodePath("../../../../gui/Transition_screen")
+
+[node name="Potted_Plant_L" parent="NavigationRegion3D/objects" instance=ExtResource("5_6qqse")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.44467, -1.57164, -2.70989)
+
+[node name="Reception_Sofa" parent="NavigationRegion3D/objects" instance=ExtResource("6_d0c65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58882, -1.64223, -1.24485)
+
+[node name="Reception_Sofa2" parent="NavigationRegion3D/objects" instance=ExtResource("6_d0c65")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.75173, -1.64223, -2.99057)
+
+[node name="keys" type="Node3D" parent="NavigationRegion3D/objects"]
+
+[node name="Motel_Key_1" parent="NavigationRegion3D/objects/keys" instance=ExtResource("7_d0c65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24921, -0.0756927, 4.20207)
+visible = false
+
+[node name="Motel_Key_2" parent="NavigationRegion3D/objects/keys" instance=ExtResource("8_oontd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93107, -0.0728869, 4.2046)
+visible = false
+
+[node name="Motel_Key_3" parent="NavigationRegion3D/objects/keys" instance=ExtResource("9_u8oeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62739, -0.0817337, 4.17975)
+
+[node name="Motel_Key_4" parent="NavigationRegion3D/objects/keys" instance=ExtResource("10_gdqk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29973, -0.0765991, 4.18837)
+visible = false
+
+[node name="Motel_Key_5" parent="NavigationRegion3D/objects/keys" instance=ExtResource("11_modci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24333, -0.907339, 4.17328)
+
+[node name="Motel_Key_6" parent="NavigationRegion3D/objects/keys" instance=ExtResource("12_jcow2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93639, -0.914689, 4.21688)
+visible = false
+
+[node name="Motel_Key_7" parent="NavigationRegion3D/objects/keys" instance=ExtResource("13_vdywj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62264, -0.915192, 4.19313)
+visible = false
+
+[node name="Motel_Key_8" parent="NavigationRegion3D/objects/keys" instance=ExtResource("14_w0m8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29723, -0.917111, 4.203)
+
+[node name="GuestListBook" type="Sprite3D" parent="NavigationRegion3D/objects"]
+transform = Transform3D(-0.109119, -0.0187298, 0.143219, 2.91567e-09, 0.139801, 0.0767506, -0.063, 0.0324409, -0.248062, -3.57794, -0.861893, 1.62173)
+texture = ExtResource("20_1jy1j")
+
+[node name="Node3D" parent="NavigationRegion3D/objects/GuestListBook" node_paths=PackedStringArray("zagadkaControlNode", "transitionScreen") instance=ExtResource("21_eccyy")]
+transform = Transform3D(5.23756, 0.261028, 0.184057, -0.193537, 6.71681, -0.0920151, -0.340232, 0.197528, 2.88566, 0.794212, -11.1037, 0.0382339)
+zagadkaControlNode = NodePath("../../../../gui/Guest_book")
+transitionScreen = NodePath("../../../../gui/Transition_screen")
+
+[node name="npc" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Receptionist" type="StaticBody3D" parent="NavigationRegion3D/npc"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.12141, -1.84147, 2.54446)
+script = ExtResource("25_1dgym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/npc/Receptionist"]
+visible = false
+shape = SubResource("CapsuleShape3D_gdqk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/npc/Receptionist"]
+visible = false
+mesh = SubResource("CapsuleMesh_modci")
+
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/npc/Receptionist"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.54546, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+pixel_size = 0.0005
+texture = ExtResource("27_lcfuc")
+
+[node name="InteractableObjectSignal" parent="NavigationRegion3D/npc/Receptionist" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("10_j81a4")]
+transform = Transform3D(1.30005, 0, 0, 0, 0.780691, 0, 0, 0, 1.27787, -0.45861, -0.258646, -0.0375426)
+transitionScreen = NodePath("../../../../gui/Transition_screen")
+
+[node name="exit" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846304, 0, -2.94618)
+physics_material_override = SubResource("PhysicsMaterial_ef6fs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483602, -2.73678, -1.69994)
+mesh = SubResource("PlaneMesh_w2bp7")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
+transform = Transform3D(-0.779298, -0.375738, 0.501514, 0.0103829, 0.792453, 0.609845, -0.626568, 0.480458, -0.613655, 2.92796, 0.776418, -2.74113)
+current = true
+fov = 91.6395
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.37956, -0.611293)
+
+[node name="Gracz" parent="." instance=ExtResource("17_modci")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -0.733691, -1.75164, -2.41157)
+
+[node name="ReceptionKeyCamera" type="Camera3D" parent="."]
+transform = Transform3D(-0.99923, -2.67755e-09, -0.0392423, -0.00127371, 0.999473, 0.0324324, 0.0392216, 0.0324574, -0.998703, -2.35173, -0.45336, 2.79716)
+
+[connection signal="pressed" from="gui/button/ReceptionKeysZoomOut" to="gui/button/ReceptionKeysZoomOut" method="_on_reception_keys_zoom_out_pressed"]
+[connection signal="area_entered" from="NavigationRegion3D/Areas/leave_zone" to="NavigationRegion3D/Areas/leave_zone" method="_on_area_entered"]
+[connection signal="item_activated" from="NavigationRegion3D/objects/Reception_Key_Shelf/InteractableObjectSignal" to="NavigationRegion3D/objects/Reception_Key_Shelf" method="_on_interactable_object_signal_item_activated"]
+[connection signal="item_activated" from="NavigationRegion3D/npc/Receptionist/InteractableObjectSignal" to="NavigationRegion3D/npc/Receptionist" method="_on_interactable_object_signal_item_activated"]

@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "temp_portrait",
+&"description": "",
+&"display_name": "woman_renting_room_nr_2",
+&"mirror": false,
+&"nicknames": ["Kobieta"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"temp_portrait": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Portraits/temp_portrait.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

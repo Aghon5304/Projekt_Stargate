@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://d18fnrmmd5dqp"]
+[gd_scene load_steps=25 format=3 uid="uid://d18fnrmmd5dqp"]
 
 [ext_resource type="PackedScene" uid="uid://drw23ealwufd" path="res://Scenes/Maps/test_map/test_map.tscn" id="1_5fyyu"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_1krmo"]
 [ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="3_8hy5b"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="4_xw5i1"]
-[ext_resource type="Script" uid="uid://crx680c2xyaw4" path="res://Scenes/Maps/test_map/test_level_change.gd" id="5_dpt41"]
-[ext_resource type="Script" uid="uid://dhu7vpwea6nit" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
+[ext_resource type="Script" path="res://Scenes/Maps/test_map/test_level_change.gd" id="5_dpt41"]
+[ext_resource type="Script" path="res://Scenes/Locations/end_location/test_go_to_end_level.gd" id="6_r7jsw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrjnr"]
 
@@ -39,6 +39,27 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3cnv8"]
 material = SubResource("StandardMaterial3D_dpt41")
+
+[sub_resource type="BoxMesh" id="BoxMesh_r7jsw"]
+size = Vector3(40, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5mo7"]
+size = Vector3(40, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_an1sa"]
+size = Vector3(20, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3heju"]
+size = Vector3(5, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8jekt"]
+size = Vector3(10, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b6swj"]
+size = Vector3(10, 1, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_omuaf"]
+size = Vector3(10, 1, 7)
 
 [node name="Test" type="Node3D"]
 
@@ -85,6 +106,36 @@ shape = SubResource("BoxShape3D_n5mo7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Test_go_the_end_credits/CollisionShape3D"]
 mesh = SubResource("BoxMesh_3cnv8")
+
+[node name="TestowyCzyściec" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(0.861629, 0, 0.507538, 0, 1, 0, -0.507538, 0, 0.861629, 31.2081, 1.01655, -62.5224)
+mesh = SubResource("BoxMesh_r7jsw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6973, 1.42145, -55.5861)
+mesh = SubResource("BoxMesh_n5mo7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6162, 1.58133, -55.9938)
+mesh = SubResource("BoxMesh_an1sa")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9778, 1.68708, -56.5704)
+mesh = SubResource("BoxMesh_3heju")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.3966, 1.76533, -60.7857)
+mesh = SubResource("BoxMesh_8jekt")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96422, 1.75863, -61.3917)
+mesh = SubResource("BoxMesh_b6swj")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="TestowyCzyściec"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4122, 1.33888, -60.2928)
+mesh = SubResource("BoxMesh_omuaf")
 
 [connection signal="body_entered" from="TestChangeMesh" to="TestChangeMesh" method="_on_body_entered"]
 [connection signal="input_event" from="Test_go_the_end_credits" to="Test_go_the_end_credits" method="_on_input_event"]
