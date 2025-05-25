@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://csix8v2puu5d7"]
+[gd_scene load_steps=5 format=3 uid="uid://csix8v2puu5d7"]
 
 [ext_resource type="PackedScene" uid="uid://cp8kwhf6q0g2v" path="res://Assets/models/Motel_Exports/Motel_Building.glb" id="1_vnpaa"]
+[ext_resource type="Texture2D" uid="uid://c0mt577hs5x7r" path="res://Assets/Images/cleaned_temp.png" id="2_etn06"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etn06"]
 size = Vector3(0.777344, 1, 0.745605)
@@ -20,3 +21,48 @@ shape = SubResource("BoxShape3D_vnpaa")
 
 [node name="Plane_020" parent="." index="2"]
 transform = Transform3D(13.5355, 0, 0, 0, 13.5355, 0, 0, 0, 41.9974, 0, 0, 0)
+
+[node name="światła" type="Node3D" parent="." index="3"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="światła" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8634, 3.1233, 10.5593)
+omni_range = 5.86969
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="światła" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8634, 3.1233, 13.5074)
+omni_range = 5.86969
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="światła" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8634, 3.1233, -0.101657)
+omni_range = 5.86969
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="światła" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8634, 3.1233, 2.84645)
+omni_range = 5.86969
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="światła" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321656, 3.1233, 10.5885)
+omni_range = 5.86969
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="światła" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321656, 3.1233, 13.5366)
+omni_range = 5.86969
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="światła" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321656, 3.1233, -0.0724919)
+omni_range = 5.86969
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="światła" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321656, 3.1233, 2.87562)
+omni_range = 5.86969
+
+[node name="Node3D" type="Node3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5853, 0.169961, 12.6635)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D" index="0"]
+transform = Transform3D(-0.000496491, 0, -0.0601399, 0, 0.060142, 0, 0.0601399, 0, -0.000496491, 2.02471, 1.19591, 0.492222)
+texture = ExtResource("2_etn06")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D" index="1"]
+transform = Transform3D(-0.000496491, 0, -0.0601399, 0, 0.060142, 0, 0.0601399, 0, -0.000496491, 2.02471, 1.19215, -2.54184)
+texture = ExtResource("2_etn06")
