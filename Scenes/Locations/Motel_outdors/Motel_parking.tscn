@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqdavcxs67suo"]
+[gd_scene load_steps=32 format=3 uid="uid://dqdavcxs67suo"]
 
 [ext_resource type="PackedScene" uid="uid://btxn66a1fgreq" path="res://Scenes/Maps/Motel/motel_outside_asphalt_parking.tscn" id="1_2fkvq"]
+[ext_resource type="Script" uid="uid://c5ngg46c0xnvi" path="res://Scenes/Locations/Motel_outdors/motel_parking.gd" id="1_aya7p"]
 [ext_resource type="PackedScene" uid="uid://csix8v2puu5d7" path="res://Scenes/Maps/Motel/motel_building.tscn" id="2_i86vt"]
 [ext_resource type="PackedScene" uid="uid://bitaxpjmt5m0k" path="res://Scenes/Maps/Motel/motel_sign.tscn" id="3_4acnq"]
 [ext_resource type="PackedScene" uid="uid://b6n4xi6rwg7tv" path="res://Scenes/Maps/Motel/juniors_car.tscn" id="4_lttmw"]
@@ -50,6 +51,7 @@ size = Vector3(13.8629, 3.97461, 1)
 size = Vector3(1, 4.89783, 8.41858)
 
 [node name="MotelParking" type="Node3D"]
+script = ExtResource("1_aya7p")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ka1d6")

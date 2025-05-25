@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cc6miig13xvfv"]
+[gd_scene load_steps=38 format=3 uid="uid://cc6miig13xvfv"]
 
+[ext_resource type="Script" uid="uid://dfy5qnduplxlw" path="res://Scenes/Locations/Motel_Reception/motel_reception.gd" id="1_4706o"]
 [ext_resource type="Script" uid="uid://thl8421ilmux" path="res://Scenes/Locations/Motel_Reception/left_zone.gd" id="1_gdqk3"]
 [ext_resource type="PackedScene" uid="uid://dwg37og6x8t2c" path="res://Scenes/Maps/Motel_reception/reception_desk.tscn" id="2_jjjcb"]
 [ext_resource type="PackedScene" uid="uid://c322ks187lnpm" path="res://Scenes/Menus/Zagadki/Motel/guest_book.tscn" id="3_eccyy"]
@@ -53,6 +54,7 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_d0c65")
 
 [node name="MotelReception" type="Node3D"]
+script = ExtResource("1_4706o")
 
 [node name="gui" type="Node" parent="."]
 
