@@ -12,12 +12,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ld3bg"]
 
-[sub_resource type="Sky" id="Sky_bc1m6"]
+[sub_resource type="Sky" id="Sky_t0y0j"]
 sky_material = SubResource("ProceduralSkyMaterial_ld3bg")
 
 [sub_resource type="Environment" id="Environment_56qcj"]
 background_mode = 2
-sky = SubResource("Sky_bc1m6")
+sky = SubResource("Sky_t0y0j")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_56qcj"]
 vertices = PackedVector3Array(-2.5, 0.02, -1.75, -2.5, 0.02, 1.75, 2.5, 0.02, 1.75, 2.5, 0.02, -1.75)
@@ -30,9 +30,10 @@ size = Vector3(6, 0, 4.5)
 [node name="Node3D" type="Node3D"]
 
 [node name="Bathroom" parent="." instance=ExtResource("1_6lw8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.691, 0)
 
 [node name="Gracz" parent="." instance=ExtResource("7_cl3hg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92408, 19.1216, 0.954029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92408, 0.438801, 0.954029)
 
 [node name="Equipment" parent="." instance=ExtResource("9_t0y0j")]
 
@@ -40,12 +41,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92408, 19.1216, 0.954029)
 environment = SubResource("Environment_56qcj")
 
 [node name="LivingRoomDoor" parent="." instance=ExtResource("10_fjj6k")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.7091, 18.6715, 0.173135)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.7091, 0.352061, 0.173135)
 next_scene = "res://Scenes/Locations/AlphaLocations/livingRoom.tscn"
 door_type = "bathroom"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99897, 18.0984, 1.78628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99897, -0.561199, 1.78628)
 navigation_mesh = SubResource("NavigationMesh_56qcj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -53,7 +54,7 @@ visible = false
 mesh = SubResource("BoxMesh_56qcj")
 
 [node name="furniture" type="Node3D" parent="."]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, -0.114729, 0)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, -18.7975, 0)
 
 [node name="Bathroom_Carpet" parent="furniture" instance=ExtResource("5_t0y0j")]
 

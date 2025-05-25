@@ -76,6 +76,9 @@ offset_bottom = 0.000976563
 
 [node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
 
+[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.122, 0)
+
 [node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
 floor_max_angle = 0.1309
@@ -113,6 +116,17 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/LivingRoom/StaticBody3D2"]
 transform = Transform3D(2.32981e-07, -2.6, 3.80382e-07, -1.69822e-18, -1.13652e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.40329, 18.4167, 2.67724)
 shape = SubResource("BoxShape3D_2o20f")
+
+[node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 0, -1.24775)
+floor_max_angle = 0.1309
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfqtg")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, -0.152157, 0.917964)
+navigation_mesh = SubResource("NavigationMesh_acxqq")
 
 [node name="WorkingDoors" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.1216, -0.917964)
