@@ -33,7 +33,6 @@ avoidance_enabled = true
 height = 2.0
 radius = 1.0
 use_3d_avoidance = true
-debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.878419, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
