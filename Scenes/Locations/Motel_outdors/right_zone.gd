@@ -5,12 +5,13 @@ extends Area3D
 
 
 func _on_area_entered(area: Area3D) -> void:
-	camera_controller.rotation_degrees.y =-90
-	following_camera.current = true
-	main_camera.current=false
-	main_camera.remove_from_group("Cameras")
-	following_camera.add_to_group("Cameras")
-	pass # Replace with function body.
+	if area.is_in_group("Player"):
+		camera_controller.rotation_degrees.y =-90
+		following_camera.current = true
+		main_camera.current=false
+		main_camera.remove_from_group("Cameras")
+		following_camera.add_to_group("Cameras")
+		pass # Replace with function body.
 
 
 

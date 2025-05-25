@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://t45dpkw3rm00"]
 
-[ext_resource type="Script" path="res://Scenes/Entities/Items/interactable_object_controlNode.gd" id="1_ijsly"]
+[ext_resource type="Script" uid="uid://cxntbhm1ymdls" path="res://Scenes/Entities/Items/interactable_object_controlNode.gd" id="1_ijsly"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwy5w"]
 
