@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7npqkhrmp6wa"]
+
+[ext_resource type="PackedScene" uid="uid://mpo02xe3wjiw" path="res://Assets/models/Motel_Reception/Potted_Plant_L.glb" id="1_7y67y"]
+
+[node name="Potted_Plant_L" instance=ExtResource("1_7y67y")]
+
+[node name="Plane_105" parent="." index="0"]
+transform = Transform3D(-0.127938, -7.45058e-09, -0.991782, 0.180162, 0.983362, -0.0232407, 0.975281, -0.181655, -0.12581, 0, 0, 0)

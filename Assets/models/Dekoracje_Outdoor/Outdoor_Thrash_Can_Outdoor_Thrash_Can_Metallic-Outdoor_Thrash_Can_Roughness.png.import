@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cmmc14s04i1l6"
+path.s3tc="res://.godot/imported/Outdoor_Thrash_Can_Outdoor_Thrash_Can_Metallic-Outdoor_Thrash_Can_Roughness.png-294b40821e5aff1e4ebd1657cfd4b907.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "9faa70a08c0dc2f2396699af2c15cb53"
+}
+
+[deps]
+
+source_file="res://Assets/models/Dekoracje_Outdoor/Outdoor_Thrash_Can_Outdoor_Thrash_Can_Metallic-Outdoor_Thrash_Can_Roughness.png"
+dest_files=["res://.godot/imported/Outdoor_Thrash_Can_Outdoor_Thrash_Can_Metallic-Outdoor_Thrash_Can_Roughness.png-294b40821e5aff1e4ebd1657cfd4b907.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

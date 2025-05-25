@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdtsmnatkc8tg"]
+
+[ext_resource type="PackedScene" uid="uid://c3fsc6fgtpuxc" path="res://Assets/models/Motel_Reception/Reception_Shell_Half.glb" id="1_jlu60"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jlu60"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v4anj"]
+
+[node name="Reception_Shell_Half" instance=ExtResource("1_jlu60")]
+
+[node name="okno_005" parent="." index="0"]
+transform = Transform3D(0, 0, 0.0762015, 0, 0.908869, 0, -0.575313, 0, 0, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.16159, -1.24687, -1.13473)
+collision_layer = 5
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_jlu60")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.61809, 0, 0, 0, 1, 0, 0, 0, 2.71644, -9.37178, 0, 10.2082)
+shape = SubResource("WorldBoundaryShape3D_v4anj")

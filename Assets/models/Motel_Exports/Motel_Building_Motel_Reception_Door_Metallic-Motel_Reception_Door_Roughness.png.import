@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://doo77w1httw6e"
+path.s3tc="res://.godot/imported/Motel_Building_Motel_Reception_Door_Metallic-Motel_Reception_Door_Roughness.png-9ae31a5a57d0fe2a0a0ea8208f7f0149.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4196659b3e950b362b17b050fcc608a6"
+}
+
+[deps]
+
+source_file="res://Assets/models/Motel_Exports/Motel_Building_Motel_Reception_Door_Metallic-Motel_Reception_Door_Roughness.png"
+dest_files=["res://.godot/imported/Motel_Building_Motel_Reception_Door_Metallic-Motel_Reception_Door_Roughness.png-9ae31a5a57d0fe2a0a0ea8208f7f0149.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

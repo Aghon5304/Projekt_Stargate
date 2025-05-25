@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bitaxpjmt5m0k"]
+
+[ext_resource type="PackedScene" uid="uid://baalbjet1qtwe" path="res://Assets/models/Motel_Exports/Motel_Sign.glb" id="1_ok4qo"]
+
+[node name="Motel_Sign" instance=ExtResource("1_ok4qo")]
+
+[node name="Circle_002" parent="." index="0"]
+transform = Transform3D(0.923009, 0.382663, 0, 0, 0, -0.999188, -0.382663, 0.923009, 0, 0, 0, 0)

@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://gb2853f8bfn7" path="res://Scenes/Menus/pause_menu/exit_to_menu_button.gd" id="5_cgna5"]
 [ext_resource type="Script" uid="uid://dcbiw67ygv1h5" path="res://Scenes/Menus/pause_menu/exit_game_button.gd" id="5_djvnr"]
 [ext_resource type="PackedScene" uid="uid://dqewmmaj4vnyp" path="res://Scenes/Menus/main_menu/main_menu.tscn" id="6_2n1qu"]
-[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/save_button.gd" id="6_y5j25"]
-[ext_resource type="Script" path="res://Scenes/Menus/pause_menu/load_button.gd" id="7_b3na1"]
+[ext_resource type="Script" uid="uid://ihwep0ukleu7" path="res://Scenes/Menus/pause_menu/save_button.gd" id="6_y5j25"]
+[ext_resource type="Script" uid="uid://b82kt43lopboa" path="res://Scenes/Menus/pause_menu/load_button.gd" id="7_b3na1"]
 
 [sub_resource type="Animation" id="Animation_fbqq0"]
 length = 0.001
