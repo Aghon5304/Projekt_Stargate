@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ccwo4o03audhn"
+path.s3tc="res://.godot/imported/Las #2 Drzewa_Las #2 Drzewa.png-5cc15eeec5c0c2383a0173c1c88d07fa.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2a4b6e15ac5fc7927e31f716841f84e5"
+}
+
+[deps]
+
+source_file="res://Assets/models/forest/Final Las #2 Export/Las #2 Drzewa_Las #2 Drzewa.png"
+dest_files=["res://.godot/imported/Las #2 Drzewa_Las #2 Drzewa.png-5cc15eeec5c0c2383a0173c1c88d07fa.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

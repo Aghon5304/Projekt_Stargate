@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ub6d4ibntjji"]
+
+[ext_resource type="PackedScene" uid="uid://cla3050axwoc6" path="res://Assets/models/forest/las_#2_ławki.tscn" id="1_m2lnf"]
+[ext_resource type="PackedScene" uid="uid://dvgukrdbyxkr7" path="res://Assets/models/forest/Final Las #2 Export/las_#2_torba.tscn" id="2_c2n5q"]
+[ext_resource type="PackedScene" uid="uid://b53lhirngy3lr" path="res://Assets/models/forest/accesories/Krótkofalówka Final.glb" id="3_rjs76"]
+
+[node name="Lawki" type="Node3D"]
+
+[node name="Las #2 Ławki" parent="." instance=ExtResource("1_m2lnf")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -107.756, 7.49185, -235.637)
+
+[node name="Las #2 Torba" parent="." instance=ExtResource("2_c2n5q")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -97.8576, 7.81013, -235.136)
+
+[node name="Krótkofalówka Final" parent="." instance=ExtResource("3_rjs76")]
+transform = Transform3D(-0.119281, 0.144109, 0.0707435, 0.0543033, 0.119158, -0.151171, -0.151073, -0.070951, -0.110194, -99.0608, 9.47301, -233.45)

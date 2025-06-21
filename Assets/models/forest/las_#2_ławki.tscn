@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cla3050axwoc6"]
+
+[ext_resource type="PackedScene" uid="uid://dsk5hj7u8mwr5" path="res://Assets/models/forest/Final Las #2 Export/Las #2 Ławki.glb" id="1_5rpre"]
+
+[node name="Las #2 Ławki" instance=ExtResource("1_5rpre")]
+
+[node name="Cube_016" parent="." index="0"]
+transform = Transform3D(0.108899, 0.00457771, -0.994042, -0.0444392, 0.999012, -0.000267802, 0.993059, 0.0442036, 0.108995, 0, 0, 0)
