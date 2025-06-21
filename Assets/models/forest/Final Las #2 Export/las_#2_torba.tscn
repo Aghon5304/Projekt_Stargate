@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvgukrdbyxkr7"]
+
+[ext_resource type="PackedScene" uid="uid://c3x31gp1f3u84" path="res://Assets/models/forest/Final Las #2 Export/Las #2 Torba.glb" id="1_46348"]
+
+[node name="Las #2 Torba" instance=ExtResource("1_46348")]
+
+[node name="Cube_017" parent="." index="0"]
+transform = Transform3D(0.585232, -0.832536, -0.102016, -0.837747, -0.574062, -0.121052, 0.0412781, 0.15283, -1.01043, 0, 0, 0)
