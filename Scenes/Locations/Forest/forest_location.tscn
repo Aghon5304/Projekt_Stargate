@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm1bpqkey6i34"]
+
+[ext_resource type="PackedScene" uid="uid://bffwnvpex4bcl" path="res://Scenes/Maps/Forest/forest_map.tscn" id="1_367ht"]
+[ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_0liqx"]
+[ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="3_yfhhp"]
+[ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="4_u2vvw"]
+[ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="5_3mvk6"]
+
+[node name="ForestLocation" type="Node3D"]
+
+[node name="Forest" parent="." instance=ExtResource("1_367ht")]
+
+[node name="Gracz" parent="." instance=ExtResource("2_0liqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3427, 2.63328, -61.0143)
+
+[node name="gui" type="Node" parent="."]
+
+[node name="Transition_screen" parent="gui" instance=ExtResource("3_yfhhp")]
+
+[node name="PauseMenu" parent="gui" instance=ExtResource("4_u2vvw")]
+
+[node name="Equipment" parent="." instance=ExtResource("5_3mvk6")]
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
+transform = Transform3D(-0.536629, -0.304285, 0.787045, 0.140735, 0.88738, 0.439034, -0.832, 0.346363, -0.43337, 46.3, 9.01112, -65.4211)
