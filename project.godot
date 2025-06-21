@@ -54,7 +54,9 @@ directories/dtl_directory={
 layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"
-variables={}
+variables={
+"qestions_passed": 0
+}
 GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"

@@ -1,6 +1,46 @@
-main_character: Dzień dobry
-Recepcjoniskta: Co potrzeba? Tylko szybko zaraz zamykam.
-- Chciał bym się dowiedzieć czy mój kolega przebywa w waszym motelu
-	Recepcjoniskta: Coś się chyba pan pomylił. Tu jest recepcja, nie ośrodek informacji. Nocleg? To proszę do mnie, a jak nie to tam są drzwi.
-- Czy mógł bym zobaczyć listę gości?
-	main_character: Jak cię to tak bardzo obchodzi to tam lista leży chcesz to patrz, to nie jest jakaś tajemnica.
+Michael: Could I check if my friend is staying here?
+join Recepcjoniskta center
+Recepcjoniskta: Does this look like an information desk?
+Recepcjoniskta: Actually don't answer that.
+Recepcjoniskta: If you can PROVE you know he is staying in a particular room, then maybe I could help you.
+Recepcjoniskta: Now what do you want?
+- I want to rent a room.
+	Recepcjoniskta: You can take room number one
+	Michael: I will take it.
+	Recepcjoniskta: Here is the key. Please sign the guestbook on the right.
+- Do you have any free rooms?
+	Recepcjoniskta: Take a look at the key rack behind me.
+- I am ready to prove I know the guest.
+	Recepcjoniskta: What room are they staying in?
+	- Room 2
+	- Room 3
+	- Room 4
+	- Room 5
+	- Room 6
+		set {qestions_passed} += 1.0
+	- Room 7
+	- Room 8
+	Recepcjoniskta: What's the guests gender?
+	- Male
+		set {qestions_passed} += 1.0
+	- Female
+	- I don't subscribe to sexism.
+	Recepcjoniskta: Do they smoke?
+	- They smoke.
+		set {qestions_passed} += 1.0
+	- They don't smoke
+	- Who cares??
+	Recepcjoniskta: Any other observations?
+	if {GlobalGameProgress.Progress.Motel_dano_fishcole} == true:
+		- They drink an unhealthy amount of Fishcola
+			set {qestions_passed} += 1.0
+		else:
+			- What are you getting at?
+if {qestions_passed} == 4.0:
+	Recepcjoniskta: Ugh, fine. You can use the spare key. 
+	Recepcjoniskta: Now piss off!
+	[end_timeline]
+else:
+	Recepcjoniskta: Umm, I don't think so.\
+	Stop wasting my time.
+leave Recepcjoniskta
