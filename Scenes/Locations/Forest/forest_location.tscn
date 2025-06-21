@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bffwnvpex4bcl" path="res://Scenes/Maps/Forest/forest_map.tscn" id="1_367ht"]
 [ext_resource type="PackedScene" uid="uid://bapfb1kxutdrt" path="res://Assets/models/forest/Trees Export.glb" id="1_fqmll"]
-[ext_resource type="PackedScene" uid="uid://ub6d4ibntjji" path="res://Scenes/Maps/Forest/benchestscn.tscn" id="1_gkmg2"]
+[ext_resource type="PackedScene" path="res://Scenes/Maps/Forest/benchestscn.tscn" id="1_gkmg2"]
 [ext_resource type="PackedScene" uid="uid://djqtror3ex8l" path="res://Assets/models/forest/Bunker Export.glb" id="1_jdrm6"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_0liqx"]
 [ext_resource type="PackedScene" uid="uid://2fdtx314g0g8" path="res://Assets/models/forest/accesories/Toolbox Export.glb" id="2_fqmll"]
@@ -22,14 +22,12 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Arr
 
 [node name="ForestLocation" type="Node3D"]
 
-[node name="Trees Export" parent="." instance=ExtResource("1_fqmll")]
-transform = Transform3D(0.124, 0, 0, 0, 0.124, 0, 0, 0, 0.124, 0, 0, -0.00495148)
-
 [node name="Objects" type="NavigationRegion3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.376335)
 navigation_mesh = SubResource("NavigationMesh_ionk4")
 
 [node name="Banches" parent="Objects" instance=ExtResource("1_gkmg2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Bunker Export" parent="Objects" instance=ExtResource("1_jdrm6")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -62,7 +60,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -1.50534)
 transform = Transform3D(2, 0, 0, 0, 1.40979, 1.41862, 0, -1.41862, 1.40979, 0, 61.3924, 4.13087)
 
 [node name="navigation paths" type="Node3D" parent="Objects"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.50534)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1.50534)
 
 [node name="Lewy las" type="NavigationObstacle3D" parent="Objects/navigation paths"]
 height = 100.0
@@ -76,6 +74,9 @@ height = 100.0
 vertices = PackedVector3Array(-47.7584, 0, 3.38683, -18.4839, 0, 3.09984, -12.8888, 0, 7.21382, -2.21966, 0, -3.80849, 7.79566, 0, 2.81222, 23.9604, 0, 2.52552, 45.9279, 0, -13.2427, 22.3328, 0, -46.7999, -40.4581, 0, -40.5542)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="Trees Export" parent="Objects" instance=ExtResource("1_fqmll")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.762573)
 
 [node name="Gracz" parent="." instance=ExtResource("2_0liqx")]
 transform = Transform3D(-0.324528, 0, 0.945876, 0, 1, 0, -0.945876, 0, -0.324528, 43.3467, 4.24142, -117.147)
