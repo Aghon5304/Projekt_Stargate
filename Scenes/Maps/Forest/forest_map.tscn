@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bffwnvpex4bcl"]
+
+[ext_resource type="PackedScene" uid="uid://bvvtyo0guxrll" path="res://Assets/models/forest/grass_export.tscn" id="10_nf5qg"]
+
+[node name="Forest" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="modele" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -88.111)
+
+[node name="Grass Export" parent="modele" instance=ExtResource("10_nf5qg")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 88.111)

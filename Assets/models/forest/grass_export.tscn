@@ -3,3 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cv7kn6niuhfhl" path="res://Assets/models/forest/Grass Export.glb" id="1_tb3mm"]
 
 [node name="Grass Export" instance=ExtResource("1_tb3mm")]
+
+[node name="Plane" parent="." index="0"]
+layers = 5
+
+[node name="StaticBody3D" parent="Plane" index="0"]
+collision_layer = 5
+collision_mask = 5

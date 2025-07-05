@@ -16,7 +16,7 @@ func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_posit
 					await get_tree().process_frame
 				if (playerInRange == true):
 					GlobalSignals.Item_used.emit()
-					var new_scene = load("res://Scenes/Locations/end_location/end_credits.tscn")
+					var new_scene = GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.Motel_outdoors)
 					get_tree().change_scene_to_packed(new_scene)
 		pass # Replace with function body.
 

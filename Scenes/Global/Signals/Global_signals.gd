@@ -4,5 +4,5 @@ extends Node
 signal Item_used
 signal Bohater_monolog(monolog: String)
 
-@export var is_not_paused = true
+@export var is_not_paused = false
 var is_notebook_open := false

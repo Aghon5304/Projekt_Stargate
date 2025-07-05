@@ -1,9 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://d3jtqwbc5f4r1"]
+[gd_scene load_steps=39 format=3 uid="uid://d3jtqwbc5f4r1"]
 
 [ext_resource type="PackedScene" uid="uid://cvqoun81ogne4" path="res://Scenes/Global/Animations/transition_screen.tscn" id="1_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://ca8jmeovriklg" path="res://Scenes/Maps/alphaMaps/living_room.tscn" id="1_w2ghf"]
 [ext_resource type="ArrayMesh" uid="uid://cqyknlesi5qor" path="res://Assets/mesh/walls/livingRoomMesh.mesh" id="2_5gcgh"]
-[ext_resource type="PackedScene" uid="uid://cbisdli0xa84q" path="res://Scenes/Entities/Door/door.tscn" id="2_lhkf3"]
 [ext_resource type="PackedScene" uid="uid://bh2exf58tq2ry" path="res://Scenes/Menus/Zagadki/zagadka_z_lodówką.tscn" id="2_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="3_acxqq"]
 [ext_resource type="PackedScene" uid="uid://d1imfipilgb4h" path="res://Scenes/Menus/pause_menu/pause_menu.tscn" id="3_xkked"]
@@ -11,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://lantpmginshd" path="res://Assets/models/livingRoom/Mug.glb" id="5_rdptd"]
 [ext_resource type="PackedScene" uid="uid://dfpdj7f2ekgrd" path="res://Assets/models/livingRoom/Newspaper.glb" id="6_5gcgh"]
 [ext_resource type="PackedScene" uid="uid://dqm52ay2af3vi" path="res://Assets/models/livingRoom/Armchair.glb" id="7_kbdc1"]
-[ext_resource type="Script" path="res://Scenes/Locations/AlphaLocations/door.gd" id="8_hd6kh"]
 [ext_resource type="PackedScene" uid="uid://dmlbv0me1a7h4" path="res://Assets/models/doors/Door_Main.glb" id="8_lwy5w"]
 [ext_resource type="PackedScene" uid="uid://ck2cx137x35hr" path="res://Assets/models/livingRoom/Sidetable.glb" id="8_p0ubc"]
+[ext_resource type="Script" uid="uid://thl8421ilmux" path="res://Scenes/Locations/Motel_Reception/left_zone.gd" id="9_2o20f"]
 [ext_resource type="PackedScene" uid="uid://oiqc1sfh5q4n" path="res://Assets/models/livingRoom/Bank_Lamp.glb" id="9_t1347"]
 [ext_resource type="PackedScene" uid="uid://cy201miopb0aj" path="res://Assets/models/livingRoom/Chair.glb" id="10_0ym7e"]
 [ext_resource type="PackedScene" uid="uid://cyd2xa6tkyb34" path="res://Assets/models/livingRoom/Table.glb" id="11_lwy5w"]
@@ -53,7 +52,7 @@ vertices_per_polygon = 10.0
 size = Vector3(1.45837, 0.0448608, 0.520508)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hd6kh"]
-size = Vector3(6.66547, 57.9855, 16.8447)
+size = Vector3(14.846, 1, 5.1655)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ql7q7"]
 size = Vector3(39.2349, 19.7744, 24.1862)
@@ -75,9 +74,6 @@ offset_right = 0.191895
 offset_bottom = 0.000976563
 
 [node name="Equipment" parent="." instance=ExtResource("4_cfqtg")]
-
-[node name="LivingRoom" parent="." instance=ExtResource("1_w2ghf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.122, 0)
 
 [node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 19.1216, -1.24775)
@@ -117,98 +113,77 @@ skeleton = NodePath("../..")
 transform = Transform3D(2.32981e-07, -2.6, 3.80382e-07, -1.69822e-18, -1.13652e-07, -8.70213, 3.08631, 1.96295e-07, -2.87181e-14, -4.40329, 18.4167, 2.67724)
 shape = SubResource("BoxShape3D_2o20f")
 
-[node name="Gracz" parent="." instance=ExtResource("3_acxqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52896, 0, -1.24775)
-floor_max_angle = 0.1309
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_cfqtg")
-
-[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49668, -0.152157, 0.917964)
-navigation_mesh = SubResource("NavigationMesh_acxqq")
-navigation_layers = 5
-
-[node name="WorkingDoors" type="Node3D" parent="NavigationRegion3D"]
+[node name="WorkingDoors" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.1216, -0.917964)
 
-[node name="bedroomDoor" parent="NavigationRegion3D/WorkingDoors" instance=ExtResource("2_lhkf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219181, 18.3175, -0.804449)
-next_scene = "res://Scenes/Locations/AlphaLocations/bedroom.tscn"
-
-[node name="bathroomDoor" parent="NavigationRegion3D/WorkingDoors" instance=ExtResource("2_lhkf3")]
-process_mode = 4
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.60892, 18.3175, -0.144485)
-visible = false
-next_scene = "res://Scenes/Locations/AlphaLocations/bathroom.tscn"
-door_type = "bathroom"
-
-[node name="Node3D" type="Node3D" parent="NavigationRegion3D/WorkingDoors"]
+[node name="Node3D" type="Node3D" parent="NavigationRegion3D2/WorkingDoors"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.149125, -0.127224, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/WorkingDoors/Node3D"]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("8_hd6kh")
+[node name="testDoor" parent="NavigationRegion3D2/WorkingDoors/Node3D" instance=ExtResource("8_lwy5w")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -117.019, 0, -23.868)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/WorkingDoors/Node3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.791, 246.505, -14.3095)
+[node name="leave_zone" type="Area3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/testDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -7.10543e-15, 0, 1.76391, -102.412, 233.121, -8.76801)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("9_2o20f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/testDoor/leave_zone"]
+transform = Transform3D(1.05107, -0.0133618, -0.0309057, 0.0138292, 1.01211, -0.00779058, 0.0143997, 0.00330123, 2.26342, -7.26568, -2.37872, -2.11985)
 shape = SubResource("BoxShape3D_hd6kh")
 
-[node name="testDoor" parent="NavigationRegion3D/WorkingDoors/Node3D" instance=ExtResource("8_lwy5w")]
-
-[node name="PickUpRange" type="Area3D" parent="NavigationRegion3D/WorkingDoors/Node3D"]
+[node name="PickUpRange" type="Area3D" parent="NavigationRegion3D2/WorkingDoors/Node3D"]
 transform = Transform3D(1, 2.06057e-13, 0, 1.59517e-12, 1, -7.27596e-12, 0, 0, 1, -124.306, 214.05, -1.59646)
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/WorkingDoors/Node3D/PickUpRange"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange"]
 transform = Transform3D(1, 7.00666e-18, -3.53015e-29, -2.1684e-19, 1, -2.87097e-16, 0, 0, 1, 0.892296, 25.7896, -10.0833)
 shape = SubResource("BoxShape3D_ql7q7")
 
-[node name="LivingArea" type="Node3D" parent="NavigationRegion3D"]
+[node name="LivingArea" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2087, -0.917964)
 
-[node name="Mug" parent="NavigationRegion3D/LivingArea" instance=ExtResource("5_rdptd")]
+[node name="Mug" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("5_rdptd")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Newspaper" parent="NavigationRegion3D/LivingArea" instance=ExtResource("6_5gcgh")]
+[node name="Newspaper" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("6_5gcgh")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Armchair" parent="NavigationRegion3D/LivingArea" instance=ExtResource("7_kbdc1")]
+[node name="Armchair" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("7_kbdc1")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Sidetable" parent="NavigationRegion3D/LivingArea" instance=ExtResource("8_p0ubc")]
+[node name="Sidetable" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("8_p0ubc")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Bank_Lamp" parent="NavigationRegion3D/LivingArea" instance=ExtResource("9_t1347")]
+[node name="Bank_Lamp" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("9_t1347")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Chair" parent="NavigationRegion3D/LivingArea" instance=ExtResource("10_0ym7e")]
+[node name="Chair" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Chair2" parent="NavigationRegion3D/LivingArea" instance=ExtResource("10_0ym7e")]
+[node name="Chair2" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 1.16448)
 
-[node name="Chair3" parent="NavigationRegion3D/LivingArea" instance=ExtResource("10_0ym7e")]
+[node name="Chair3" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("10_0ym7e")]
 transform = Transform3D(0.0207055, 0, -0.0772741, 0, 0.08, 0, 0.0772741, 0, 0.0207055, 0.958539, 0, 1.20667)
 
-[node name="Table" parent="NavigationRegion3D/LivingArea" instance=ExtResource("11_lwy5w")]
+[node name="Table" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("11_lwy5w")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Wind_Machine" parent="NavigationRegion3D/LivingArea" instance=ExtResource("12_2o20f")]
+[node name="Wind_Machine" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("12_2o20f")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="Dresser" parent="NavigationRegion3D2/LivingArea" instance=ExtResource("19_hd6kh")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0.35568)
 
-[node name="Kitchen" type="Node3D" parent="NavigationRegion3D"]
+[node name="Kitchen" type="Node3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49668, -18.2234, -0.917964)
 
 [node name="Lodówka" type="Node3D" parent="NavigationRegion3D2/Kitchen"]
 
-[node name="Fridge" parent="NavigationRegion3D/Kitchen/Lodówka" instance=ExtResource("14_ql7q7")]
+[node name="Fridge" parent="NavigationRegion3D2/Kitchen/Lodówka" instance=ExtResource("14_ql7q7")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="FridgeClickable" parent="NavigationRegion3D2/Kitchen/Lodówka" node_paths=PackedStringArray("zagadkaControlNode", "transitionScreen") instance=ExtResource("21_hd6kh")]
@@ -218,7 +193,7 @@ transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="Piec" type="Node3D" parent="NavigationRegion3D2/Kitchen"]
 
-[node name="Oven" parent="NavigationRegion3D/Kitchen/Piec" instance=ExtResource("17_abfwv")]
+[node name="Oven" parent="NavigationRegion3D2/Kitchen/Piec" instance=ExtResource("17_abfwv")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="InteractableObjectSignal2" parent="NavigationRegion3D2/Kitchen/Piec" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("24_dpgo2")]
@@ -227,31 +202,31 @@ transitionScreen = NodePath("../../../../gui/Transition_screen")
 requiredItem = 1
 givenItem = 2
 
-[node name="Kitchentop_above_Fridge" parent="NavigationRegion3D/Kitchen" instance=ExtResource("15_dpgo2")]
+[node name="Kitchentop_above_Fridge" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("15_dpgo2")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Kitchentop" parent="NavigationRegion3D/Kitchen" instance=ExtResource("16_yoj2b")]
+[node name="Kitchentop" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("16_yoj2b")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Dishrack" parent="NavigationRegion3D/Kitchen" instance=ExtResource("18_jfri7")]
+[node name="Dishrack" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("18_jfri7")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Countertop_sink" parent="NavigationRegion3D/Kitchen" instance=ExtResource("19_mvcnl")]
+[node name="Countertop_sink" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("19_mvcnl")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Countertop_by_Oven2" parent="NavigationRegion3D/Kitchen" instance=ExtResource("20_v4mej")]
+[node name="Countertop_by_Oven2" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("20_v4mej")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Countertop_by_Fridge" parent="NavigationRegion3D/Kitchen" instance=ExtResource("21_g34lq")]
+[node name="Countertop_by_Fridge" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("21_g34lq")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Cooker_Hood" parent="NavigationRegion3D/Kitchen" instance=ExtResource("22_fjv2g")]
+[node name="Cooker_Hood" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("22_fjv2g")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Pan" parent="NavigationRegion3D/Kitchen" instance=ExtResource("23_wg53g")]
+[node name="Pan" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("23_wg53g")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
-[node name="Pot" parent="NavigationRegion3D/Kitchen" instance=ExtResource("24_p12un")]
+[node name="Pot" parent="NavigationRegion3D2/Kitchen" instance=ExtResource("24_p12un")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D2"]
@@ -262,6 +237,7 @@ affect_navigation_mesh = true
 carve_navigation_mesh = true
 use_3d_avoidance = true
 
-[connection signal="input_event" from="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_static_body_3d_input_event"]
-[connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_entered"]
-[connection signal="area_exited" from="NavigationRegion3D2/WorkingDoors/Node3D/PickUpRange" to="NavigationRegion3D2/WorkingDoors/Node3D/StaticBody3D" method="_on_pick_up_range_area_exited"]
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfqtg")
+
+[connection signal="area_entered" from="NavigationRegion3D2/WorkingDoors/Node3D/testDoor/leave_zone" to="NavigationRegion3D2/WorkingDoors/Node3D/testDoor/leave_zone" method="_on_area_entered"]
