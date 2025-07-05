@@ -3,6 +3,7 @@ extends Area3D
 
 
 func _on_area_entered(area: Area3D) -> void:
-	main_camera.current=true
-	main_camera.add_to_group("Cameras")
+	if area.is_in_group("Player"):
+		main_camera.current=true
+		main_camera.add_to_group("Cameras")
 	pass # Replace with function body.
