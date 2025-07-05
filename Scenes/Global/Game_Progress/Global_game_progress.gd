@@ -4,6 +4,7 @@ var Progress :={
 	"klucz_w_lodówce" = false,
 	"Motel_pierwsza_pani_od_fishcoli" = false,
 	"Motel_dano_fishcole" = false,
+	"Forest_Trash_pick_up" = false,
 }
 
 # enum wszystkich lokacji
@@ -11,6 +12,7 @@ enum Location {
 	Lokacja_testowa,
 	Motel_outdoors,
 	Motel_reception,
+	Forest,
 }
 
 var Current_Location :Location
@@ -19,5 +21,6 @@ var Current_Location :Location
 var Locations_dict ={
 	Location.Lokacja_testowa:load('res://Scenes/Locations/AlphaLocations/livingRoom.tscn'),
 	Location.Motel_outdoors:load("res://Scenes/Locations/Motel_outdors/Motel_parking.tscn"),
-	Location.Motel_reception:load("res://Scenes/Locations/Motel_Reception/motel_reception.tscn")
+	Location.Motel_reception:load("res://Scenes/Locations/Motel_Reception/motel_reception.tscn"),
+	Location.Forest:load("res://Scenes/Locations/Forest/forest_location.tscn")
 }
