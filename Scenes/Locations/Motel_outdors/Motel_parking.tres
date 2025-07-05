@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://cx6dnj3q7sosi"]
+
+[ext_resource type="Texture2D" uid="uid://dhxg27kcqpcm2" path="res://Assets/Images/sample_sky.png" id="1_hljsa"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kt5da"]
+panorama = ExtResource("1_hljsa")
+
+[sub_resource type="Sky" id="Sky_pvra2"]
+sky_material = SubResource("PanoramaSkyMaterial_kt5da")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 2.2
+sky = SubResource("Sky_pvra2")
+sky_rotation = Vector3(-0.333358, 0.111701, 0)

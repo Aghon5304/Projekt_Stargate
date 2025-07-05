@@ -4,15 +4,17 @@ extends Area3D
 
 
 func _on_area_entered(area: Area3D) -> void:
-	fornt_zone.current = true
-	main_camera.current=false
-	main_camera.remove_from_group("Cameras")
-	fornt_zone.add_to_group("Cameras")
+	if area.is_in_group("Player"):
+		fornt_zone.current = true
+		main_camera.current=false
+		main_camera.remove_from_group("Cameras")
+		fornt_zone.add_to_group("Cameras")
 	pass # Replace with function body.
 
 
 
 func _on_area_exited(area: Area3D) -> void:
-	fornt_zone.remove_from_group("Cameras")
-	fornt_zone.current = false
+	if area.is_in_group("Player"):
+		fornt_zone.remove_from_group("Cameras")
+		fornt_zone.current = false
 	pass # Replace with function body.

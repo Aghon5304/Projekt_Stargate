@@ -16,6 +16,7 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _on_area_exited(area: Area3D) -> void:
-	following_camera.remove_from_group("Cameras")
-	following_camera.current = false
+	if area.is_in_group("Player"):
+		following_camera.remove_from_group("Cameras")
+		following_camera.current = false
 	pass # Replace with function body.

@@ -4,7 +4,9 @@ var Progress :={
 	"klucz_w_lodówce" = false,
 	"Motel_pierwsza_pani_od_fishcoli" = false,
 	"Motel_dano_fishcole" = false,
+	"Motel_Fishcola_pickup" = false,
 	"Forest_Trash_pick_up" = false,
+	"Motel_Notebook_pickup" = false,
 }
 
 # enum wszystkich lokacji
