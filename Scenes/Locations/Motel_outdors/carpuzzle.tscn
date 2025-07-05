@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdb3ty04ft437"]
+
+[ext_resource type="Texture2D" uid="uid://jneulomunhah" path="res://Assets/Images/Motel/Inside_With_Notebook.png" id="1_vw4lb"]
+[ext_resource type="Script" uid="uid://b0igii0wjgkyt" path="res://Scenes/Locations/Motel_outdors/button.gd" id="2_vw4lb"]
+[ext_resource type="Script" uid="uid://c8dm74kwdqif7" path="res://Scenes/Menus/Zagadki/return_button.gd" id="3_vcnyx"]
+
+[node name="Carpuzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vw4lb")
+expand_mode = 2
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.698785
+anchor_top = 0.487765
+anchor_right = 0.979625
+anchor_bottom = 0.833333
+offset_top = -0.0720215
+offset_right = -0.528076
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_vw4lb")
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.074
+anchor_bottom = 0.117
+offset_right = -0.248001
+offset_bottom = 0.183998
+text = "X"
+script = ExtResource("3_vcnyx")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="ReturnButton" to="ReturnButton" method="_on_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://dqdavcxs67suo"]
+[gd_scene load_steps=39 format=3 uid="uid://dqdavcxs67suo"]
 
 [ext_resource type="PackedScene" uid="uid://btxn66a1fgreq" path="res://Scenes/Maps/Motel/motel_outside_asphalt_parking.tscn" id="1_2fkvq"]
 [ext_resource type="Script" uid="uid://c5ngg46c0xnvi" path="res://Scenes/Locations/Motel_outdors/motel_parking.gd" id="1_aya7p"]
 [ext_resource type="PackedScene" uid="uid://csix8v2puu5d7" path="res://Scenes/Maps/Motel/motel_building.tscn" id="2_i86vt"]
 [ext_resource type="PackedScene" uid="uid://bitaxpjmt5m0k" path="res://Scenes/Maps/Motel/motel_sign.tscn" id="3_4acnq"]
+[ext_resource type="PackedScene" uid="uid://t45dpkw3rm00" path="res://Scenes/Entities/Items/interactable_object_controlNode.tscn" id="3_ctnqc"]
 [ext_resource type="PackedScene" uid="uid://b6n4xi6rwg7tv" path="res://Scenes/Maps/Motel/juniors_car.tscn" id="4_lttmw"]
 [ext_resource type="PackedScene" uid="uid://caalwv30j14my" path="res://Scenes/Maps/Motel/ice_machine.tscn" id="5_bhlx3"]
 [ext_resource type="PackedScene" uid="uid://dtqswqitj1eqw" path="res://Scenes/Maps/Motel/garbage_big.tscn" id="6_p7wq5"]
@@ -27,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bbg1xdjcsq78a" path="res://Assets/models/Motel_Exports/Fishcola.glb" id="14_x12oi"]
 [ext_resource type="Script" uid="uid://cvoimchawkmxu" path="res://Scenes/Locations/Motel_outdors/beta.gd" id="23_bu8h4"]
 [ext_resource type="Environment" uid="uid://cx6dnj3q7sosi" path="res://Scenes/Locations/Motel_outdors/Motel_parking.tres" id="24_kt5da"]
+[ext_resource type="PackedScene" uid="uid://bdb3ty04ft437" path="res://Scenes/Locations/Motel_outdors/carpuzzle.tscn" id="25_wfcq0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ka1d6"]
 vertices = PackedVector3Array(4.49033, 0.281332, 3.37584, 4.99033, 0.281332, 4.37584, 6.74033, 0.281332, 4.37584, -2.75967, 0.281332, -1.62416, -2.75967, 0.531332, -0.874157, -2.00967, 0.281332, 2.12584, 0.240334, 0.281332, 1.87584, 6.74033, 0.281332, -9.37416, -3.50967, 0.281332, -9.12416, -3.50967, 0.531332, -1.87416, -5.00967, 0.531332, 5.37584, -4.25967, 0.531332, 5.37584, -4.00967, 0.531332, 4.87584, -2.75967, 0.531332, 5.12584, -2.75967, 0.531332, 4.87584, -2.75967, 0.531332, 3.62584, -3.00967, 0.531332, -0.374157, -4.25967, 0.531332, -0.624157, -5.00967, 0.531332, 0.375843, -4.25967, 0.531332, -1.62416, -9.25967, 0.531332, -0.374157, -9.25967, 0.281332, -8.87416, -25.0097, 0.281332, 4.87584, -22.7597, 0.531332, 4.87584, -22.5097, 0.281332, 4.12584, -21.2597, 0.531332, 4.37584, -20.0097, 0.281332, 3.37584, -20.0097, 0.281332, -0.124157, -20.2597, 0.281332, -7.87416, -20.2597, 0.281332, -8.87416, -25.0097, 0.281332, -8.62416, -19.0097, 0.281332, -0.374157, -19.0097, 0.281332, -6.87416, -14.7597, 0.281332, -0.374157, -14.5097, 0.281332, -0.374157, -14.7597, 0.281332, -1.62416, -16.5097, 0.281332, -7.62416, -17.5097, 0.281332, -7.87416, -18.2597, 0.281332, -6.87416, -14.0097, 0.531332, -1.87416, -14.0097, 0.281332, -8.87416, -15.7597, 0.281332, -8.87416, -13.5097, 0.531332, -1.62416, -13.5097, 0.531332, -0.874157, -12.7597, 0.531332, 0.125843, -4.25967, 4.28133, 28.6258, -4.25967, 4.28133, 32.1258, -3.75967, 4.28133, 32.1258, -3.50967, 4.28133, 19.3758, -14.0097, 4.28133, -1.12416, -3.50967, 4.28133, -1.12416, -21.5097, 0.531332, 11.1258, -21.2597, 0.531332, 11.6258, -20.7597, 0.531332, 11.6258, -20.7597, 0.531332, 6.37584, -13.7597, 0.531332, -0.374157, -13.7597, 0.531332, 0.375843, -25.0097, 0.281332, 11.6258, -22.7597, 0.531332, 11.6258, -22.5097, 0.531332, 11.1258, -22.5097, 0.531332, 5.87584, -14.7597, 0.281332, 3.62584, -13.7597, 0.531332, 2.62584, -16.2597, 0.531332, 4.62584, -16.0097, 0.531332, 6.12584, -14.7597, 0.531332, 6.12584, -14.5097, 0.531332, 4.87584, -21.5097, 0.531332, 5.87584, -12.7597, 0.531332, 4.87584, -12.7597, 0.531332, 2.87584, -19.0097, 0.531332, 4.62584, -19.2597, 0.531332, 6.12584, -19.0097, 1.53133, 1.37584, -19.0097, 1.53133, 1.87584, -15.5097, 1.53133, 1.87584, -15.5097, 1.53133, 1.37584, -6.25967, 0.531332, 1.62584, -11.5097, 0.531332, 1.62584, -11.2597, 0.531332, 4.62584, -11.7597, 0.531332, 7.37584, -6.25967, 0.531332, 28.8758, -19.5097, 0.531332, 28.8758, -19.5097, 0.531332, 7.37584, -3.00967, 0.531332, 11.8758, -2.75967, 0.531332, 12.3758, -2.50967, 0.531332, 12.3758, -2.50967, 0.531332, 10.1258, -5.00967, 0.531332, 12.3758, -4.25967, 0.531332, 12.3758, -4.00967, 0.531332, 11.8758, -4.00967, 0.531332, 6.37584, -0.509666, 0.281332, 6.37584, -3.00967, 0.531332, 6.37584, -2.00967, 0.281332, 9.62584, 4.49033, 0.281332, 9.62584, 3.74033, 0.281332, 7.37584, 4.74033, 0.281332, 11.3758, 6.74033, 0.281332, 11.3758, -22.0097, 4.28133, 5.12584, -22.0097, 4.28133, 32.1258, -21.2597, 4.28133, 32.1258, -21.2597, 4.28133, 5.12584, -18.2597, 2.03133, 5.62584, -18.2597, 2.28133, 6.12584, -17.0097, 2.28133, 6.12584, -17.0097, 2.03133, 5.62584, -3.00967, 0.531332, 13.1258, -3.00967, 0.531332, 18.6258, -2.00967, 0.281332, 13.1258, -4.75967, 0.531332, 19.1258, -4.25967, 0.531332, 19.1258, -4.00967, 0.531332, 18.6258, -4.00967, 0.531332, 13.1258, -2.75967, 0.531332, 19.3758, 6.74033, 0.281332, 19.3758, 4.49033, 0.281332, 13.1258, -21.5097, 0.531332, 17.8758, -21.2597, 0.531332, 18.3758, -20.7597, 0.531332, 18.3758, -21.5097, 0.531332, 12.3758, -22.5097, 0.531332, 17.8758, -22.5097, 0.531332, 12.3758, -25.0097, 0.281332, 18.3758, -22.7597, 0.531332, 18.3758, -21.5097, 0.531332, 19.1258, -22.5097, 0.531332, 24.6258, -21.2597, 0.531332, 24.8758, -21.0097, 0.531332, 24.8758, -22.5097, 0.531332, 19.1258, -25.0097, 0.281332, 25.1258, -22.7597, 0.531332, 25.1258, -4.00967, 0.531332, 19.8758, -5.00967, 0.531332, 29.8758, -4.25967, 0.531332, 25.6258, -4.00967, 0.531332, 26.8758, -2.75967, 0.281332, 26.6258, 5.99033, 0.281332, 30.1258, -3.00967, 0.531332, 25.3758, 6.74033, 0.281332, 30.1258, -3.00967, 0.531332, 19.8758, -21.5097, 0.531332, 25.8758, -20.7597, 0.531332, 29.3758, -22.5097, 0.531332, 25.8758, -25.0097, 0.281332, 29.3758)
@@ -60,8 +62,13 @@ script = ExtResource("1_aya7p")
 
 [node name="puzzle" type="Node3D" parent="."]
 
-[node name="InteractableObjectSignal" parent="puzzle" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
+[node name="fishcolaPickup" parent="puzzle" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.08921, -21.5362, 0.667421, 22.8114)
+transitionScreen = NodePath("../../gui/Transition_screen")
+
+[node name="CarNotebookEnter" parent="puzzle" node_paths=PackedStringArray("zagadkaControlNode", "transitionScreen") instance=ExtResource("3_ctnqc")]
+transform = Transform3D(1.6917, 0, 0, 0, 1, 0, 0, 0, 1, 1.15418, 0.0153727, 9.63287)
+zagadkaControlNode = NodePath("../../gui/Carpuzzle")
 transitionScreen = NodePath("../../gui/Transition_screen")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -248,6 +255,13 @@ fov = 79.5031
 
 [node name="gui" type="Node" parent="."]
 
+[node name="Carpuzzle" parent="gui" instance=ExtResource("25_wfcq0")]
+anchors_preset = -1
+anchor_left = 2.604
+anchor_right = 3.604
+offset_left = 0.191895
+offset_right = 0.191895
+
 [node name="Transition_screen" parent="gui" instance=ExtResource("9_ka1d6")]
 
 [node name="PauseMenu" parent="gui" instance=ExtResource("11_5u7sm")]
@@ -260,7 +274,7 @@ transform = Transform3D(1, 0, 0, 0, -0.977101, 0.212775, 0, -0.212775, -0.977101
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("24_kt5da")
 
-[connection signal="item_activated" from="puzzle/InteractableObjectSignal" to="NavigationRegion3D/Objects/Fishcole" method="_on_interactable_object_signal_item_activated"]
+[connection signal="item_activated" from="puzzle/fishcolaPickup" to="NavigationRegion3D/Objects/Fishcole" method="_on_interactable_object_signal_item_activated"]
 [connection signal="item_activated" from="NavigationRegion3D/Objects/Reception/Reception_door" to="NavigationRegion3D/Objects/Reception" method="_on_reception_door_item_activated"]
 [connection signal="item_activated" from="NavigationRegion3D/Objects/Beta/Reception_door" to="NavigationRegion3D/Objects/Beta" method="_on_reception_door_item_activated"]
 [connection signal="item_activated" from="NavigationRegion3D/NPC/NPC renting nr_ 7/InteractableObjectSignal" to="NavigationRegion3D/NPC/NPC renting nr_ 7" method="_on_interactable_object_signal_item_activated"]

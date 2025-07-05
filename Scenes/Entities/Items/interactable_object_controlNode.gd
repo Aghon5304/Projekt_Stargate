@@ -10,12 +10,14 @@ func _ready() -> void:
 	animationPlayer = transitionScreen.get_node_or_null("AnimationPlayer")
 
 func _on_pick_up_range_area_entered(area: Area3D) -> void:
-	playerInRange = true
+	if area.is_in_group("Player"):
+		playerInRange = true
 	pass # Replace with function body.
 
 
 func _on_pick_up_range_area_exited(area: Area3D) -> void:
-	playerInRange = false
+	if area.is_in_group("Player"):
+		playerInRange = false
 	pass # Replace with function body.
 
 func _on_teren_do_klikniecia_mouse_entered() -> void:
