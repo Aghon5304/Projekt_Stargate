@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bffwnvpex4bcl" path="res://Scenes/Maps/Forest/forest_map.tscn" id="1_367ht"]
 [ext_resource type="PackedScene" uid="uid://bapfb1kxutdrt" path="res://Assets/models/forest/Trees Export.glb" id="1_fqmll"]
-[ext_resource type="PackedScene" path="res://Scenes/Maps/Forest/benchestscn.tscn" id="1_gkmg2"]
+[ext_resource type="PackedScene" uid="uid://ub6d4ibntjji" path="res://Scenes/Maps/Forest/benchestscn.tscn" id="1_gkmg2"]
 [ext_resource type="PackedScene" uid="uid://djqtror3ex8l" path="res://Assets/models/forest/Bunker Export.glb" id="1_jdrm6"]
 [ext_resource type="Script" uid="uid://b2nn14ct7drqb" path="res://Scenes/Locations/Forest/area_camera.gd" id="1_xxbqf"]
 [ext_resource type="PackedScene" uid="uid://bgmp0s0yqctpj" path="res://Scenes/Entities/Player/gracz.tscn" id="2_0liqx"]
@@ -227,10 +227,6 @@ transform = Transform3D(-0.324528, 0, 0.945876, 0, 1, 0, -0.945876, 0, -0.324528
 [node name="gui" type="Node" parent="."]
 
 [node name="Transition_screen" parent="gui" instance=ExtResource("3_yfhhp")]
-offset_left = 5000.0
-offset_top = 5000.0
-offset_right = 5000.0
-offset_bottom = 5000.0
 
 [node name="PauseMenu" parent="gui" instance=ExtResource("4_u2vvw")]
 
