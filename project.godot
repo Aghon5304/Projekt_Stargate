@@ -54,6 +54,7 @@ layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"
 variables={
+"have_pass": 0,
 "qestions_passed": 0
 }
 GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"

@@ -19,6 +19,7 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpRange"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.288944, -1.6298, -0.210045)
 shape = SubResource("BoxShape3D_0ym7e")
+debug_color = Color(0.811027, 0.302145, 0.70779, 0.42)
 
 [node name="terenDoKlikniecia" type="StaticBody3D" parent="."]
 transform = Transform3D(1.11697, 0, 0, 0, 2.28809, 0, 0, 0, 1, 0, 1.13191, 0)
@@ -27,6 +28,7 @@ collision_mask = 5
 
 [node name="terenDoKlikniecia" type="CollisionShape3D" parent="terenDoKlikniecia"]
 shape = SubResource("BoxShape3D_61dv4")
+debug_color = Color(0.84996, 0.0923188, 0.869092, 0.42)
 
 [connection signal="area_entered" from="PickUpRange" to="." method="_on_pick_up_range_area_entered"]
 [connection signal="area_exited" from="PickUpRange" to="." method="_on_pick_up_range_area_exited"]

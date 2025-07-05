@@ -1,4 +1,4 @@
-if {true} == true:
+if {have_pass} == 1.0:
 	guard_character: Huh... I guess you can go through.
 	join main_character center
 	- What's your name?
@@ -14,4 +14,4 @@ if {true} == true:
 		guard_character: No.
 else:
 	guard_character: Stop! No entry without permit.
-	guard_character: (Thinking) Hmm good thing I got my hands on that
+	Michael: (Thinking) Hmm good thing I got my hands on that
