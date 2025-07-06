@@ -14,7 +14,7 @@ func _ready() -> void:
 	Icons[GlobalItems.ItemTypes.KLUCZ_WYJETY_Z_LODU] = preload("res://Assets/Images/Key_v1_cursor.png")
 	Icons[GlobalItems.ItemTypes.PRZEPUSTKA] = preload("res://Assets/Images/Access_Pass.png")
 	Icons[GlobalItems.ItemTypes.KAWALEK_ZLOMU] = preload("res://Assets/Images/Zom.png")
-	Icons[GlobalItems.ItemTypes.FISHCOLA] = preload("res://Assets/Images/icon.svg")
+	Icons[GlobalItems.ItemTypes.FISHCOLA] = preload("res://Assets/Images/Fishcola-image.png")
 	Icons[GlobalItems.ItemTypes.NOTATNIK] = preload("res://Assets/Images/Motel/Notebook_icon.png")
 	#przy starcie sceny wypełnia gui ekwipunkek porpawnymi ikonami
 		
