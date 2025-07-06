@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdb3ty04ft437"]
+[gd_scene load_steps=5 format=3 uid="uid://bdb3ty04ft437"]
 
 [ext_resource type="Texture2D" uid="uid://jneulomunhah" path="res://Assets/Images/Motel/Inside_With_Notebook.png" id="1_vw4lb"]
 [ext_resource type="Script" uid="uid://b0igii0wjgkyt" path="res://Scenes/Locations/Motel_outdors/button.gd" id="2_vw4lb"]
 [ext_resource type="Script" uid="uid://c8dm74kwdqif7" path="res://Scenes/Menus/Zagadki/return_button.gd" id="3_vcnyx"]
+[ext_resource type="Script" uid="uid://1jvilaj24fuk" path="res://Scenes/Locations/Motel_outdors/return_button_2.gd" id="4_6lkl5"]
 
 [node name="Carpuzzle" type="Control"]
 layout_mode = 3
@@ -47,5 +48,80 @@ offset_bottom = 0.183998
 text = "X"
 script = ExtResource("3_vcnyx")
 
+[node name="Notebook" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3000.0
+offset_right = 3000.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Notebook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReturnButton2" type="Button" parent="Notebook/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.074
+anchor_bottom = 0.117
+offset_right = -0.248001
+offset_bottom = 0.183998
+text = "X"
+script = ExtResource("4_6lkl5")
+
+[node name="title" type="Label" parent="Notebook/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.148
+offset_bottom = 0.0960007
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Dear Diary"
+horizontal_alignment = 1
+
+[node name="list" type="Label" parent="Notebook/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.191
+anchor_right = 0.359
+anchor_bottom = 1.0
+offset_left = -77.8
+offset_top = 0.232002
+offset_right = 660.432
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "TO DO:
+1.	Buy some more Fish Cola
+2.	Get in touch with the Local weirdo
+3.	Find better lodging
+4.	Contact Michael (?)
+5.	Talk to the nice lady in room 2 !!!"
+uppercase = true
+
+[node name="Line2D" type="Line2D" parent="Notebook/ColorRect/list"]
+points = PackedVector2Array(-6, 51, 391, 56)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="Notebook/ColorRect/list"]
+points = PackedVector2Array(-7, 92, 489, 93)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="ReturnButton" to="ReturnButton" method="_on_pressed"]
+[connection signal="pressed" from="Notebook/ColorRect/ReturnButton2" to="Notebook/ColorRect/ReturnButton2" method="_on_pressed"]
