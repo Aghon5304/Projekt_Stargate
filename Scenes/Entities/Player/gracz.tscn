@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgmp0s0yqctpj"]
 
 [ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_h75k5"]
-[ext_resource type="PackedScene" uid="uid://pwlbfltib2be" path="res://Assets/models/player/protag_1.tscn" id="2_47maw"]
+[ext_resource type="PackedScene" uid="uid://bnn6dlq6y70ih" path="res://Assets/models/player/seba/Protag.glb" id="2_55qto"]
 [ext_resource type="Script" uid="uid://bdmxusdy74rot" path="res://Scenes/Entities/Player/label_3d.gd" id="3_55qto"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyoov"]
@@ -20,8 +20,8 @@ input_ray_pickable = false
 wall_min_slide_angle = 1.59174
 script = ExtResource("1_h75k5")
 
-[node name="MainGameProt" parent="." instance=ExtResource("2_47maw")]
-transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0, 1.03574, 0)
+[node name="MainGameProt" parent="." instance=ExtResource("2_55qto")]
+transform = Transform3D(-0.015, 0, 1.31134e-09, 0, 0.015, 0, -1.31134e-09, 0, -0.015, 0, 1.036, 0)
 
 [node name="TutorialMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_vyoov")

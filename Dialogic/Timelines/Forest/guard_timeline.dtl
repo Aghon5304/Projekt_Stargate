@@ -1,17 +1,16 @@
-if {have_pass} == 1.0:
-	guard_character: Huh... I guess you can go through.
-	join main_character center
-	- What's your name?
-		guard_character: ...
-		main_character: So?...
-		guard_character: Frank
-		main_character: Nice to meet you Frank!
-		...
-	- What's behind the checkpoint?
-		main_character: Forest
-		main_character: Great...
-	- Can I borrow those bolt cutters?
-		guard_character: No.
-else:
-	guard_character: Stop! No entry without permit.
-	Michael: (Thinking) Hmm good thing I got my hands on that
+guard_character: Stop! No entry without permit.
+Michael: (Thinking) Hmm good thing I got my hands on that
+- Good thing I have one of these!
+guard_character: Huh... I guess you can go through.
+join main_character center
+- What's your name?
+	guard_character: ...
+	main_character: So?...
+	guard_character: Frank
+	main_character: Nice to meet you Frank!
+	...
+- What's behind the checkpoint?
+	main_character: Forest
+	main_character: Great...
+- Can I borrow those bolt cutters?
+	guard_character: No.

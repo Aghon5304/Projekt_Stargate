@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjlp3hkuiwmv1"]
+
+[ext_resource type="Script" uid="uid://by4cretp7udcf" path="res://Scenes/Entities/Player/ClickToMove.gd" id="1_f1uqu"]
+[ext_resource type="PackedScene" uid="uid://chyet1pia3851" path="res://Assets/models/player/seba/Młody (nie najlepszy ale tyle ugotowałem na 25.05).glb" id="2_ckcyf"]
+[ext_resource type="Script" uid="uid://bdmxusdy74rot" path="res://Scenes/Entities/Player/label_3d.gd" id="3_c7g6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyoov"]
+albedo_color = Color(0.357764, 0.72814, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o4ttk"]
+material = SubResource("StandardMaterial3D_vyoov")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bom8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1fhp"]
+size = Vector3(1.5, 1, 1.22064)
+
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_f1uqu")
+
+[node name="MainGameProt" parent="." instance=ExtResource("2_ckcyf")]
+transform = Transform3D(-0.015, 0, 1.31134e-09, 0, 0.015, 0, -1.31134e-09, 0, -0.015, 0, 1.036, 0)
+
+[node name="TutorialMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_o4ttk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 1.3
+target_desired_distance = 0.1
+avoidance_enabled = true
+height = 2.0
+radius = 1.0
+use_3d_avoidance = true
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.878419, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_7bom8")
+
+[node name="PlayerArea" type="Area3D" parent="." groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea"]
+transform = Transform3D(1, 0, 0, 0, 2.31685, 0, 0, 0, 1, 0, 0.194818, -0.0352478)
+shape = SubResource("BoxShape3D_o1fhp")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.94561, 0)
+billboard = 1
+script = ExtResource("3_c7g6e")

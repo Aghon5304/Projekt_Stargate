@@ -16,6 +16,10 @@ func _ready() -> void:
 	Icons[GlobalItems.ItemTypes.FISHCOLA] = preload("res://Assets/Images/icon.svg")
 	Icons[GlobalItems.ItemTypes.NOTATNIK] = preload("res://Assets/Images/Motel/Notebook_icon.png")
 	Icons[GlobalItems.ItemTypes.PRZEPUSTKA] = preload("res://Assets/Images/Access_Pass_cursor.png")
+	Icons[GlobalItems.ItemTypes.KAWALEK_ZLOMU] = preload("res://Assets/Images/Zom_1.png")
+	Icons[GlobalItems.ItemTypes.OBCEGI] = preload("res://Assets/Images/Boltcutters_cursor.png")
+	Icons[GlobalItems.ItemTypes.ZEPSUTA_KROTKOFALOWKA] = preload("res://Assets/Images/red_krotkofalowka.png")
+	Icons[GlobalItems.ItemTypes.DZIALAJACA_KROTKOFALOWKA] = preload("res://Assets/Images/Krotkofalowka_1.png")
 	#przy starcie sceny wypełnia gui ekwipunkek porpawnymi ikonami
 		
 	for x in buttons.size():
