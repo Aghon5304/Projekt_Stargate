@@ -15,6 +15,9 @@ enum Location {
 	Motel_outdoors,
 	Motel_reception,
 	Forest,
+	transition_to_motel,
+	napisy,
+	prologue
 }
 
 var Current_Location :Location
@@ -24,5 +27,8 @@ var Locations_dict ={
 	Location.Lokacja_testowa:load('res://Scenes/Locations/AlphaLocations/livingRoom.tscn'),
 	Location.Motel_outdoors:load("res://Scenes/Locations/Motel_outdors/Motel_parking.tscn"),
 	Location.Motel_reception:load("res://Scenes/Locations/Motel_Reception/motel_reception.tscn"),
-	Location.Forest:load("res://Scenes/Locations/Forest/forest_location.tscn")
+	Location.Forest:load("res://Scenes/Locations/Forest/forest_location.tscn"),
+	Location.transition_to_motel:load("res://Scenes/Locations/Motel_outdors/tranasition.tscn"),
+	Location.napisy:load("res://Scenes/Locations/Motel_outdors/ending.tscn"),
+	Location.prologue:load("res://Scenes/Menus/prologue/prologue.tscn")
 }

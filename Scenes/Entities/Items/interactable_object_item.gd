@@ -59,3 +59,7 @@ func _on_teren_do_klikniecia_input_event(camera: Node, event: InputEvent, event_
 						GlobalItems.Ekwipunek[x] = givenItem
 						GlobalSignals.Item_used.emit()
 	pass # Replace with function body.
+
+
+func _on_visibility_changed() -> void:
+	pass # Replace with function body.

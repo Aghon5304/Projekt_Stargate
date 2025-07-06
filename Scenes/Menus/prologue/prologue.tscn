@@ -21,8 +21,9 @@ offset_bottom = 650.0
 
 [node name="PrologueButton" type="Button" parent="MarginContainer"]
 layout_mode = 2
-text = "Jesteś dziennikarzem śledczym, którego celem jest odnalezienie swojego współpracownika “Juniora”. Podążając za jego tropem udało ci się znaleźć mieszkanie, w którym przebywał. Wiesz, że musiał tu gdzieś ukryć kasetę, na którą nagrał swoje odkrycia i przemyślenia. Potrzebujesz tych informacji, żeby rozwikłać tajemnicę zniknięcia twojego kolegi. Powodzenia.
-Kliknij aby kontynuuować"
+text = "Junior speaking. Sorry for running off without telling anyone, but listen up - I’m onto something big. If things go as planned, I’ll make Watergate look like a slow news day! I believe I’m about to uncover a secret government experiment, but I can’t tell you too much over the phone, they might be listening. Meet me in person instead, I’ll give you the address of the bunker.
+
+Oh, and I swear you won’t have to bail me out of any trouble this time."
 autowrap_mode = 2
 script = ExtResource("1_h3rjh")
 

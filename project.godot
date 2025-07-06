@@ -36,13 +36,16 @@ directories/dch_directory={
 "woman_renting_room_nr_2": "res://Dialogic/Characters/Motel/woman_renting_room_nr_2.dch"
 }
 directories/dtl_directory={
+"Doors_hint": "res://Dialogic/Timelines/Forest/Doors_hint.dtl",
+"Doors_open": "res://Dialogic/Timelines/Forest/Doors_open.dtl",
 "Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
 "Reception": "res://Dialogic/Timelines/Motel/Reception.dtl",
 "after_walkie-talkie_puzzle": "res://Dialogic/Timelines/Forest/after_walkie-talkie_puzzle.dtl",
+"boltcutters_warning": "res://Dialogic/Timelines/Forest/boltcutters_warning.dtl",
 "burker_dors_interaction": "res://Dialogic/Timelines/Forest/burker_dors_interaction.dtl",
+"end": "res://Dialogic/Timelines/Forest/end.dtl",
 "graffiti_interaction": "res://Dialogic/Timelines/Forest/graffiti_interaction.dtl",
 "guard_timeline": "res://Dialogic/Timelines/Forest/guard_timeline.dtl",
-"living_room_first_hint": "res://Dialogic/Timelines/Forest/living_room_first_hint.dtl",
 "pass_interaction": "res://Dialogic/Timelines/Forest/pass_interaction.dtl",
 "thrash_pickup": "res://Dialogic/Timelines/Forest/thrash_pickup.dtl",
 "walkie-talkie_damaged": "res://Dialogic/Timelines/Forest/walkie-talkie_damaged.dtl",
@@ -54,6 +57,7 @@ layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"
 variables={
+"have_pass": 0,
 "qestions_passed": 0
 }
 GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
