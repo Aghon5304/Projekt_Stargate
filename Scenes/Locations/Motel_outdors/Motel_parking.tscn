@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://66wgwxu3ch6d" path="res://Scenes/Locations/Motel_outdors/reset_right_zone.gd" id="12_6660k"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="12_mfy0j"]
 [ext_resource type="PackedScene" uid="uid://dedf8ypplixvh" path="res://Assets/models/Motel_Exports/Motel_Cart.glb" id="13_v3ssj"]
-[ext_resource type="Script" uid="uid://bwwf8u6vxe76k" path="res://Scenes/Locations/Motel_outdors/fishcole.gd" id="14_kt5da"]
+[ext_resource type="Script" path="res://Scenes/Locations/Motel_outdors/fishcole.gd" id="14_kt5da"]
 [ext_resource type="PackedScene" uid="uid://bbg1xdjcsq78a" path="res://Assets/models/Motel_Exports/Fishcola.glb" id="14_x12oi"]
 [ext_resource type="PackedScene" uid="uid://bxgk6rbcs4b4m" path="res://Assets/models/Motel_Exports/Fish Cola Fixed.glb" id="17_ctnqc"]
 [ext_resource type="Script" uid="uid://cvoimchawkmxu" path="res://Scenes/Locations/Motel_outdors/beta.gd" id="23_bu8h4"]
@@ -103,8 +103,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93143, 0, 13.6886)
 script = ExtResource("23_bu8h4")
 
 [node name="Reception_door" parent="NavigationRegion3D/Objects/Beta" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
-transform = Transform3D(1.67551, 0, 0, 0, 1.56188, 0, 0, 0, 1, -14.6026, 0.718379, 0.735525)
+transform = Transform3D(1.67551, 0, 0, 0, 1.56188, 0, 0, 0, 4.12294, -14.6026, 0.718379, 0.269296)
 transitionScreen = NodePath("../../../../gui/Transition_screen")
+requiredItem = 2
 
 [node name="Motel_Cart" parent="NavigationRegion3D/Objects" instance=ExtResource("13_v3ssj")]
 transform = Transform3D(-0.964216, 0, -0.265119, 0, 1, 0, 0.265119, 0, -0.964216, -20.9149, 0.537535, 22.06)
