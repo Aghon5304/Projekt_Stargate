@@ -36,8 +36,8 @@ Recepcjoniskta: Now what do you want?
 			set {qestions_passed} += 1.0
 		else:
 			- What are you getting at?
-if {qestions_passed} == 4.0:
-	Recepcjoniskta: Ugh, fine. You can use the spare key. 
+if {qestions_passed} <= 4.0:
+	Recepcjoniskta: Ugh, fine. You can use the spare key.
 	Recepcjoniskta: Now piss off!
 	[end_timeline]
 else:
