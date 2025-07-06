@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	var end: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.napisy)
+	var end: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.napisy2)
 	get_tree().change_scene_to_packed(end)

@@ -17,6 +17,7 @@ enum Location {
 	Forest,
 	transition_to_motel,
 	napisy,
+	napisy2,
 	prologue
 }
 
@@ -30,5 +31,6 @@ var Locations_dict ={
 	Location.Forest:load("res://Scenes/Locations/Forest/forest_location.tscn"),
 	Location.transition_to_motel:load("res://Scenes/Locations/Motel_outdors/tranasition.tscn"),
 	Location.napisy:load("res://Scenes/Locations/Motel_outdors/ending.tscn"),
+	Location.napisy2:load("res://Scenes/Locations/end_location/end_credits.tscn"),
 	Location.prologue:load("res://Scenes/Menus/prologue/prologue.tscn")
 }
