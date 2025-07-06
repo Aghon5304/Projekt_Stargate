@@ -13,9 +13,9 @@ func ended():
 	get_tree().change_scene_to_packed(Motel_transition)
 	
 func _on_interactable_object_signal_item_activated() -> void:
-	Dialogic.timeline_ended.connect(ended)
 	if count == 0:
 		if 8 in GlobalItems.Ekwipunek:
+			Dialogic.timeline_ended.connect(ended)
 			Dialogic.start("Doors_open")
 			Dialogic.start("end")
 			GlobalItems.Ekwipunek.assign([-1,-1,-1,-1,-1,-1,-1,-1])

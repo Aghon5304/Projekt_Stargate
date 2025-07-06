@@ -44,23 +44,29 @@ script = ExtResource("1_pvra2")
 
 [node name="Camera1" type="Camera3D" parent="Camera" groups=["Cameras"]]
 transform = Transform3D(-0.996527, 0.0306659, -0.0774216, -0.0131944, 0.859834, 0.510402, 0.0822217, 0.509651, -0.856443, 39.4476, 7.09876, -120.321)
+environment = ExtResource("1_pvra3")
 current = true
 
 [node name="Camera2" type="Camera3D" parent="Camera"]
 transform = Transform3D(-0.725498, -0.353121, 0.590726, 0.00915605, 0.853306, 0.52133, -0.688163, 0.383633, -0.615839, 34.0882, 10.4973, -130.912)
+environment = ExtResource("1_pvra3")
 
 [node name="Camera3" type="Camera3D" parent="Camera"]
 transform = Transform3D(0.816227, -0.183301, 0.547882, 0.0212869, 0.957231, 0.288542, -0.577339, -0.223853, 0.78522, 17.3018, 10.4973, -103.158)
+environment = ExtResource("1_pvra3")
 fov = 97.016
 
 [node name="Camera4" type="Camera3D" parent="Camera"]
 transform = Transform3D(0.987766, -0.0647311, 0.141872, -0.0156351, 0.864083, 0.503107, -0.155156, -0.49917, 0.8525, -8.83249, 10.4973, -120.195)
+environment = ExtResource("1_pvra3")
 
 [node name="Camera5" type="Camera3D" parent="Camera"]
 transform = Transform3D(-0.805788, -0.3088, 0.50532, -0.0156351, 0.864083, 0.503107, -0.591998, 0.397497, -0.701096, -24.2989, 10.4973, -126.285)
+environment = ExtResource("1_pvra3")
 
 [node name="Camera6" type="Camera3D" parent="Camera"]
 transform = Transform3D(0.322079, -0.471997, 0.820661, -0.0156351, 0.864083, 0.503107, -0.946584, -0.174871, 0.270923, -30.3495, 7.07691, -111.028)
+environment = ExtResource("1_pvra3")
 fov = 76.4025
 
 [node name="Area3d" type="Node3D" parent="."]
