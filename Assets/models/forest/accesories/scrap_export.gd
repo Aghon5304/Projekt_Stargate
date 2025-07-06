@@ -8,4 +8,6 @@ func _on_interactable_object_signal_item_activated() -> void:
 		if 9 not in GlobalItems.Ekwipunek or 11 not in GlobalItems.Ekwipunek:
 			GlobalItems.Ekwipunek.insert(0,9)
 			Dialogic.start("thrash_pickup")
+			$".".queue_free()
+			$"../Electronics Export".queue_free()
 			count += 1

@@ -36,10 +36,14 @@ directories/dch_directory={
 "woman_renting_room_nr_2": "res://Dialogic/Characters/Motel/woman_renting_room_nr_2.dch"
 }
 directories/dtl_directory={
+"Doors_hint": "res://Dialogic/Timelines/Forest/Doors_hint.dtl",
+"Doors_open": "res://Dialogic/Timelines/Forest/Doors_open.dtl",
 "Kobieta z Fish Colą": "res://Dialogic/Timelines/Motel/Kobieta z Fish Colą.dtl",
 "Reception": "res://Dialogic/Timelines/Motel/Reception.dtl",
 "after_walkie-talkie_puzzle": "res://Dialogic/Timelines/Forest/after_walkie-talkie_puzzle.dtl",
+"boltcutters_warning": "res://Dialogic/Timelines/Forest/boltcutters_warning.dtl",
 "burker_dors_interaction": "res://Dialogic/Timelines/Forest/burker_dors_interaction.dtl",
+"end": "res://Dialogic/Timelines/Forest/end.dtl",
 "graffiti_interaction": "res://Dialogic/Timelines/Forest/graffiti_interaction.dtl",
 "guard_timeline": "res://Dialogic/Timelines/Forest/guard_timeline.dtl",
 "pass_interaction": "res://Dialogic/Timelines/Forest/pass_interaction.dtl",
