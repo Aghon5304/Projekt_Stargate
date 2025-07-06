@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpisefe1jvr6g"]
 
-[ext_resource type="Script" uid="uid://x3qtver6g2e2" path="res://prologue_button.gd" id="1_y6n7b"]
+[ext_resource type="Script" uid="uid://dogbc866lmwsj" path="res://Scenes/Locations/Motel_outdors/transit.gd" id="1_y6n7b"]
 
 [node name="Transition" type="Control"]
 layout_mode = 3
@@ -11,10 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 1159.0
 offset_bottom = 650.0
 
-[node name="PrologueButton" type="Button" parent="MarginContainer"]
+[node name="transit" type="Button" parent="MarginContainer"]
 layout_mode = 2
 text = "7 days later 
 Outskirts of River Creek
@@ -23,4 +24,4 @@ Investigative Journalist Michael Deere"
 autowrap_mode = 2
 script = ExtResource("1_y6n7b")
 
-[connection signal="pressed" from="MarginContainer/PrologueButton" to="MarginContainer/PrologueButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/transit" to="MarginContainer/transit" method="_on_pressed"]

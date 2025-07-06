@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed_new_game_button() -> void:
-	var Forest :PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.Forest)
-	get_tree().change_scene_to_packed(Forest)# Replace with function body.
+	var s :PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.prologue)
+	get_tree().change_scene_to_packed(s)# Replace with function body.

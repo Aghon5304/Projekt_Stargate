@@ -1,6 +1,5 @@
 extends Button
 
-@onready var new_game = "res://Scenes/Locations/Forest/forest_location.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -12,5 +11,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	var Forest: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.Forest)
-	get_tree().change_scene_to_packed(Forest)
+	var end: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.napisy)
+	get_tree().change_scene_to_packed(end)

@@ -23,9 +23,9 @@
 [ext_resource type="Script" uid="uid://66wgwxu3ch6d" path="res://Scenes/Locations/Motel_outdors/reset_right_zone.gd" id="12_6660k"]
 [ext_resource type="PackedScene" uid="uid://c022k2pduvwhn" path="res://Scenes/Menus/equipment_bar/equipment.tscn" id="12_mfy0j"]
 [ext_resource type="PackedScene" uid="uid://dedf8ypplixvh" path="res://Assets/models/Motel_Exports/Motel_Cart.glb" id="13_v3ssj"]
-[ext_resource type="Script" path="res://Scenes/Locations/Motel_outdors/fishcole.gd" id="14_kt5da"]
+[ext_resource type="Script" uid="uid://bwwf8u6vxe76k" path="res://Scenes/Locations/Motel_outdors/fishcole.gd" id="14_kt5da"]
 [ext_resource type="PackedScene" uid="uid://bbg1xdjcsq78a" path="res://Assets/models/Motel_Exports/Fishcola.glb" id="14_x12oi"]
-[ext_resource type="PackedScene" uid="uid://cbm4xvhmw5daw" path="res://Assets/models/Motel_Exports/fishcola_lady_final.tscn" id="19_lpbsm"]
+[ext_resource type="PackedScene" uid="uid://bxgk6rbcs4b4m" path="res://Assets/models/Motel_Exports/Fish Cola Fixed.glb" id="17_ctnqc"]
 [ext_resource type="Script" uid="uid://cvoimchawkmxu" path="res://Scenes/Locations/Motel_outdors/beta.gd" id="23_bu8h4"]
 [ext_resource type="Environment" uid="uid://cx6dnj3q7sosi" path="res://Scenes/Locations/Motel_outdors/Motel_parking.tres" id="24_kt5da"]
 [ext_resource type="PackedScene" uid="uid://bdb3ty04ft437" path="res://Scenes/Locations/Motel_outdors/carpuzzle.tscn" id="25_wfcq0"]
@@ -157,12 +157,12 @@ use_3d_avoidance = true
 
 [node name="NPC" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="Fishcola lady Final" parent="NavigationRegion3D/NPC" instance=ExtResource("19_lpbsm")]
-transform = Transform3D(-0.00336465, 0, -0.012557, 0, 0.013, 0, 0.012557, 0, -0.00336465, -12.5968, 2.00385, 1.63494)
+[node name="Fish Cola Fixed" parent="NavigationRegion3D/NPC" instance=ExtResource("17_ctnqc")]
+transform = Transform3D(-0.00336465, 0, -0.012557, 0, 0.013, 0, 0.012557, 0, -0.00336465, -12.597, 2.004, 1.635)
 script = ExtResource("11_nugkr")
 
-[node name="InteractableObjectSignal" parent="NavigationRegion3D/NPC/Fishcola lady Final" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
-transform = Transform3D(-15.8204, 0, 150.699, 0, 56.5275, 0, -59.0424, 0, -40.3797, -3.4375, -69.7796, 8.79248)
+[node name="InteractableObjectSignal" parent="NavigationRegion3D/NPC/Fish Cola Fixed" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
+transform = Transform3D(45, 0, -3.8147e-05, 0, 41.609, 0, 1.33514e-05, 0, 114.795, 0.968079, 1.09669, -2.099)
 transitionScreen = NodePath("../../../../gui/Transition_screen")
 
 [node name="Areas" type="Node3D" parent="NavigationRegion3D"]
@@ -258,7 +258,7 @@ environment = ExtResource("24_kt5da")
 [connection signal="item_activated" from="puzzle/fishcolaPickup" to="NavigationRegion3D/Objects/Fishcole" method="_on_interactable_object_signal_item_activated"]
 [connection signal="item_activated" from="NavigationRegion3D/Objects/Reception/Reception_door" to="NavigationRegion3D/Objects/Reception" method="_on_reception_door_item_activated"]
 [connection signal="item_activated" from="NavigationRegion3D/Objects/Beta/Reception_door" to="NavigationRegion3D/Objects/Beta" method="_on_reception_door_item_activated"]
-[connection signal="item_activated" from="NavigationRegion3D/NPC/Fishcola lady Final/InteractableObjectSignal" to="NavigationRegion3D/NPC/Fishcola lady Final" method="_on_interactable_object_signal_item_activated"]
+[connection signal="item_activated" from="NavigationRegion3D/NPC/Fish Cola Fixed/InteractableObjectSignal" to="NavigationRegion3D/NPC/Fish Cola Fixed" method="_on_interactable_object_signal_item_activated"]
 [connection signal="area_entered" from="NavigationRegion3D/Areas/left_zone" to="NavigationRegion3D/Areas/left_zone" method="_on_area_entered"]
 [connection signal="area_exited" from="NavigationRegion3D/Areas/left_zone" to="NavigationRegion3D/Areas/left_zone" method="_on_area_exited"]
 [connection signal="area_entered" from="NavigationRegion3D/Areas/right_zone" to="NavigationRegion3D/Areas/right_zone" method="_on_area_entered"]

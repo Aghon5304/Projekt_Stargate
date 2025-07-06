@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b85invvhea2wa"]
+[gd_scene load_steps=11 format=3 uid="uid://b85invvhea2wa"]
 
 [ext_resource type="Script" uid="uid://dco7c0reed62y" path="res://Scenes/Menus/options_menu/options_menu.gd" id="1_fxulr"]
 [ext_resource type="Shader" uid="uid://43abydoq3dlo" path="res://Scenes/Menus/pause_menu/pause_menu.gdshader" id="1_wjtcd"]
 [ext_resource type="Script" uid="uid://bwifm8ho3ytx5" path="res://Scenes/Menus/options_menu/master_volume_slider.gd" id="2_hafqh"]
 [ext_resource type="Script" uid="uid://brgblhkifv43q" path="res://Scenes/Menus/options_menu/sfx_volume_slider.gd" id="3_q07b1"]
-[ext_resource type="Script" uid="uid://c0kslfb6kq7qj" path="res://Scenes/Menus/options_menu/brightness_slider.gd" id="3_xv7hx"]
 [ext_resource type="Script" uid="uid://dne0gxe4s2uyy" path="res://Scenes/Menus/options_menu/music_volume_slider.gd" id="4_4h60w"]
 [ext_resource type="Script" uid="uid://bgaq033n5d5we" path="res://Scenes/Menus/options_menu/return_to_paused_menu.gd" id="7_1q56i"]
 
@@ -85,18 +84,6 @@ offset_bottom = 493.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Brightness" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Brightness"
-
-[node name="BrightnessSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-min_value = 0.01
-max_value = 4.0
-step = 0.01
-value = 1.0
-script = ExtResource("3_xv7hx")
-
 [node name="MasterVolume" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Master Volume"
@@ -136,5 +123,4 @@ offset_bottom = 142.0
 text = "Return"
 script = ExtResource("7_1q56i")
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/BrightnessSlider" to="MarginContainer/VBoxContainer/BrightnessSlider" method="_on_value_changed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]

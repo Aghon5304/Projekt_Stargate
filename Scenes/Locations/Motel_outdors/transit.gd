@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	var Forest: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.Forest)
-	get_tree().change_scene_to_packed(Forest)
+	var Motel_transition: PackedScene= GlobalGameProgress.Locations_dict.get(GlobalGameProgress.Location.Motel_outdoors)
+	get_tree().change_scene_to_packed(Motel_transition)
