@@ -103,7 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93143, 0, 13.6886)
 script = ExtResource("23_bu8h4")
 
 [node name="Reception_door" parent="NavigationRegion3D/Objects/Beta" node_paths=PackedStringArray("transitionScreen") instance=ExtResource("9_nefqt")]
-transform = Transform3D(1.67551, 0, 0, 0, 1.56188, 0, 0, 0, 4.12294, -14.6026, 0.718379, 0.269296)
+transform = Transform3D(1.67551, 0, 0, 0, 1.56188, 0, 0, 0, 4.12294, -14.1213, 0.718379, 0.269296)
 transitionScreen = NodePath("../../../../gui/Transition_screen")
 requiredItem = 2
 
