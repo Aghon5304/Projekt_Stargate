@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ub6d4ibntjji" path="res://Scenes/Maps/Forest/benchestscn.tscn" id="1_gkmg2"]
 [ext_resource type="PackedScene" uid="uid://djqtror3ex8l" path="res://Assets/models/forest/Bunker Export.glb" id="1_jdrm6"]
 [ext_resource type="Script" uid="uid://ds5q11a0l1chx" path="res://Scenes/Locations/Forest/forest_location.gd" id="1_pvra2"]
-[ext_resource type="Environment" uid="uid://dtvg53g8qwf1a" path="res://Scenes/Locations/Forest/forest_location.tres" id="1_pvra2"]
+[ext_resource type="Environment" uid="uid://dtvg53g8qwf1a" path="res://Scenes/Locations/Forest/forest_location.tres" id="1_pvra3"]
 [ext_resource type="Script" uid="uid://b2nn14ct7drqb" path="res://Scenes/Locations/Forest/area_camera.gd" id="1_xxbqf"]
 [ext_resource type="PackedScene" uid="uid://2fdtx314g0g8" path="res://Assets/models/forest/accesories/Toolbox Export.glb" id="2_fqmll"]
 [ext_resource type="PackedScene" uid="uid://drxwj3ipedmah" path="res://Assets/models/forest/accesories/Bolt Cutters Export.glb" id="3_gkmg2"]
@@ -259,17 +259,6 @@ carve_navigation_mesh = true
 [node name="Trees Export" parent="Objects" instance=ExtResource("1_fqmll")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.39247, 0, -7.45331)
 
-[node name="trash" type="Node3D" parent="Objects"]
-
-[node name="Electronics Export" parent="Objects/trash" instance=ExtResource("4_xxbqf")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="Scrap Export" parent="Objects/trash" instance=ExtResource("5_xk07w")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="Gracz" parent="." instance=ExtResource("2_0liqx")]
-transform = Transform3D(-0.324528, 0, 0.945876, 0, 1, 0, -0.945876, 0, -0.324528, 43.7704, 3.97961, -117.147)
-
 [node name="npc" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.963058)
 script = ExtResource("15_pvra2")
@@ -293,8 +282,7 @@ transitionScreen = NodePath("../../../gui/Transition_screen")
 [node name="Equipment" parent="." instance=ExtResource("5_3mvk6")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_pvra2")
-camera_attributes = SubResource("CameraAttributesPractical_pvra2")
+environment = ExtResource("1_pvra3")
 
 [connection signal="area_entered" from="Area3d/area_camera2" to="Area3d/area_camera2" method="_on_area_entered"]
 [connection signal="area_exited" from="Area3d/area_camera2" to="Area3d/area_camera2" method="_on_area_exited"]
