@@ -42,7 +42,6 @@ directories/dtl_directory={
 "burker_dors_interaction": "res://Dialogic/Timelines/Forest/burker_dors_interaction.dtl",
 "graffiti_interaction": "res://Dialogic/Timelines/Forest/graffiti_interaction.dtl",
 "guard_timeline": "res://Dialogic/Timelines/Forest/guard_timeline.dtl",
-"living_room_first_hint": "res://Dialogic/Timelines/Forest/living_room_first_hint.dtl",
 "pass_interaction": "res://Dialogic/Timelines/Forest/pass_interaction.dtl",
 "thrash_pickup": "res://Dialogic/Timelines/Forest/thrash_pickup.dtl",
 "walkie-talkie_damaged": "res://Dialogic/Timelines/Forest/walkie-talkie_damaged.dtl",
