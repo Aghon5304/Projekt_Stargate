@@ -25,7 +25,6 @@ MainMenu="*res://Scenes/Menus/main_menu/main_menu.gd"
 GlobalWorldEnvironment="*res://Scenes/Menus/world_environment.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GlobalSaveManager="*res://Scenes/Global/Save/Save_Manager.gd"
-GlobalNotebook="*res://Scenes/Menus/notebook/Autoload/global_notebook.gd"
 
 [dialogic]
 
